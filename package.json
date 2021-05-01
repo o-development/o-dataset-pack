@@ -1,0 +1,34 @@
+{
+  "name": "subscribable-dataset",
+  "version": "1.0.0",
+  "description": "An RDFJS dataset that alerts upon the update of a node",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/o-development/subscribable-dataset.git"
+  },
+  "author": "Jackson Morgan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/o-development/subscribable-dataset/issues"
+  },
+  "homepage": "https://github.com/o-development/subscribable-dataset#readme",
+  "devDependencies": {
+    "@types/rdf-dataset-indexed": "^0.4.5",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@rdfjs/data-model": "^1.2.0",
+    "rdf-dataset-indexed": "^0.4.0"
+  }
+}
