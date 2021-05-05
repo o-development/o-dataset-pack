@@ -5,7 +5,7 @@ export class ExtendedDataset
   extends DatasetCoreImplementation<BaseQuad>
   implements Dataset<Quad, BaseQuad> {
   /**
-   * No param constructor
+   * Constructor
    */
   constructor(quads?: DatasetCore<Quad, BaseQuad> | BaseQuad[]) {
     if (quads) {
