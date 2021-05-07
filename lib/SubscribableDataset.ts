@@ -49,70 +49,177 @@ export default class SubscribableDataset<
    * ==================================================================
    */
 
-  addAll(quads: Dataset<InAndOutQuad, InAndOutQuad> | InAndOutQuad[]): this {
-    throw new Error("Method not implemented.");
+  /**
+   * Imports the quads into this dataset.
+   * This method differs from Dataset.union in that it adds all quads to the current instance, rather than combining quads and the current instance to create a new instance.
+   * @param quads
+   * @returns the dataset instance it was called on.
+   */
+  public addAll(
+    quads: Dataset<InAndOutQuad, InAndOutQuad> | InAndOutQuad[]
+  ): this {
+    this.dataset.addAll(quads);
+    this.triggerSubscriptionForQuads({
+      added: this.datasetFactory.dataset(quads),
+    });
+    return this;
   }
+
+  /**
+   * Bulk add and remove triples
+   * @param changed
+   */
   public bulk(changed: DatasetChanges<InAndOutQuad>): this {
-    throw new Error("Method Not Implemented.");
+    if (changed.added) {
+      this.dataset.addAll(changed.added);
+    }
+    if (changed.removed) {
+      changed.removed.forEach((quad) => {
+        this.dataset.delete(quad);
+      });
+    }
+    this.triggerSubscriptionForQuads(changed);
+    return this;
   }
-  contains(other: Dataset<InAndOutQuad, InAndOutQuad>): boolean {
-    throw new Error("Method not implemented.");
+
+  /**
+   * Returns true if the current instance is a superset of the given dataset; differently put: if the given dataset is a subset of, is contained in the current dataset.
+   * Blank Nodes will be normalized.
+   * @param other
+   */
+  public contains(other: Dataset<InAndOutQuad, InAndOutQuad>): boolean {
+    return this.dataset.contains(other);
   }
-  deleteMatches(
+
+  /**
+   *  This method removes the quads in the current instance that match the given arguments. The logic described in Quad Matching is applied for each quad in this dataset to select the quads which will be deleted.
+   * @param subject
+   * @param predicate
+   * @param object
+   * @param graph
+   * @returns the dataset instance it was called on.
+   */
+  public deleteMatches(
     subject?: Term,
     predicate?: Term,
     object?: Term,
     graph?: Term
   ): this {
-    throw new Error("Method not implemented.");
+    const matching = this.dataset.match(subject, predicate, object, graph);
+    for (const quad of matching) {
+      // This cast is fine because we know that under the covers,
+      this.delete(quad);
+    }
+    this.triggerSubscriptionForQuads({ removed: matching });
+    return this;
   }
-  difference(
+
+  /**
+   * Returns a new dataset that contains alls quads from the current dataset, not included in the given dataset.
+   * @param other
+   */
+  public difference(
     other: Dataset<InAndOutQuad, InAndOutQuad>
   ): Dataset<InAndOutQuad, InAndOutQuad> {
-    throw new Error("Method not implemented.");
+    return this.dataset.difference(other);
   }
-  equals(other: Dataset<InAndOutQuad, InAndOutQuad>): boolean {
-    throw new Error("Method not implemented.");
+
+  /**
+   * Returns true if the current instance contains the same graph structure as the given dataset.
+   * @param other
+   */
+  public equals(other: Dataset<InAndOutQuad, InAndOutQuad>): boolean {
+    return this.dataset.equals(other);
   }
-  every(
+
+  /**
+   * Universal quantification method, tests whether every quad in the dataset passes the test implemented by the provided iteratee.
+   * This method immediately returns boolean false once a quad that does not pass the test is found.
+   * This method always returns boolean true on an empty dataset.
+   * Note: This method is aligned with Array.prototype.every() in ECMAScript-262.
+   * @param iteratee
+   */
+  public every(
     iteratee: (
       quad: InAndOutQuad,
       dataset: Dataset<InAndOutQuad, InAndOutQuad>
     ) => boolean
   ): boolean {
-    throw new Error("Method not implemented.");
+    return this.dataset.every(iteratee);
   }
-  filter(
+
+  /**
+   * Creates a new dataset with all the quads that pass the test implemented by the provided iteratee.
+   * Note: This method is aligned with Array.prototype.filter() in ECMAScript-262.
+   * @param iteratee
+   */
+  public filter(
     iteratee: (
       quad: InAndOutQuad,
       dataset: Dataset<InAndOutQuad, InAndOutQuad>
     ) => boolean
   ): Dataset<InAndOutQuad, InAndOutQuad> {
-    throw new Error("Method not implemented.");
+    return this.dataset.filter(iteratee);
   }
-  forEach(
+
+  /**
+   * Executes the provided iteratee once on each quad in the dataset.
+   * Note: This method is aligned with Array.prototype.forEach() in ECMAScript-262.
+   * @param iteratee
+   */
+  public forEach(
     iteratee: (
       quad: InAndOutQuad,
       dataset: Dataset<InAndOutQuad, InAndOutQuad>
     ) => void
   ): void {
-    throw new Error("Method not implemented.");
+    return this.dataset.forEach(iteratee);
   }
-  import(stream: Stream<InAndOutQuad>): Promise<this> {
-    throw new Error("Method not implemented.");
+
+  /**
+   * Imports all quads from the given stream into the dataset.
+   * The stream events end and error are wrapped in a Promise.
+   * @param stream
+   */
+  public async import(stream: Stream<InAndOutQuad>): Promise<this> {
+    await this.import(stream);
+    return this;
   }
-  intersection(other: Dataset<InAndOutQuad, InAndOutQuad>): this {
-    throw new Error("Method not implemented.");
+
+  /**
+   * Returns a new dataset containing alls quads from the current dataset that are also included in the given dataset.
+   * @param other
+   */
+  // Typescript disabled because rdf-js has incorrect typings
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  public intersection(
+    other: Dataset<InAndOutQuad, InAndOutQuad>
+  ): Dataset<InAndOutQuad, InAndOutQuad> {
+    return this.dataset.intersection(other);
   }
-  map(
+
+  /**
+   * Returns a new dataset containing all quads returned by applying iteratee to each quad in the current dataset.
+   * @param iteratee
+   */
+  public map(
     iteratee: (
       quad: InAndOutQuad,
       dataset: Dataset<InAndOutQuad, InAndOutQuad>
     ) => InAndOutQuad
   ): Dataset<InAndOutQuad, InAndOutQuad> {
-    throw new Error("Method not implemented.");
+    return this.dataset.map(iteratee);
   }
-  reduce<A = any>(
+
+  /**
+   * This method calls the iteratee on each quad of the DatasetCore. The first time the iteratee is called, the accumulator value is the initialValue or, if not given, equals to the first quad of the Dataset. The return value of the iteratee is used as accumulator value for the next calls.
+   * This method returns the return value of the last iteratee call.
+   * Note: This method is aligned with Array.prototype.reduce() in ECMAScript-262.
+   * @param iteratee
+   * @param initialValue
+   */
+  public reduce<A = unknown>(
     iteratee: (
       accumulator: A,
       quad: InAndOutQuad,
@@ -120,55 +227,128 @@ export default class SubscribableDataset<
     ) => A,
     initialValue?: A
   ): A {
-    throw new Error("Method not implemented.");
+    return this.dataset.reduce(iteratee, initialValue);
   }
-  some(
+
+  /**
+   * Existential quantification method, tests whether some quads in the dataset pass the test implemented by the provided iteratee.
+   * Note: This method is aligned with Array.prototype.some() in ECMAScript-262.
+   * @param iteratee
+   * @returns boolean true once a quad that passes the test is found.
+   */
+  public some(
     iteratee: (
       quad: InAndOutQuad,
       dataset: Dataset<InAndOutQuad, InAndOutQuad>
     ) => boolean
   ): boolean {
-    throw new Error("Method not implemented.");
+    return this.dataset.some(iteratee);
   }
-  toArray(): InAndOutQuad[] {
-    throw new Error("Method not implemented.");
+
+  /**
+   * Returns the set of quads within the dataset as a host language native sequence, for example an Array in ECMAScript-262.
+   * Note: Since a DatasetCore is an unordered set, the order of the quads within the returned sequence is arbitrary.
+   */
+  public toArray(): InAndOutQuad[] {
+    return this.dataset.toArray();
   }
-  toCanonical(): string {
-    throw new Error("Method not implemented.");
+
+  /**
+   * Returns an N-Quads string representation of the dataset, preprocessed with RDF Dataset Normalization algorithm.
+   */
+  public toCanonical(): string {
+    return this.dataset.toCanonical();
   }
-  toStream(): Stream<InAndOutQuad> {
-    throw new Error("Method not implemented.");
+
+  /**
+   * Returns a stream that contains all quads of the dataset.
+   */
+  public toStream(): Stream<InAndOutQuad> {
+    return this.dataset.toStream();
   }
-  toString(): string {
-    throw new Error("Method not implemented.");
+
+  /**
+   * Returns an N-Quads string representation of the dataset.
+   * No prior normalization is required, therefore the results for the same quads may vary depending on the Dataset implementation.
+   */
+  public toString(): string {
+    return this.dataset.toString();
   }
-  union(
+
+  /**
+   * Returns a new Dataset that is a concatenation of this dataset and the quads given as an argument.
+   * @param other
+   */
+  public union(
     quads: Dataset<InAndOutQuad, InAndOutQuad>
   ): Dataset<InAndOutQuad, InAndOutQuad> {
-    throw new Error("Method not implemented.");
+    return this.dataset.union(quads);
   }
-  match(
+
+  /**
+   * This method returns a new dataset that is comprised of all quads in the current instance matching the given arguments. The logic described in Quad Matching is applied for each quad in this dataset to check if it should be included in the output dataset.
+   * @param subject
+   * @param predicate
+   * @param object
+   * @param graph
+   * @returns a Dataset with matching triples
+   */
+  public match(
     subject?: Term | null,
     predicate?: Term | null,
     object?: Term | null,
     graph?: Term | null
   ): Dataset<InAndOutQuad, InAndOutQuad> {
-    throw new Error("Method not implemented.");
+    return this.dataset.match(subject, predicate, object, graph);
   }
-  get size(): number {
-    throw new Error("Method not implemented.");
+
+  /**
+   * A non-negative integer that specifies the number of quads in the set.
+   */
+  public get size(): number {
+    return this.dataset.size;
   }
-  add(quad: InAndOutQuad): this {
-    throw new Error("Method not implemented.");
+
+  /**
+   * Adds the specified quad to the dataset.
+   * Existing quads, as defined in Quad.equals, will be ignored.
+   * @param quad
+   * @returns the dataset instance it was called on.
+   */
+  public add(quad: InAndOutQuad): this {
+    this.dataset.add(quad);
+    this.triggerSubscriptionForQuads({
+      added: this.datasetFactory.dataset([quad]),
+    });
+    return this;
   }
-  delete(quad: InAndOutQuad): this {
-    throw new Error("Method not implemented.");
+
+  /**
+   * Removes the specified quad from the dataset.
+   * This method returns the dataset instance it was called on.
+   * @param quad
+   */
+  public delete(quad: InAndOutQuad): this {
+    this.dataset.delete(quad);
+    this.triggerSubscriptionForQuads({
+      removed: this.datasetFactory.dataset([quad]),
+    });
+    return this;
   }
-  has(quad: InAndOutQuad): boolean {
-    throw new Error("Method not implemented.");
+
+  /**
+   * Determines whether a dataset includes a certain quad, returning true or false as appropriate.
+   * @param quad
+   */
+  public has(quad: InAndOutQuad): boolean {
+    return this.dataset.has(quad);
   }
-  [Symbol.iterator](): Iterator<InAndOutQuad, any, undefined> {
-    throw new Error("Method not implemented.");
+
+  /**
+   * Returns an iterator
+   */
+  public [Symbol.iterator](): Iterator<InAndOutQuad, unknown, undefined> {
+    return this.dataset[Symbol.iterator]();
   }
 
   /**
@@ -445,7 +625,10 @@ export default class SubscribableDataset<
    * ==================================================================
    */
 
+  /**
+   * Returns a transactional dataset that will update this dataset when its transaction is committed.
+   */
   public startTransaction(): TransactionalDataset {
-    throw new Error("Method Not Implemented.");
+    return new TransactionalDataset(this);
   }
 }
