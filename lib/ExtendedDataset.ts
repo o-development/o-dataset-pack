@@ -7,7 +7,7 @@ export class ExtendedDataset
   /**
    * Constructor
    */
-  constructor(quads?: DatasetCore<Quad, BaseQuad> | BaseQuad[]) {
+  constructor(quads?: DatasetCore<BaseQuad> | BaseQuad[]) {
     if (quads) {
       const arr = [];
       for (const quad of quads) {
@@ -25,7 +25,7 @@ export class ExtendedDataset
    * @param quads
    * @returns the dataset instance it was called on.
    */
-  addAll(quads: BaseQuad[] | Dataset<BaseQuad, BaseQuad>): this {
+  addAll(quads: BaseQuad[] | Dataset<BaseQuad>): this {
     for (const quad of quads) {
       this.add(quad);
     }
@@ -37,7 +37,7 @@ export class ExtendedDataset
    * Blank Nodes will be normalized.
    * @param other
    */
-  contains(other: Dataset<BaseQuad, BaseQuad>): boolean {
+  contains(other: Dataset<BaseQuad>): boolean {
     for (const quad of other) {
       if (!this.has(quad)) {
         return false;
@@ -62,6 +62,7 @@ export class ExtendedDataset
   ): this {
     const matching = this.match(subject, predicate, object, graph);
     for (const quad of matching) {
+      // This cast is fine because we know that under the covers,
       this.delete(quad);
     }
     return this;
@@ -71,7 +72,7 @@ export class ExtendedDataset
    * Returns a new dataset that contains alls quads from the current dataset, not included in the given dataset.
    * @param other
    */
-  difference(other: DatasetCore<BaseQuad, BaseQuad>): Dataset<Quad, BaseQuad> {
+  difference(other: DatasetCore<BaseQuad>): Dataset<Quad, BaseQuad> {
     const dataset = new ExtendedDataset();
     for (const quad of this) {
       if (!other.has(quad)) {
@@ -85,7 +86,7 @@ export class ExtendedDataset
    * Returns true if the current instance contains the same graph structure as the given dataset.
    * @param other
    */
-  equals(other: Dataset<BaseQuad, BaseQuad>): boolean {
+  equals(other: Dataset<BaseQuad>): boolean {
     const iteratingDataset = this.size < other.size ? this : other;
     const comparingDataset = this.size < other.size ? other : this;
     for (const quad of iteratingDataset) {

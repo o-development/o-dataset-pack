@@ -5,21 +5,25 @@ import {
   SubscribableTerms,
   DatasetChanges,
   nodeEventListener,
+  BulkEditableDataset,
 } from "./SubscribableDatasetTypes";
+import TransactionalDataset from "./TransactionalDataset";
 
 /**
  * A wrapper for a dataset that allows subscriptions to be made on nodes to
  * be triggered whenever a quad containing that added or removed.
  */
-export default class SubscribableDataset implements Dataset {
+export default class SubscribableDataset<
+  InAndOutQuad extends BaseQuad = BaseQuad
+> implements BulkEditableDataset<InAndOutQuad> {
   /**
    * The underlying dataset factory
    */
-  private datasetFactory: DatasetFactory;
+  private datasetFactory: DatasetFactory<InAndOutQuad, InAndOutQuad>;
   /**
    * The underlying dataset
    */
-  private dataset: Dataset;
+  private dataset: Dataset<InAndOutQuad, InAndOutQuad>;
   /**
    * The underlying event emitter
    */
@@ -30,7 +34,10 @@ export default class SubscribableDataset implements Dataset {
    * @param datasetFactory
    * @param initialDataset
    */
-  constructor(datasetFactory: DatasetFactory, initialDataset?: Dataset) {
+  constructor(
+    datasetFactory: DatasetFactory<InAndOutQuad, InAndOutQuad>,
+    initialDataset?: Dataset<InAndOutQuad, InAndOutQuad>
+  ) {
     this.datasetFactory = datasetFactory;
     this.dataset = initialDataset || this.datasetFactory.dataset();
     this.eventEmitter = new EventEmitter();
@@ -42,14 +49,13 @@ export default class SubscribableDataset implements Dataset {
    * ==================================================================
    */
 
-  /**
-   *
-   * @param quads
-   */
-  addAll(quads: Dataset<InQuad, InQuad> | InQuad[]): this {
+  addAll(quads: Dataset<InAndOutQuad, InAndOutQuad> | InAndOutQuad[]): this {
     throw new Error("Method not implemented.");
   }
-  contains(other: Dataset<InQuad, InQuad>): boolean {
+  public bulk(changed: DatasetChanges<InAndOutQuad>): this {
+    throw new Error("Method Not Implemented.");
+  }
+  contains(other: Dataset<InAndOutQuad, InAndOutQuad>): boolean {
     throw new Error("Method not implemented.");
   }
   deleteMatches(
@@ -60,66 +66,85 @@ export default class SubscribableDataset implements Dataset {
   ): this {
     throw new Error("Method not implemented.");
   }
-  difference(other: Dataset<InQuad, InQuad>): Dataset<OutQuad, InQuad> {
+  difference(
+    other: Dataset<InAndOutQuad, InAndOutQuad>
+  ): Dataset<InAndOutQuad, InAndOutQuad> {
     throw new Error("Method not implemented.");
   }
-  equals(other: Dataset<InQuad, InQuad>): boolean {
+  equals(other: Dataset<InAndOutQuad, InAndOutQuad>): boolean {
     throw new Error("Method not implemented.");
   }
   every(
-    iteratee: (quad: OutQuad, dataset: Dataset<OutQuad, OutQuad>) => boolean
+    iteratee: (
+      quad: InAndOutQuad,
+      dataset: Dataset<InAndOutQuad, InAndOutQuad>
+    ) => boolean
   ): boolean {
     throw new Error("Method not implemented.");
   }
   filter(
-    iteratee: (quad: OutQuad, dataset: Dataset<OutQuad, OutQuad>) => boolean
-  ): Dataset<OutQuad, InQuad> {
+    iteratee: (
+      quad: InAndOutQuad,
+      dataset: Dataset<InAndOutQuad, InAndOutQuad>
+    ) => boolean
+  ): Dataset<InAndOutQuad, InAndOutQuad> {
     throw new Error("Method not implemented.");
   }
   forEach(
-    iteratee: (quad: OutQuad, dataset: Dataset<OutQuad, OutQuad>) => void
+    iteratee: (
+      quad: InAndOutQuad,
+      dataset: Dataset<InAndOutQuad, InAndOutQuad>
+    ) => void
   ): void {
     throw new Error("Method not implemented.");
   }
-  import(stream: Stream<InQuad>): Promise<this> {
+  import(stream: Stream<InAndOutQuad>): Promise<this> {
     throw new Error("Method not implemented.");
   }
-  intersection(other: Dataset<InQuad, InQuad>): this {
+  intersection(other: Dataset<InAndOutQuad, InAndOutQuad>): this {
     throw new Error("Method not implemented.");
   }
   map(
-    iteratee: (quad: OutQuad, dataset: Dataset<OutQuad, OutQuad>) => OutQuad
-  ): Dataset<OutQuad, InQuad> {
+    iteratee: (
+      quad: InAndOutQuad,
+      dataset: Dataset<InAndOutQuad, InAndOutQuad>
+    ) => InAndOutQuad
+  ): Dataset<InAndOutQuad, InAndOutQuad> {
     throw new Error("Method not implemented.");
   }
   reduce<A = any>(
     iteratee: (
       accumulator: A,
-      quad: OutQuad,
-      dataset: Dataset<OutQuad, OutQuad>
+      quad: InAndOutQuad,
+      dataset: Dataset<InAndOutQuad, InAndOutQuad>
     ) => A,
     initialValue?: A
   ): A {
     throw new Error("Method not implemented.");
   }
   some(
-    iteratee: (quad: OutQuad, dataset: Dataset<OutQuad, OutQuad>) => boolean
+    iteratee: (
+      quad: InAndOutQuad,
+      dataset: Dataset<InAndOutQuad, InAndOutQuad>
+    ) => boolean
   ): boolean {
     throw new Error("Method not implemented.");
   }
-  toArray(): OutQuad[] {
+  toArray(): InAndOutQuad[] {
     throw new Error("Method not implemented.");
   }
   toCanonical(): string {
     throw new Error("Method not implemented.");
   }
-  toStream(): Stream<OutQuad> {
+  toStream(): Stream<InAndOutQuad> {
     throw new Error("Method not implemented.");
   }
   toString(): string {
     throw new Error("Method not implemented.");
   }
-  union(quads: Dataset<InQuad, InQuad>): Dataset<OutQuad, InQuad> {
+  union(
+    quads: Dataset<InAndOutQuad, InAndOutQuad>
+  ): Dataset<InAndOutQuad, InAndOutQuad> {
     throw new Error("Method not implemented.");
   }
   match(
@@ -127,20 +152,22 @@ export default class SubscribableDataset implements Dataset {
     predicate?: Term | null,
     object?: Term | null,
     graph?: Term | null
-  ): Dataset<OutQuad, InQuad> {
+  ): Dataset<InAndOutQuad, InAndOutQuad> {
     throw new Error("Method not implemented.");
   }
-  size: number;
-  add(quad: InQuad): this {
+  get size(): number {
     throw new Error("Method not implemented.");
   }
-  delete(quad: InQuad): this {
+  add(quad: InAndOutQuad): this {
     throw new Error("Method not implemented.");
   }
-  has(quad: InQuad): boolean {
+  delete(quad: InAndOutQuad): this {
     throw new Error("Method not implemented.");
   }
-  [Symbol.iterator](): Iterator<OutQuad, any, undefined> {
+  has(quad: InAndOutQuad): boolean {
+    throw new Error("Method not implemented.");
+  }
+  [Symbol.iterator](): Iterator<InAndOutQuad, any, undefined> {
     throw new Error("Method not implemented.");
   }
 
@@ -190,7 +217,9 @@ export default class SubscribableDataset implements Dataset {
    * Triggers all subscriptions based on an updated quads
    * @param changed The changed triples of the transaction
    */
-  private triggerSubscriptionForQuads(changed: DatasetChanges): void {
+  private triggerSubscriptionForQuads(
+    changed: DatasetChanges<InAndOutQuad>
+  ): void {
     const triggeredTermsMap: Record<string, SubscribableTerms> = {};
     const forEachQuad = (quad: BaseQuad) => {
       const subject = quad.subject;
@@ -221,20 +250,23 @@ export default class SubscribableDataset implements Dataset {
    */
   private triggerSubscriptionForNode(
     term: SubscribableTerms,
-    changed: DatasetChanges
+    changed: DatasetChanges<InAndOutQuad>
   ): void {
     if (this.listenerCount(term) > 0) {
-      let allQuads: Dataset = this.datasetFactory.dataset();
+      let allQuads: Dataset<
+        InAndOutQuad,
+        InAndOutQuad
+      > = this.datasetFactory.dataset();
       if (term.termType !== "DefaultGraph") {
-        allQuads = allQuads.union(this.match(term, null, null));
-        allQuads = allQuads.union(this.match(null, null, term));
+        allQuads = allQuads.union(this.match(term, null, null, null));
+        allQuads = allQuads.union(this.match(null, null, term, null));
         if (term.termType !== "BlankNode") {
-          allQuads = allQuads.union(this.match(null, term, null));
+          allQuads = allQuads.union(this.match(null, term, null, null));
         }
       } else {
         allQuads = allQuads.union(this.match(null, null, null, term));
       }
-      const changedForThisNode: DatasetChanges = {
+      const changedForThisNode: DatasetChanges<InAndOutQuad> = {
         added: changed.added
           ? changed.added.filter((addedNode) => allQuads.has(addedNode))
           : undefined,
@@ -254,22 +286,22 @@ export default class SubscribableDataset implements Dataset {
    */
   public addListener(
     eventName: SubscribableTerms,
-    listener: nodeEventListener
+    listener: nodeEventListener<InAndOutQuad>
   ): this {
     return this.on(eventName, listener);
   }
 
   /**
    * Synchronously calls each of the listeners registered for the event named eventName, in the order they were registered, passing the supplied arguments to each.
-   * @param eventName 
-   * @param dataset 
-   * @param datasetChanges 
+   * @param eventName
+   * @param dataset
+   * @param datasetChanges
    * @returns true if the event had listeners, false otherwise.
    */
   public emit(
     eventName: SubscribableTerms,
-    dataset: Dataset,
-    datasetChanges: DatasetChanges
+    dataset: Dataset<InAndOutQuad, InAndOutQuad>,
+    datasetChanges: DatasetChanges<InAndOutQuad>
   ): boolean {
     return this.eventEmitter.emit(
       this.getKeyFromNode(eventName),
@@ -304,23 +336,31 @@ export default class SubscribableDataset implements Dataset {
   /**
    * Returns a copy of the array of listeners for the event named eventName.
    */
-  public listeners(eventName: SubscribableTerms): nodeEventListener[] {
+  public listeners(
+    eventName: SubscribableTerms
+  ): nodeEventListener<InAndOutQuad>[] {
     return this.eventEmitter.listeners(
       this.getKeyFromNode(eventName)
-    ) as nodeEventListener[];
+    ) as nodeEventListener<InAndOutQuad>[];
   }
 
   /**
    * Alias for emitter.removeListener()
    */
-  off(eventName: SubscribableTerms, listener: nodeEventListener): void {
+  public off(
+    eventName: SubscribableTerms,
+    listener: nodeEventListener<InAndOutQuad>
+  ): void {
     this.removeListener(eventName, listener);
   }
 
   /**
    * Adds the listener function to the end of the listeners array for the event named eventName. No checks are made to see if the listener has already been added. Multiple calls passing the same combination of eventName and listener will result in the listener being added, and called, multiple times.
    */
-  on(eventName: SubscribableTerms, listener: nodeEventListener): this {
+  public on(
+    eventName: SubscribableTerms,
+    listener: nodeEventListener<InAndOutQuad>
+  ): this {
     this.eventEmitter.on(this.getKeyFromNode(eventName), listener);
     return this;
   }
@@ -328,7 +368,10 @@ export default class SubscribableDataset implements Dataset {
   /**
    * Adds a one-time listener function for the event named eventName. The next time eventName is triggered, this listener is removed and then invoked.
    */
-  once(eventName: SubscribableTerms, listener: nodeEventListener): this {
+  public once(
+    eventName: SubscribableTerms,
+    listener: nodeEventListener<InAndOutQuad>
+  ): this {
     this.eventEmitter.once(this.getKeyFromNode(eventName), listener);
     return this;
   }
@@ -336,9 +379,9 @@ export default class SubscribableDataset implements Dataset {
   /**
    * Adds the listener function to the beginning of the listeners array for the event named eventName. No checks are made to see if the listener has already been added. Multiple calls passing the same combination of eventName and listener will result in the listener being added, and called, multiple times.
    */
-  prependListener(
+  public prependListener(
     eventName: SubscribableTerms,
-    listener: nodeEventListener
+    listener: nodeEventListener<InAndOutQuad>
   ): this {
     this.eventEmitter.prependListener(this.getKeyFromNode(eventName), listener);
     return this;
@@ -347,9 +390,9 @@ export default class SubscribableDataset implements Dataset {
   /**
    * Adds a one-time listener function for the event named eventName to the beginning of the listeners array. The next time eventName is triggered, this listener is removed, and then invoked.
    */
-  prependOnceListener(
+  public prependOnceListener(
     eventName: SubscribableTerms,
-    listener: nodeEventListener
+    listener: nodeEventListener<InAndOutQuad>
   ): this {
     this.eventEmitter.prependOnceListener(
       this.getKeyFromNode(eventName),
@@ -361,7 +404,7 @@ export default class SubscribableDataset implements Dataset {
   /**
    * Removes all listeners, or those of the specified eventName.
    */
-  removeAllListeners(eventName: SubscribableTerms): this {
+  public removeAllListeners(eventName: SubscribableTerms): this {
     this.eventEmitter.removeAllListeners(this.getKeyFromNode(eventName));
     return this;
   }
@@ -369,9 +412,9 @@ export default class SubscribableDataset implements Dataset {
   /**
    * Removes the specified listener from the listener array for the event named eventName.
    */
-  removeListener(
+  public removeListener(
     eventName: SubscribableTerms,
-    listener: nodeEventListener
+    listener: nodeEventListener<InAndOutQuad>
   ): this {
     this.eventEmitter.removeListener(this.getKeyFromNode(eventName), listener);
     return this;
@@ -380,7 +423,7 @@ export default class SubscribableDataset implements Dataset {
   /**
    * By default EventEmitters will print a warning if more than 10 listeners are added for a particular event. This is a useful default that helps finding memory leaks. The emitter.setMaxListeners() method allows the limit to be modified for this specific EventEmitter instance. The value can be set to Infinity (or 0) to indicate an unlimited number of listeners.
    */
-  setMaxListeners(n: number): this {
+  public setMaxListeners(n: number): this {
     this.eventEmitter.setMaxListeners(n);
     return this;
   }
@@ -388,7 +431,9 @@ export default class SubscribableDataset implements Dataset {
   /**
    * Returns a copy of the array of listeners for the event named eventName, including any wrappers (such as those created by .once()).
    */
-  rawListeners(eventName: SubscribableTerms): nodeEventListener[] {
+  public rawListeners(
+    eventName: SubscribableTerms
+  ): nodeEventListener<InAndOutQuad>[] {
     return this.eventEmitter.rawListeners(
       this.getKeyFromNode(eventName)
     ) as nodeEventListener[];
@@ -400,11 +445,7 @@ export default class SubscribableDataset implements Dataset {
    * ==================================================================
    */
 
-  bulk(changed: DatasetChanges): this {
-
-  }
-
-  startTransaction(): TransactionalDataset {
-    
+  public startTransaction(): TransactionalDataset {
+    throw new Error("Method Not Implemented.");
   }
 }
