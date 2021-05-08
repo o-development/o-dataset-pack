@@ -21,9 +21,18 @@ export type nodeEventListener<InAndOutQuad extends BaseQuad = BaseQuad> = (
 ) => void;
 
 /**
- *
+ * Adds the bulk method for add and remove
  */
 export interface BulkEditableDataset<InAndOutQuad extends BaseQuad = BaseQuad>
   extends Dataset<InAndOutQuad, InAndOutQuad> {
   bulk(changes: DatasetChanges<InAndOutQuad>): this;
+}
+
+/**
+ *
+ */
+export interface TransactionalDataset<InAndOutQuad extends BaseQuad = BaseQuad>
+  extends Dataset<InAndOutQuad, InAndOutQuad> {
+  rollback(): void;
+  commit(): void;
 }

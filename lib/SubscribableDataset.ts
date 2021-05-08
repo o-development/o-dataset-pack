@@ -7,7 +7,7 @@ import {
   nodeEventListener,
   BulkEditableDataset,
 } from "./SubscribableDatasetTypes";
-import TransactionalDataset from "./TransactionalDataset";
+import TransactionalDataset from "./ProxyTransactionalDataset";
 
 /**
  * A wrapper for a dataset that allows subscriptions to be made on nodes to

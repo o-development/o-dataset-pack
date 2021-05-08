@@ -1,22 +1,43 @@
-import { DatasetCore, Dataset, BaseQuad, Stream, Term, Quad } from "rdf-js";
-import DatasetCoreImplementation from "@rdfjs/dataset/DatasetCore";
+import {
+  DatasetCore,
+  Dataset,
+  BaseQuad,
+  Stream,
+  Term,
+  DatasetCoreFactory,
+} from "rdf-js";
 
-export class ExtendedDataset
-  extends DatasetCoreImplementation<BaseQuad>
-  implements Dataset<Quad, BaseQuad> {
+export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
+  implements Dataset<InAndOutQuad, InAndOutQuad> {
+  /**
+   * The main backing dataset
+   */
+  protected dataset: DatasetCore<InAndOutQuad, InAndOutQuad>;
+
+  /**
+   * A factory that generates datasets for the methods
+   */
+  protected datasetCoreFactory: DatasetCoreFactory<InAndOutQuad, InAndOutQuad>;
+
   /**
    * Constructor
    */
-  constructor(quads?: DatasetCore<BaseQuad> | BaseQuad[]) {
-    if (quads) {
-      const arr = [];
-      for (const quad of quads) {
-        arr.push(quad);
-      }
-      super(arr);
-    } else {
-      super([]);
-    }
+  constructor(
+    dataset: DatasetCore<InAndOutQuad, InAndOutQuad>,
+    datasetFactory: DatasetCoreFactory<InAndOutQuad, InAndOutQuad>
+  ) {
+    this.dataset = dataset;
+    this.datasetCoreFactory = datasetFactory;
+  }
+
+  /**
+   * Creates a blank dataset using the dataset factory
+   */
+  private createBlankDataset(): Dataset<InAndOutQuad, InAndOutQuad> {
+    return new ExtendedDataset<InAndOutQuad>(
+      this.datasetCoreFactory.dataset(),
+      this.datasetCoreFactory
+    );
   }
 
   /**
@@ -25,7 +46,7 @@ export class ExtendedDataset
    * @param quads
    * @returns the dataset instance it was called on.
    */
-  addAll(quads: BaseQuad[] | Dataset<BaseQuad>): this {
+  addAll(quads: InAndOutQuad[] | Dataset<InAndOutQuad>): this {
     for (const quad of quads) {
       this.add(quad);
     }
@@ -37,7 +58,7 @@ export class ExtendedDataset
    * Blank Nodes will be normalized.
    * @param other
    */
-  contains(other: Dataset<BaseQuad>): boolean {
+  contains(other: Dataset<InAndOutQuad>): boolean {
     for (const quad of other) {
       if (!this.has(quad)) {
         return false;
@@ -63,7 +84,7 @@ export class ExtendedDataset
     const matching = this.match(subject, predicate, object, graph);
     for (const quad of matching) {
       // This cast is fine because we know that under the covers,
-      this.delete(quad);
+      this.dataset.delete(quad);
     }
     return this;
   }
@@ -72,8 +93,10 @@ export class ExtendedDataset
    * Returns a new dataset that contains alls quads from the current dataset, not included in the given dataset.
    * @param other
    */
-  difference(other: DatasetCore<BaseQuad>): Dataset<Quad, BaseQuad> {
-    const dataset = new ExtendedDataset();
+  difference(
+    other: DatasetCore<InAndOutQuad>
+  ): Dataset<InAndOutQuad, InAndOutQuad> {
+    const dataset = this.createBlankDataset();
     for (const quad of this) {
       if (!other.has(quad)) {
         dataset.add(quad);
@@ -86,7 +109,7 @@ export class ExtendedDataset
    * Returns true if the current instance contains the same graph structure as the given dataset.
    * @param other
    */
-  equals(other: Dataset<BaseQuad>): boolean {
+  equals(other: Dataset<InAndOutQuad, InAndOutQuad>): boolean {
     const iteratingDataset = this.size < other.size ? this : other;
     const comparingDataset = this.size < other.size ? other : this;
     for (const quad of iteratingDataset) {
@@ -105,7 +128,10 @@ export class ExtendedDataset
    * @param iteratee
    */
   every(
-    iteratee: (quad: Quad, dataset: Dataset<Quad, BaseQuad>) => boolean
+    iteratee: (
+      quad: InAndOutQuad,
+      dataset: Dataset<InAndOutQuad, InAndOutQuad>
+    ) => boolean
   ): boolean {
     for (const quad of this) {
       if (!iteratee(quad, this)) {
@@ -121,9 +147,12 @@ export class ExtendedDataset
    * @param iteratee
    */
   filter(
-    iteratee: (quad: Quad, dataset: Dataset<Quad, BaseQuad>) => boolean
-  ): Dataset<Quad, BaseQuad> {
-    const dataset = new ExtendedDataset();
+    iteratee: (
+      quad: InAndOutQuad,
+      dataset: Dataset<InAndOutQuad, InAndOutQuad>
+    ) => boolean
+  ): Dataset<InAndOutQuad, InAndOutQuad> {
+    const dataset = this.createBlankDataset();
     for (const quad of this) {
       if (iteratee(quad, this)) {
         dataset.add(quad);
@@ -138,7 +167,10 @@ export class ExtendedDataset
    * @param iteratee
    */
   forEach(
-    iteratee: (quad: Quad, dataset: Dataset<Quad, BaseQuad>) => void
+    iteratee: (
+      quad: InAndOutQuad,
+      dataset: Dataset<InAndOutQuad, InAndOutQuad>
+    ) => void
   ): void {
     for (const quad of this) {
       iteratee(quad, this);
@@ -150,7 +182,7 @@ export class ExtendedDataset
    * The stream events end and error are wrapped in a Promise.
    * @param stream
    */
-  import(stream: Stream<BaseQuad>): Promise<this> {
+  import(stream: Stream<InAndOutQuad>): Promise<this> {
     return new Promise((resolve, reject) => {
       stream
         .on("data", (quad) => {
@@ -170,8 +202,10 @@ export class ExtendedDataset
   // Typescript disabled because rdf-js has incorrect typings
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  intersection(other: Dataset<BaseQuad, BaseQuad>): Dataset<Quad, BaseQuad> {
-    const dataset = new ExtendedDataset();
+  intersection(
+    other: Dataset<InAndOutQuad, InAndOutQuad>
+  ): Dataset<InAndOutQuad, InAndOutQuad> {
+    const dataset = this.createBlankDataset();
     const iteratingDataset = this.size < other.size ? this : other;
     const comparingDataset = this.size < other.size ? other : this;
     for (const quad of iteratingDataset) {
@@ -187,9 +221,12 @@ export class ExtendedDataset
    * @param iteratee
    */
   map(
-    iteratee: (quad: Quad, dataset: Dataset<Quad, BaseQuad>) => Quad
-  ): Dataset<Quad, BaseQuad> {
-    const dataset = new ExtendedDataset();
+    iteratee: (
+      quad: InAndOutQuad,
+      dataset: Dataset<InAndOutQuad, InAndOutQuad>
+    ) => InAndOutQuad
+  ): Dataset<InAndOutQuad, InAndOutQuad> {
+    const dataset = this.createBlankDataset();
     for (const quad of this) {
       dataset.add(iteratee(quad, this));
     }
@@ -206,8 +243,8 @@ export class ExtendedDataset
   reduce<A = unknown>(
     iteratee: (
       accumulator: A,
-      quad: Quad,
-      dataset: Dataset<Quad, BaseQuad>
+      quad: InAndOutQuad,
+      dataset: Dataset<InAndOutQuad, InAndOutQuad>
     ) => A,
     initialValue?: A
   ): A {
@@ -216,7 +253,7 @@ export class ExtendedDataset
         "Cannot reduce an empty Dataset without an initial value."
       );
     }
-    const thisIterator: Iterator<Quad> = this[Symbol.iterator]();
+    const thisIterator: Iterator<InAndOutQuad> = this[Symbol.iterator]();
     let iteratorResult = thisIterator.next();
     let accumulatedValue: A = iteratee(
       initialValue as A,
@@ -224,12 +261,12 @@ export class ExtendedDataset
       this
     );
     while (!iteratorResult.done) {
-      iteratorResult = thisIterator.next();
       accumulatedValue = iteratee(
         initialValue as A,
         iteratorResult.value,
         this
       );
+      iteratorResult = thisIterator.next();
     }
     return accumulatedValue;
   }
@@ -241,7 +278,10 @@ export class ExtendedDataset
    * @returns boolean true once a quad that passes the test is found.
    */
   some(
-    iteratee: (quad: Quad, dataset: Dataset<Quad, BaseQuad>) => boolean
+    iteratee: (
+      quad: InAndOutQuad,
+      dataset: Dataset<InAndOutQuad, InAndOutQuad>
+    ) => boolean
   ): boolean {
     for (const quad of this) {
       if (iteratee(quad, this)) {
@@ -255,7 +295,7 @@ export class ExtendedDataset
    * Returns the set of quads within the dataset as a host language native sequence, for example an Array in ECMAScript-262.
    * Note: Since a DatasetCore is an unordered set, the order of the quads within the returned sequence is arbitrary.
    */
-  toArray(): Quad[] {
+  toArray(): InAndOutQuad[] {
     const array = [];
     for (const quad of this) {
       array.push(quad);
@@ -273,7 +313,7 @@ export class ExtendedDataset
   /**
    * Returns a stream that contains all quads of the dataset.
    */
-  toStream(): Stream<Quad> {
+  toStream(): Stream<InAndOutQuad> {
     throw new Error("Method not implemented.");
   }
 
@@ -289,10 +329,12 @@ export class ExtendedDataset
    * Returns a new Dataset that is a concatenation of this dataset and the quads given as an argument.
    * @param other
    */
-  union(other: Dataset<BaseQuad, BaseQuad>): Dataset<Quad, BaseQuad> {
+  union(
+    other: Dataset<InAndOutQuad, InAndOutQuad>
+  ): Dataset<InAndOutQuad, InAndOutQuad> {
     const iteratingDataset = this.size < other.size ? this : other;
     const comparingDataset = this.size < other.size ? other : this;
-    const dataset = new ExtendedDataset();
+    const dataset = this.createBlankDataset();
     for (const quad of iteratingDataset) {
       if (comparingDataset.has(quad)) {
         dataset.add(quad);
@@ -314,7 +356,53 @@ export class ExtendedDataset
     predicate?: Term | null,
     object?: Term | null,
     graph?: Term | null
-  ): Dataset<Quad, BaseQuad> {
-    return new ExtendedDataset(super.match(subject, predicate, object, graph));
+  ): Dataset<InAndOutQuad, InAndOutQuad> {
+    return new ExtendedDataset(
+      this.dataset.match(subject, predicate, object, graph),
+      this.datasetCoreFactory
+    );
+  }
+
+  /**
+   * A non-negative integer that specifies the number of quads in the set.
+   */
+  public get size(): number {
+    throw new Error("Method not implemented.");
+  }
+
+  /**
+   * Adds the specified quad to the dataset.
+   * Existing quads, as defined in Quad.equals, will be ignored.
+   * @param quad
+   * @returns the dataset instance it was called on.
+   */
+  public add(quad: InAndOutQuad): this {
+    this.dataset.add(quad);
+    return this;
+  }
+
+  /**
+   * Removes the specified quad from the dataset.
+   * This method returns the dataset instance it was called on.
+   * @param quad
+   */
+  public delete(quad: InAndOutQuad): this {
+    this.dataset.delete(quad);
+    return this;
+  }
+
+  /**
+   * Determines whether a dataset includes a certain quad, returning true or false as appropriate.
+   * @param quad
+   */
+  public has(quad: InAndOutQuad): boolean {
+    return this.dataset.has(quad);
+  }
+
+  /**
+   * Returns an iterator
+   */
+  public [Symbol.iterator](): Iterator<InAndOutQuad, unknown, undefined> {
+    return this.dataset[Symbol.iterator]();
   }
 }
