@@ -107,8 +107,7 @@ export default class SubscribableDataset<
   ): this {
     const matching = this.dataset.match(subject, predicate, object, graph);
     for (const quad of matching) {
-      // This cast is fine because we know that under the covers,
-      this.delete(quad);
+      this.dataset.delete(quad);
     }
     this.triggerSubscriptionForQuads({ removed: matching });
     return this;
@@ -629,6 +628,6 @@ export default class SubscribableDataset<
    * Returns a transactional dataset that will update this dataset when its transaction is committed.
    */
   public startTransaction(): TransactionalDataset {
-    return new TransactionalDataset(this);
+    return new TransactionalDataset(this, this.datasetFactory);
   }
 }
