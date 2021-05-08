@@ -5,7 +5,9 @@ import {
   Stream,
   Term,
   DatasetCoreFactory,
+  Quad,
 } from "rdf-js";
+import { Writer } from "n3";
 
 export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
   implements Dataset<InAndOutQuad, InAndOutQuad> {
@@ -322,7 +324,8 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * No prior normalization is required, therefore the results for the same quads may vary depending on the Dataset implementation.
    */
   toString(): string {
-    throw new Error("Method not implemented.");
+    const writer = new Writer<InAndOutQuad>();
+    return writer.quadsToString(this.toArray() as Quad[]);
   }
 
   /**
