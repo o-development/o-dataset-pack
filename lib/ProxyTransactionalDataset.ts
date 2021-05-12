@@ -156,12 +156,15 @@ export default class ProxyTransactionalDataset<
   /**
    * Returns an iterator
    */
-  public [Symbol.iterator](): Iterator<InAndOutQuad, unknown, undefined> {
+  public [Symbol.iterator](): Iterator<InAndOutQuad, InAndOutQuad, undefined> {
     const addedIterator = (this.datasetChanges.added || [])[Symbol.iterator]();
     let addedNext = addedIterator.next();
     const parentIterator = this.parentDataset[Symbol.iterator]();
     let parentNext = parentIterator.next();
     return {
+      // TODO: fix later
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       next: () => {
         if (!addedNext || !addedNext.done) {
           const toReturn = addedNext;

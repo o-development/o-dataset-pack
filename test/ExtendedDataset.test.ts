@@ -555,7 +555,7 @@ describe("ExtendedDataset", () => {
 
   it("Throws a not implemented error for toCononical", () => {
     expect(extendedDataset.toCanonical).toThrow("Method not implemented.");
-  })
+  });
 
   it("Streams itself", async () => {
     initializeDataset();
