@@ -437,13 +437,13 @@ export default class SubscribableDataset<
         InAndOutQuad
       > = this.datasetFactory.dataset();
       if (term.termType !== "DefaultGraph") {
-        allQuads = allQuads.union(this.match(term, null, null, null));
-        allQuads = allQuads.union(this.match(null, null, term, null));
+        allQuads = allQuads.intersection(this.match(term, null, null, null));
+        allQuads = allQuads.intersection(this.match(null, null, term, null));
         if (term.termType !== "BlankNode") {
-          allQuads = allQuads.union(this.match(null, term, null, null));
+          allQuads = allQuads.intersection(this.match(null, term, null, null));
         }
       } else {
-        allQuads = allQuads.union(this.match(null, null, null, term));
+        allQuads = allQuads.intersection(this.match(null, null, null, term));
       }
       const changedForThisNode: DatasetChanges<InAndOutQuad> = {
         added: changed.added

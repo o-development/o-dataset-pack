@@ -8,7 +8,6 @@ import {
   Quad,
 } from "rdf-js";
 import { Writer } from "n3";
-import DumbQuadStream from "./DumbQuadStream";
 import { Readable } from "stream";
 
 export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
@@ -256,24 +255,16 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
     ) => A,
     initialValue?: A
   ): A {
-    if (this.size === 0 && !initialValue) {
+    if (this.size === 0 && initialValue == undefined) {
       throw new Error(
         "Cannot reduce an empty Dataset without an initial value."
       );
     }
     const thisIterator: Iterator<InAndOutQuad> = this[Symbol.iterator]();
     let iteratorResult = thisIterator.next();
-    let accumulatedValue: A = iteratee(
-      initialValue as A,
-      iteratorResult.value,
-      this
-    );
+    let accumulatedValue: A = initialValue as A;
     while (!iteratorResult.done) {
-      accumulatedValue = iteratee(
-        initialValue as A,
-        iteratorResult.value,
-        this
-      );
+      accumulatedValue = iteratee(accumulatedValue, iteratorResult.value, this);
       iteratorResult = thisIterator.next();
     }
     return accumulatedValue;
@@ -325,6 +316,7 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
     const iterator = this[Symbol.iterator]();
     let curNext = iterator.next();
     const stream = new Readable({
+      objectMode: true,
       read() {
         if (curNext.done || !curNext.value) {
           this.push(null);
@@ -353,13 +345,12 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
   union(
     other: Dataset<InAndOutQuad, InAndOutQuad>
   ): Dataset<InAndOutQuad, InAndOutQuad> {
-    const iteratingDataset = this.size < other.size ? this : other;
-    const comparingDataset = this.size < other.size ? other : this;
     const dataset = this.createBlankDataset();
-    for (const quad of iteratingDataset) {
-      if (comparingDataset.has(quad)) {
-        dataset.add(quad);
-      }
+    for (const quad of this) {
+      dataset.add(quad);
+    }
+    for (const quad of other) {
+      dataset.add(quad);
     }
     return dataset;
   }

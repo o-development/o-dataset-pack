@@ -1,6 +1,8 @@
 import { namedNode, literal, quad } from "@rdfjs/dataset";
-import { BaseQuad, Dataset } from "rdf-js";
+import { Quad_Object, Quad_Predicate } from "n3";
+import { BaseQuad, Dataset, Quad_Subject } from "rdf-js";
 import { createExtendedDataset } from "../lib/createExtendedDataset";
+import { Readable } from "stream";
 
 describe("ExtendedDataset", () => {
   let extendedDataset: Dataset<BaseQuad>;
@@ -23,14 +25,6 @@ describe("ExtendedDataset", () => {
       ),
     ]);
   };
-
-  it("successfully runs toString", () => {
-    initializeDataset();
-    const stringified = extendedDataset.toString();
-    expect(stringified).toBe(
-      `<http://example.org/cartoons#Tom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/cartoons#Cat> .\n<http://example.org/cartoons#Tom> <http://example.org/cartoons#name> "Tom" .\n`
-    );
-  });
 
   it("Adds a quad", () => {
     const addedQuad = quad(
@@ -324,6 +318,25 @@ describe("ExtendedDataset", () => {
     expect(extendedDataset.every(() => false)).toBe(false);
   });
 
+  it("runs filter", () => {
+    initializeDataset();
+    const newDataset = extendedDataset.filter(
+      (curQuad) =>
+        curQuad.predicate.value ===
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+    );
+    expect(newDataset.size).toBe(1);
+    expect(
+      newDataset.has(
+        quad(
+          namedNode("http://example.org/cartoons#Tom"),
+          namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+          namedNode("http://example.org/cartoons#Cat")
+        )
+      )
+    ).toBe(true);
+  });
+
   it("runs forEach", () => {
     initializeDataset();
     const quads: BaseQuad[] = [];
@@ -350,6 +363,200 @@ describe("ExtendedDataset", () => {
     ).toBe(true);
   });
 
+  it("Imports quads from a stream", async () => {
+    const stream = createExtendedDataset([
+      quad(
+        namedNode("http://example.org/cartoons#Tom"),
+        namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+        namedNode("http://example.org/cartoons#Cat")
+      ),
+      quad(
+        namedNode("http://example.org/cartoons#Tom"),
+        namedNode("http://example.org/cartoons#name"),
+        literal("Tom")
+      ),
+    ]).toStream();
+    await extendedDataset.import(stream);
+    expect(
+      extendedDataset.has(
+        quad(
+          namedNode("http://example.org/cartoons#Tom"),
+          namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+          namedNode("http://example.org/cartoons#Cat")
+        )
+      )
+    ).toBe(true);
+    expect(
+      extendedDataset.has(
+        quad(
+          namedNode("http://example.org/cartoons#Tom"),
+          namedNode("http://example.org/cartoons#name"),
+          literal("Tom")
+        )
+      )
+    ).toBe(true);
+  });
+
+  it("Rejects import stream if stream errors", async () => {
+    const badStream = new Readable({
+      read() {
+        this.emit("error", new Error("This is a bad stream."));
+      },
+    });
+    await expect(extendedDataset.import(badStream)).rejects.toThrow(
+      "This is a bad stream."
+    );
+  });
+
+  it("finds the intersection when this is bigger", () => {
+    initializeDataset();
+    const otherDataset = createExtendedDataset([
+      quad(
+        namedNode("http://example.org/cartoons#Tom"),
+        namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+        namedNode("http://example.org/cartoons#Cat")
+      ),
+    ]);
+    const intersectionDataset = extendedDataset.intersection(otherDataset);
+    expect(intersectionDataset.size).toBe(1);
+    expect(
+      intersectionDataset.has(
+        quad(
+          namedNode("http://example.org/cartoons#Tom"),
+          namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+          namedNode("http://example.org/cartoons#Cat")
+        )
+      )
+    ).toBe(true);
+  });
+
+  it("finds the intersection when other is bigger", () => {
+    initializeDataset();
+    const otherDataset = createExtendedDataset([
+      quad(
+        namedNode("http://example.org/cartoons#Tom"),
+        namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+        namedNode("http://example.org/cartoons#Cat")
+      ),
+      quad(
+        namedNode("http://fake1.com"),
+        namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+        namedNode("http://example.org/cartoons#Cat")
+      ),
+      quad(
+        namedNode("http://fake2.com"),
+        namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+        namedNode("http://example.org/cartoons#Cat")
+      ),
+    ]);
+    const intersectionDataset = extendedDataset.intersection(otherDataset);
+    expect(intersectionDataset.size).toBe(1);
+    expect(
+      intersectionDataset.has(
+        quad(
+          namedNode("http://example.org/cartoons#Tom"),
+          namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+          namedNode("http://example.org/cartoons#Cat")
+        )
+      )
+    ).toBe(true);
+  });
+
+  it("Maps the dataset", () => {
+    initializeDataset();
+    const mappedDataset = extendedDataset.map((curQuad) => {
+      return quad(
+        curQuad.predicate as Quad_Subject,
+        curQuad.predicate as Quad_Predicate,
+        curQuad.predicate as Quad_Object
+      );
+    });
+    expect(mappedDataset.size).toBe(2);
+    expect(
+      mappedDataset.has(
+        quad(
+          namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+          namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+          namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")
+        )
+      )
+    ).toBe(true);
+    expect(
+      mappedDataset.has(
+        quad(
+          namedNode("http://example.org/cartoons#name"),
+          namedNode("http://example.org/cartoons#name"),
+          namedNode("http://example.org/cartoons#name")
+        )
+      )
+    ).toBe(true);
+  });
+
+  it("Reduces the dataset", () => {
+    initializeDataset();
+    const reducedSubjects = extendedDataset.reduce((agg, curQuad) => {
+      return `${agg}${curQuad.subject.value}`;
+    }, "");
+    expect(reducedSubjects).toBe(
+      "http://example.org/cartoons#Tomhttp://example.org/cartoons#Tom"
+    );
+  });
+
+  it("Reduces an empty dataset", () => {
+    const reducedSubjects = extendedDataset.reduce((agg, curQuad) => {
+      return `${agg}${curQuad.subject.value}`;
+    }, "");
+    expect(reducedSubjects).toBe("");
+  });
+
+  it("Throws an error if reduce is called on an empty dataset without an initial value", () => {
+    expect(() =>
+      extendedDataset.reduce(() => {
+        /* Do nothing */
+      })
+    ).toThrow("Cannot reduce an empty Dataset without an initial value.");
+  });
+
+  it("Determines of some quad satifies an iteratee when it does", () => {
+    initializeDataset();
+    expect(
+      extendedDataset.some(
+        (curQuad) =>
+          curQuad.predicate.value === "http://example.org/cartoons#name"
+      )
+    ).toBe(true);
+  });
+
+  it("Determines of some quad satifies an iteratee when it doesn't", () => {
+    initializeDataset();
+    expect(
+      extendedDataset.some(
+        (curQuad) => curQuad.predicate.value === "http://fake.com"
+      )
+    ).toBe(false);
+  });
+
+  it("Converts the dataset into an array", () => {
+    initializeDataset();
+    const arr = extendedDataset.toArray();
+    expect(Array.isArray(arr)).toBe(true);
+    expect(arr.length).toBe(2);
+    expect(arr[0].predicate.value).toBe(
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+    );
+    expect(arr[1].predicate.value).toBe("http://example.org/cartoons#name");
+  });
+
+  it("Converts the empty dataset into an empty array", () => {
+    const arr = extendedDataset.toArray();
+    expect(Array.isArray(arr)).toBe(true);
+    expect(arr.length).toBe(0);
+  });
+
+  it("Throws a not implemented error for toCononical", () => {
+    expect(extendedDataset.toCanonical).toThrow("Method not implemented.");
+  })
+
   it("Streams itself", async () => {
     initializeDataset();
     return new Promise<void>((resolve, reject) => {
@@ -362,5 +569,58 @@ describe("ExtendedDataset", () => {
         resolve();
       });
     });
+  });
+
+  it("successfully runs toString", () => {
+    initializeDataset();
+    const stringified = extendedDataset.toString();
+    expect(stringified).toBe(
+      `<http://example.org/cartoons#Tom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/cartoons#Cat> .\n<http://example.org/cartoons#Tom> <http://example.org/cartoons#name> "Tom" .\n`
+    );
+  });
+
+  it("Finds a union", () => {
+    initializeDataset();
+    const otherDataset = createExtendedDataset([
+      quad(
+        namedNode("http://example.org/cartoons#Licky"),
+        namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+        namedNode("http://example.org/cartoons#Cat")
+      ),
+      quad(
+        namedNode("http://example.org/cartoons#Tom"),
+        namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+        namedNode("http://example.org/cartoons#Cat")
+      ),
+    ]);
+    const unionDataset = extendedDataset.union(otherDataset);
+    expect(unionDataset.size).toBe(3);
+    expect(
+      unionDataset.has(
+        quad(
+          namedNode("http://example.org/cartoons#Licky"),
+          namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+          namedNode("http://example.org/cartoons#Cat")
+        )
+      )
+    ).toBe(true);
+    expect(
+      unionDataset.has(
+        quad(
+          namedNode("http://example.org/cartoons#Tom"),
+          namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+          namedNode("http://example.org/cartoons#Cat")
+        )
+      )
+    ).toBe(true);
+    expect(
+      unionDataset.has(
+        quad(
+          namedNode("http://example.org/cartoons#Tom"),
+          namedNode("http://example.org/cartoons#name"),
+          literal("Tom")
+        )
+      )
+    ).toBe(true);
   });
 });
