@@ -4,17 +4,39 @@ A library of RDFJS Datasets that have many uses
 
 This library follows the [RDFJS spec for a Dataset](https://rdf.js.org/dataset-spec/). It is implemented with [Dataset-Indexed](https://www.npmjs.com/package/rdf-dataset-indexed?activeTab=readme).
 
+## Installation
+```bash
+npm install o-dataset-pack
+```
+
+## Simple Examples
+
+### ExtendedDataset
+```typescript
+import { createDataset } from "o-dataset-pack";
+import { quad, namedNode } from "@rdfjs/data-model";
+const dataset = createDataset();
+dataset.add(
+  quad(
+    namedNode("http://example.org/cartoons#Tom"),
+    namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+    namedNode("http://example.org/cartoons#Cat")
+  )
+);
+console.log(dataset.toString());
+```
+
 ## ExtendedDataset
 
 The extended dataset implements all the [additional methods](https://rdf.js.org/dataset-spec/#dataset-interface) of the RDFJS dataset spec.
 
 Usage:
 ```typescript
-import { createDataset } from "../lib";
+import { createDataset } from "o-dataset-pack";
 import { quad, namedNode, literal } from "@rdfjs/data-model";
 // Required for advanced features:
 import { dataset as initializeDatasetCore } from "@rdfjs/dataset";
-import { ExtendendedDatasetFactory } from "../lib";
+import { ExtendendedDatasetFactory } from "o-dataset-pack";
 import { Dataset, Quad, DatasetCoreFactory, DatasetCore } from "rdf-js";
 
 /**
