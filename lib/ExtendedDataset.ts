@@ -8,6 +8,8 @@ import {
   Quad,
 } from "rdf-js";
 import { Writer } from "n3";
+import DumbQuadStream from "./DumbQuadStream";
+import { Readable } from "stream";
 
 export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
   implements Dataset<InAndOutQuad, InAndOutQuad> {
@@ -61,6 +63,9 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * @param other
    */
   contains(other: Dataset<InAndOutQuad>): boolean {
+    if (other.size > this.size) {
+      return false;
+    }
     for (const quad of other) {
       if (!this.has(quad)) {
         return false;
@@ -112,10 +117,11 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * @param other
    */
   equals(other: Dataset<InAndOutQuad, InAndOutQuad>): boolean {
-    const iteratingDataset = this.size < other.size ? this : other;
-    const comparingDataset = this.size < other.size ? other : this;
-    for (const quad of iteratingDataset) {
-      if (!comparingDataset.has(quad)) {
+    if (this.size !== other.size) {
+      return false;
+    }
+    for (const quad of this) {
+      if (!other.has(quad)) {
         return false;
       }
     }
@@ -316,7 +322,19 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * Returns a stream that contains all quads of the dataset.
    */
   toStream(): Stream<InAndOutQuad> {
-    throw new Error("Method not implemented.");
+    const iterator = this[Symbol.iterator]();
+    let curNext = iterator.next();
+    const stream = new Readable({
+      read() {
+        if (curNext.done || !curNext.value) {
+          this.push(null);
+          return;
+        }
+        this.push(curNext.value);
+        curNext = iterator.next();
+      },
+    });
+    return stream;
   }
 
   /**
@@ -370,7 +388,7 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * A non-negative integer that specifies the number of quads in the set.
    */
   public get size(): number {
-    throw new Error("Method not implemented.");
+    return this.dataset.size;
   }
 
   /**
@@ -399,13 +417,13 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * @param quad
    */
   public has(quad: InAndOutQuad): boolean {
-    return this.dataset.has(quad);
+    return Boolean(this.dataset.has(quad));
   }
 
   /**
    * Returns an iterator
    */
-  public [Symbol.iterator](): Iterator<InAndOutQuad, unknown, undefined> {
+  public [Symbol.iterator](): Iterator<InAndOutQuad, InAndOutQuad, undefined> {
     return this.dataset[Symbol.iterator]();
   }
 }

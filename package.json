@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -35,7 +35,6 @@
   "dependencies": {
     "@rdfjs/data-model": "^1.2.0",
     "@rdfjs/dataset": "^1.1.0",
-    "n3": "^1.10.0",
-    "rdf-dataset-indexed": "^0.4.0"
+    "n3": "^1.10.0"
   }
 }
