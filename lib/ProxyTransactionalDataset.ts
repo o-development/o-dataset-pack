@@ -3,7 +3,7 @@ import {
   BulkEditableDataset,
   DatasetChanges,
   TransactionalDataset,
-} from "./SubscribableDatasetTypes";
+} from "./types";
 import ExtendedDataset from "./ExtendedDataset";
 
 /**

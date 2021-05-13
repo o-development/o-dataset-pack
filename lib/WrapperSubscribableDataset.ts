@@ -5,17 +5,18 @@ import {
   SubscribableTerms,
   DatasetChanges,
   nodeEventListener,
-  BulkEditableDataset,
-} from "./SubscribableDatasetTypes";
-import TransactionalDataset from "./ProxyTransactionalDataset";
+  SubscribableDataset,
+  TransactionalDataset,
+} from "./types";
+import ProxyTransactionalDataset from "./ProxyTransactionalDataset";
 
 /**
  * A wrapper for a dataset that allows subscriptions to be made on nodes to
  * be triggered whenever a quad containing that added or removed.
  */
-export default class SubscribableDataset<
+export default class WrapperSubscribableDataset<
   InAndOutQuad extends BaseQuad = BaseQuad
-> implements BulkEditableDataset<InAndOutQuad> {
+> implements SubscribableDataset<InAndOutQuad> {
   /**
    * The underlying dataset factory
    */
@@ -627,7 +628,10 @@ export default class SubscribableDataset<
   /**
    * Returns a transactional dataset that will update this dataset when its transaction is committed.
    */
-  public startTransaction(): TransactionalDataset {
-    return new TransactionalDataset(this, this.datasetFactory);
+  public startTransaction(): TransactionalDataset<InAndOutQuad> {
+    // Type problem again
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    return new ProxyTransactionalDataset(this, this.datasetFactory);
   }
 }
