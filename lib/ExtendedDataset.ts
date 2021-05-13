@@ -89,7 +89,6 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
   ): this {
     const matching = this.match(subject, predicate, object, graph);
     for (const quad of matching) {
-      // This cast is fine because we know that under the covers,
       this.dataset.delete(quad);
     }
     return this;

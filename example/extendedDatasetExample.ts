@@ -2,7 +2,7 @@ import { createDataset } from "../lib";
 import { quad, namedNode, literal } from "@rdfjs/data-model";
 // Required for advanced features:
 import { dataset as initializeDatasetCore } from "@rdfjs/dataset";
-import { ExtendendedDatasetFactory } from "../lib";
+import { ExtendedDatasetFactory } from "../lib";
 import { Dataset, Quad, DatasetCoreFactory, DatasetCore } from "rdf-js";
 
 /**
@@ -38,7 +38,7 @@ const datasetFactory: DatasetCoreFactory = {
     return initializeDatasetCore(quads);
   },
 };
-const extendedDatasetFactory = new ExtendendedDatasetFactory(datasetFactory);
+const extendedDatasetFactory = new ExtendedDatasetFactory(datasetFactory);
 const customDataset = extendedDatasetFactory.dataset(initializedQuads);
 
 /**

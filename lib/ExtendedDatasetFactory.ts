@@ -1,8 +1,9 @@
 import { DatasetFactory, BaseQuad, Dataset, DatasetCoreFactory } from "rdf-js";
 import ExtendedDataset from "./ExtendedDataset";
 
-export class ExtendendedDatasetFactory<InAndOutQuad extends BaseQuad = BaseQuad>
-  implements DatasetFactory<InAndOutQuad, InAndOutQuad> {
+export default class ExtendedDatasetFactory<
+  InAndOutQuad extends BaseQuad = BaseQuad
+> implements DatasetFactory<InAndOutQuad, InAndOutQuad> {
   private datasetCoreFactory: DatasetCoreFactory<InAndOutQuad, InAndOutQuad>;
   constructor(
     datasetCoreFactory: DatasetCoreFactory<InAndOutQuad, InAndOutQuad>

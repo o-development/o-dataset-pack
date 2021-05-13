@@ -1,6 +1,6 @@
-export { createExtendedDataset as createDataset } from "./createExtendedDataset";
+export { default as createDataset } from "./createExtendedDataset";
 
-export * from "./ExtendedDataset";
-export * from "./ExtendedDatasetFactory";
+export { default as ExtendedDataset } from "./ExtendedDataset";
+export { default as ExtendedDatasetFactory } from "./ExtendedDatasetFactory";
 export * from "./ProxyTransactionalDataset";
 export * from "./SubscribableDatasetTypes";

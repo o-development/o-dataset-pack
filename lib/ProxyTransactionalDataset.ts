@@ -6,6 +6,11 @@ import {
 } from "./SubscribableDatasetTypes";
 import ExtendedDataset from "./ExtendedDataset";
 
+/**
+ * Proxy Transactional Dataset is a transactional dataset that does not duplicate
+ * the parent dataset, it will dynamically determine the correct return value for
+ * methods in real time when the method is called.
+ */
 // This is caused by the typings being incorrect for the intersect method
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -27,14 +32,18 @@ export default class ProxyTransactionalDataset<
   private datasetFactory: DatasetFactory<InAndOutQuad, InAndOutQuad>;
 
   /**
-   * True if this transaction was committed, false if it hasn't been committed or has been rolled back.
-   */
-  private hasCommitted: boolean;
-
-  /**
    * The changes made that are ready to commit
    */
   private datasetChanges: DatasetChanges<InAndOutQuad>;
+
+  /**
+   * A list of changes made to the parent dataset upon commit used for rolling back changes.
+   * This is different from 'datasetChanges' because datasetChanges is allowed to overlap
+   * with the parent dataset.
+   * For example, the parent dataset may already have triple A, and datasetChanges can
+   * also have triple A.
+   */
+  private committedDatasetChanges?: DatasetChanges<InAndOutQuad>;
 
   /**
    * Constructor
@@ -47,7 +56,6 @@ export default class ProxyTransactionalDataset<
     super(datasetFactory.dataset(), datasetFactory);
     this.parentDataset = parentDataset;
     this.datasetFactory = datasetFactory;
-    this.hasCommitted = false;
     this.datasetChanges = {};
   }
 
@@ -76,6 +84,28 @@ export default class ProxyTransactionalDataset<
    */
   public bulk(changes: DatasetChanges<InAndOutQuad>): this {
     this.updateDatasetChanges(changes);
+    return this;
+  }
+
+  /**
+   *  This method removes the quads in the current instance that match the given arguments. The logic described in Quad Matching is applied for each quad in this dataset to select the quads which will be deleted.
+   * @param subject
+   * @param predicate
+   * @param object
+   * @param graph
+   * @returns the dataset instance it was called on.
+   */
+  deleteMatches(
+    subject?: Term,
+    predicate?: Term,
+    object?: Term,
+    graph?: Term
+  ): this {
+    this.checkIfTransactionCommitted();
+    const matching = this.match(subject, predicate, object, graph);
+    for (const quad of matching) {
+      this.delete(quad);
+    }
     return this;
   }
 
@@ -116,8 +146,8 @@ export default class ProxyTransactionalDataset<
   public get size(): number {
     return (
       this.parentDataset.size +
-      (this.datasetChanges.added?.size || 0) -
-      (this.datasetChanges.added?.size || 0)
+      (this.datasetChanges.added?.difference(this.parentDataset).size || 0) -
+      (this.datasetChanges.removed?.intersection(this.parentDataset).size || 0)
     );
   }
 
@@ -156,15 +186,12 @@ export default class ProxyTransactionalDataset<
   /**
    * Returns an iterator
    */
-  public [Symbol.iterator](): Iterator<InAndOutQuad, InAndOutQuad, undefined> {
+  public [Symbol.iterator](): Iterator<InAndOutQuad> {
     const addedIterator = (this.datasetChanges.added || [])[Symbol.iterator]();
     let addedNext = addedIterator.next();
     const parentIterator = this.parentDataset[Symbol.iterator]();
     let parentNext = parentIterator.next();
     return {
-      // TODO: fix later
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
       next: () => {
         if (!addedNext || !addedNext.done) {
           const toReturn = addedNext;
@@ -203,40 +230,9 @@ export default class ProxyTransactionalDataset<
    * @param changed
    */
   private checkIfTransactionCommitted() {
-    if (this.hasCommitted) {
+    if (this.committedDatasetChanges) {
       throw new Error("Transaction has already committed");
     }
-  }
-
-  /**
-   * Updates one property of the Dataset changes object. Will also remove that triple from the other property
-   * @param propertyA
-   * @param propertyB
-   * @param change
-   */
-  private updateDatasetChangesProperty(
-    changedProperty?: Dataset<InAndOutQuad>,
-    otherProperty?: Dataset<InAndOutQuad>,
-    change?: Dataset<InAndOutQuad> | InAndOutQuad[]
-  ): { changedSet?: Dataset<InAndOutQuad>; otherSet?: Dataset<InAndOutQuad> } {
-    const result = { changedSet: changedProperty, otherSet: otherProperty };
-    if (change) {
-      const changeDataset = this.datasetFactory.dataset(change);
-      // Add changes to changed dataset
-      if (result.changedSet) {
-        result.changedSet = result.changedSet.union(changeDataset);
-      } else {
-        result.changedSet = changeDataset;
-      }
-      // Remove duplicates from other dataset
-      if (result.otherSet) {
-        result.otherSet = result.otherSet.difference(changeDataset);
-        if (result.otherSet.size === 0) {
-          result.otherSet = undefined;
-        }
-      }
-    }
-    return result;
   }
 
   /**
@@ -248,50 +244,66 @@ export default class ProxyTransactionalDataset<
     removed?: Dataset<InAndOutQuad> | InAndOutQuad[];
   }): void {
     this.checkIfTransactionCommitted();
-    // Ensure that the parent dataset is in need of updating
-    const allChangesToAdd = changes.added?.filter(
-      (quad: InAndOutQuad) => !this.parentDataset.has(quad)
-    );
-    const allChangesToRemove = changes.removed?.filter((quad: InAndOutQuad) =>
-      this.parentDataset.has(quad)
-    );
 
-    // Add the result
-    const addedResult = this.updateDatasetChangesProperty(
-      this.datasetChanges.added,
-      this.datasetChanges.removed,
-      allChangesToAdd
-    );
-    this.datasetChanges = {
-      added: addedResult.changedSet,
-      removed: addedResult.otherSet,
-    };
-    const removedResult = this.updateDatasetChangesProperty(
-      this.datasetChanges.removed,
-      this.datasetChanges.added,
-      allChangesToRemove
-    );
-    this.datasetChanges = {
-      added: removedResult.otherSet,
-      removed: removedResult.changedSet,
-    };
+    // Add added
+    if (changes.added) {
+      if (this.datasetChanges.added) {
+        this.datasetChanges.added.addAll(changes.added);
+      } else {
+        this.datasetChanges.added = this.datasetFactory.dataset(changes.added);
+      }
+    }
+    // Add removed
+    if (changes.removed) {
+      if (this.datasetChanges.removed) {
+        this.datasetChanges.removed.addAll(changes.removed);
+      } else {
+        this.datasetChanges.removed = this.datasetFactory.dataset(
+          changes.removed
+        );
+      }
+    }
+
+    // Remove duplicates between the two datasets
+    if (this.datasetChanges.added && this.datasetChanges.removed) {
+      const changesIntersection = this.datasetChanges.added.intersection(
+        this.datasetChanges.removed
+      );
+      if (changesIntersection.size > 0) {
+        this.datasetChanges.added = this.datasetChanges.added.difference(
+          changesIntersection
+        );
+        this.datasetChanges.removed = this.datasetChanges.removed.difference(
+          changesIntersection
+        );
+      }
+    }
+
+    // Make undefined if size is zero
+    if (this.datasetChanges.added && this.datasetChanges.added.size === 0) {
+      this.datasetChanges.added = undefined;
+    }
+    if (this.datasetChanges.removed && this.datasetChanges.removed.size === 0) {
+      this.datasetChanges.removed = undefined;
+    }
   }
 
   /**
    * Helper method to update the parent dataset or any other provided dataset
    */
-  private updateDataset(
-    dataset: Dataset<InAndOutQuad, InAndOutQuad>,
-    datasetChanges: DatasetChanges<InAndOutQuad>
-  ) {
-    if ((dataset as BulkEditableDataset<InAndOutQuad>).bulk) {
-      (dataset as BulkEditableDataset<InAndOutQuad>).bulk(datasetChanges);
+  private updateParentDataset(datasetChanges: DatasetChanges<InAndOutQuad>) {
+    if ((this.parentDataset as BulkEditableDataset<InAndOutQuad>).bulk) {
+      (this.parentDataset as BulkEditableDataset<InAndOutQuad>).bulk(
+        datasetChanges
+      );
     } else {
       if (datasetChanges.added) {
-        dataset.addAll(datasetChanges.added);
+        this.parentDataset.addAll(datasetChanges.added);
       }
       if (datasetChanges.removed) {
-        dataset.addAll(datasetChanges.removed);
+        datasetChanges.removed.forEach((curQuad) => {
+          this.parentDataset.delete(curQuad);
+        });
       }
     }
   }
@@ -301,22 +313,27 @@ export default class ProxyTransactionalDataset<
    */
   public commit(): void {
     this.checkIfTransactionCommitted();
-    this.updateDataset(this.parentDataset, this.datasetChanges);
-    this.hasCommitted = true;
+    this.committedDatasetChanges = {
+      added: this.datasetChanges.added?.difference(this.parentDataset),
+      removed: this.datasetChanges.removed?.intersection(this.parentDataset),
+    };
+    this.updateParentDataset(this.committedDatasetChanges);
   }
 
   /**
    * Rolls back changes made to the parent dataset
    */
   public rollback(): void {
-    if (!this.hasCommitted) {
-      throw new Error("Transaction has not yet been committed");
+    if (!this.committedDatasetChanges) {
+      throw new Error(
+        "Cannot rollback. Transaction has not yet been committed"
+      );
     }
-    this.updateDataset(this.parentDataset, {
-      added: this.datasetChanges.removed,
-      removed: this.datasetChanges.added,
+    this.updateParentDataset({
+      added: this.committedDatasetChanges.removed,
+      removed: this.committedDatasetChanges.added,
     });
-    this.hasCommitted = false;
+    this.committedDatasetChanges = undefined;
   }
 
   /**

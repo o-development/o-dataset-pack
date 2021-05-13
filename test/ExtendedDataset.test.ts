@@ -1,7 +1,7 @@
 import { namedNode, literal, quad } from "@rdfjs/dataset";
 import { Quad_Object, Quad_Predicate } from "n3";
 import { BaseQuad, Dataset, Quad_Subject } from "rdf-js";
-import { createExtendedDataset } from "../lib/createExtendedDataset";
+import createExtendedDataset from "../lib/createExtendedDataset";
 import { Readable } from "stream";
 
 describe("ExtendedDataset", () => {
