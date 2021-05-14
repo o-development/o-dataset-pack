@@ -1,4 +1,5 @@
 import { DatasetFactory, BaseQuad, Dataset } from "rdf-js";
+import { SubscribableDataset } from "./types";
 import WrapperSubscribableDataset from "./WrapperSubscribableDataset";
 
 export default class WrapperSubscribableDatasetFactory<
@@ -11,7 +12,10 @@ export default class WrapperSubscribableDatasetFactory<
 
   dataset(
     quads?: Dataset<InAndOutQuad, InAndOutQuad> | InAndOutQuad[]
-  ): Dataset<InAndOutQuad, InAndOutQuad> {
+  ): SubscribableDataset<InAndOutQuad> {
+    // Typings are wrong
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     return new WrapperSubscribableDataset(
       this.datasetFactory,
       quads ? this.datasetFactory.dataset(quads) : undefined

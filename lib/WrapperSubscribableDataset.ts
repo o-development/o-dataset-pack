@@ -182,7 +182,7 @@ export default class WrapperSubscribableDataset<
    * @param stream
    */
   public async import(stream: Stream<InAndOutQuad>): Promise<this> {
-    await this.import(stream);
+    await this.dataset.import(stream);
     return this;
   }
 
@@ -438,21 +438,43 @@ export default class WrapperSubscribableDataset<
         InAndOutQuad
       > = this.datasetFactory.dataset();
       if (term.termType !== "DefaultGraph") {
-        allQuads = allQuads.intersection(this.match(term, null, null, null));
-        allQuads = allQuads.intersection(this.match(null, null, term, null));
+        allQuads = allQuads.union(this.match(term, null, null, null));
+        allQuads = allQuads.union(this.match(null, null, term, null));
         if (term.termType !== "BlankNode") {
-          allQuads = allQuads.intersection(this.match(null, term, null, null));
+          allQuads = allQuads.union(this.match(null, term, null, null));
         }
       } else {
-        allQuads = allQuads.intersection(this.match(null, null, null, term));
+        allQuads = allQuads.union(this.match(null, null, null, term));
       }
-      const changedForThisNode: DatasetChanges<InAndOutQuad> = {
+      let changedForThisNode: DatasetChanges<InAndOutQuad> = {
         added: changed.added
-          ? changed.added.filter((addedNode) => allQuads.has(addedNode))
+          ? changed.added.filter(
+              (addedQuad) =>
+                addedQuad.subject.equals(term) ||
+                addedQuad.predicate.equals(term) ||
+                addedQuad.object.equals(term) ||
+                addedQuad.graph.equals(term)
+            )
           : undefined,
         removed: changed.removed
-          ? changed.removed.filter((removedNode) => allQuads.has(removedNode))
+          ? changed.removed.filter(
+              (removedQuad) =>
+                removedQuad.subject.equals(term) ||
+                removedQuad.predicate.equals(term) ||
+                removedQuad.object.equals(term) ||
+                removedQuad.graph.equals(term)
+            )
           : undefined,
+      };
+      changedForThisNode = {
+        added:
+          changedForThisNode.added && changedForThisNode.added.size > 0
+            ? changedForThisNode.added
+            : undefined,
+        removed:
+          changedForThisNode.removed && changedForThisNode.removed.size > 0
+            ? changedForThisNode.removed
+            : undefined,
       };
       this.emit(term, allQuads, changedForThisNode);
     }

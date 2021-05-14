@@ -1,13 +1,15 @@
 import { Dataset, DatasetCoreFactory, Quad, DatasetCore } from "rdf-js";
-import ExtendedDatasetFactory from "../lib/ExtendedDatasetFactory";
+import {
+  ExtendedDatasetFactory,
+  BulkEditableDataset,
+  ProxyTransactionalDataset,
+} from "../lib";
 import {
   namedNode,
   literal,
   quad,
   dataset as initializeDatasetCore,
 } from "@rdfjs/dataset";
-import ProxyTransactionalDataset from "../lib/ProxyTransactionalDataset";
-import { BulkEditableDataset } from "../lib";
 
 describe("ProxyTransactionalDataset", () => {
   let parentDataset: Dataset<Quad>;
