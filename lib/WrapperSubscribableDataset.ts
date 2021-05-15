@@ -442,6 +442,7 @@ export default class WrapperSubscribableDataset<
         allQuads = allQuads.union(this.match(null, null, term, null));
         if (term.termType !== "BlankNode") {
           allQuads = allQuads.union(this.match(null, term, null, null));
+          allQuads = allQuads.union(this.match(null, null, null, term));
         }
       } else {
         allQuads = allQuads.union(this.match(null, null, null, term));

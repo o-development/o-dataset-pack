@@ -200,6 +200,22 @@ describe("WrapperSubscribableDataset", () => {
     ).toBe(true);
   });
 
+  it("Alerts when a named graph is updated", () => {
+    const callbackFunc = jest.fn();
+    subscribableDatastet.on(namedNode("https://coolgraphs.com"), callbackFunc);
+    const quadWithGraph = quad(
+      namedNode("https://example.com/books#Dumbledoor"),
+      namedNode("http://example.org/books#name"),
+      literal("Dubmledoor"),
+      namedNode("https://coolgraphs.com")
+    );
+    subscribableDatastet.add(quadWithGraph);
+    expect(callbackFunc).toHaveBeenCalledTimes(1);
+    expect(
+      callbackFunc.mock.calls[0][0].equals(createDataset([quadWithGraph]))
+    ).toBe(true);
+  });
+
   it("Alerts when one blank node is updated, but not the other", () => {
     const blankNodeQuadA = quad(
       namedNode("http://example.org/cartoons#Tom"),

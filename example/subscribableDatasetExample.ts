@@ -1,150 +1,4 @@
-# O Dataset Pack
-
-A library of RDFJS Datasets that have many uses including subscribing to node changes and making transactions on a dataset.
-
-This library follows the [RDFJS spec for a Dataset](https://rdf.js.org/dataset-spec/).
-
-## Installation
-```bash
-npm install o-dataset-pack
-```
-
-## Simple Examples
-
-### ExtendedDataset
-```typescript
-import { createDataset } from "o-dataset-pack";
-import { quad, namedNode } from "@rdfjs/data-model";
-const dataset = createDataset();
-dataset.add(
-  quad(
-    namedNode("http://example.org/cartoons#Zuko"),
-    namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
-    namedNode("http://example.org/cartoons#Firebender")
-  )
-);
-/*
-Prints:
-<http://example.org/cartoons#Zuko> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/cartoons#Firebender> .
-*/
-console.log(dataset.toString());
-```
-
-### SubscribableDataset
-```typescript
-import { createSubscribableDataset, DatasetChanges } from "o-dataset-pack";
-import { Dataset } from "rdf-js";
-import { quad, namedNode, literal } from "@rdfjs/data-model";
-
-const subscribableDataset = createSubscribableDataset([
-  quad(
-    namedNode("http://example.org/cartoons#Zuko"),
-    namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
-    namedNode("http://example.org/cartoons#Firebender")
-  ),
-]);
-subscribableDataset.on(
-  namedNode("http://example.org/cartoons#Zuko"),
-  (currentQuads: Dataset, changes: DatasetChanges) => {
-    console.log(currentQuads.toString());
-    console.log("--------");
-    console.log(changes.added?.toString());
-  }
-);
-/*
-Prints:
-<http://example.org/cartoons#Zuko> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/cartoons#Firebender> .
-<http://example.org/cartoons#Zuko> <http://example.org/cartoons#name> "Zuko" .
---------
-<http://example.org/cartoons#Zuko> <http://example.org/cartoons#name> "Zuko" .
-*/
-subscribableDataset.add(
-  quad(
-    namedNode("http://example.org/cartoons#Zuko"),
-    namedNode("http://example.org/cartoons#name"),
-    literal("Zuko")
-  )
-);
-```
-
-## API
-
-See the [full API docs](docs/modules.md).
-
-## ExtendedDataset
-
-The extended dataset implements all the [additional methods](https://rdf.js.org/dataset-spec/#dataset-interface) of the RDFJS dataset spec.
-
-Usage:
-```typescript
-import { createDataset } from "o-dataset-pack";
-import { quad, namedNode, literal } from "@rdfjs/data-model";
-// Required for advanced features:
-import { dataset as initializeDatasetCore } from "@rdfjs/dataset";
-import { ExtendendedDatasetFactory } from "o-dataset-pack";
-import { Dataset, Quad, DatasetCoreFactory, DatasetCore } from "rdf-js";
-
-/**
- * Create a dataset with default settings
- */
-const defaultDataset = createDataset();
-
-/**
- * Create a dataset with default settings and initialized values
- */
-const initializedQuads = [
-  quad(
-    namedNode("http://example.org/cartoons#Tom"),
-    namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
-    namedNode("http://example.org/cartoons#Cat")
-  ),
-  quad(
-    namedNode("http://example.org/cartoons#Tom"),
-    namedNode("http://example.org/cartoons#name"),
-    literal("Tom")
-  ),
-];
-const defaultDataset2 = createDataset(initializedQuads);
-
-/**
- * (Advanced Feature) Create a dataset by injecting a chosen datasetCore and datasetCoreFactory
- */
-const datasetFactory: DatasetCoreFactory = {
-  dataset: (quads?: Dataset | Quad[]): DatasetCore => {
-    // Bad typings. These will be fixed https://github.com/rdfjs/types/pull/11
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    return initializeDatasetCore(quads);
-  },
-};
-const extendedDatasetFactory = new ExtendendedDatasetFactory(datasetFactory);
-const customDataset = extendedDatasetFactory.dataset(initializedQuads);
-
-/**
- * Do all the methods of the RDFJS Dataset interface. For a full list of methods, go to
- * https://rdf.js.org/dataset-spec/#data-interfaces
- */
-defaultDataset.add(
-  quad(
-    namedNode("http://example.org/cartoons#Miuki"),
-    namedNode("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
-    namedNode("http://example.org/cartoons#Cat")
-  )
-);
-const combinedDataset = defaultDataset.union(defaultDataset2);
-const differenceDataset = combinedDataset.difference(customDataset);
-// Prints true because "defaultDataset2" and "customDataset" have equal values
-// combinedDataset = defaultDataset ∪ defaultDataset2
-// differenceDatasset = defaultDataset \ customDataset
-// Therefore differenceDataset == defaultDataset
-console.log(differenceDataset.equals(defaultDataset));
-
-```
-
-## SubscribableDataset
-
-```typescript
-import { createSubscribableDataset, DatasetChanges } from "o-dataset-pack";
+import { createSubscribableDataset, DatasetChanges } from "../lib";
 import { quad, namedNode, literal } from "@rdfjs/data-model";
 import { Dataset } from "rdf-js";
 
@@ -242,7 +96,6 @@ Added Quads:
 Removed Quads:
 undefined
 
-
 CARTOON GRAPH CHANGED ============
 <http://example.org/cartoons#Zuko> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/cartoons#Firebender> <http://example.org/cartoons> .
 <http://example.org/cartoons#Zuko> <http://example.org/cartoons#name> "Zuko" <http://example.org/cartoons> .
@@ -314,7 +167,6 @@ Removed Quads:
 <http://example.org/cartoons#Katara> <http://example.org/cartoons#hasEnemy> <http://example.org/cartoons#Zuko> <http://example.org/cartoons> .
 <http://example.org/cartoons#Zuko> <http://example.org/cartoons#hasEnemy> <http://example.org/cartoons#Katara> <http://example.org/cartoons> .
 
-
 CARTOON GRAPH CHANGED ============
 <http://example.org/cartoons#Zuko> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/cartoons#Firebender> <http://example.org/cartoons> .
 <http://example.org/cartoons#Zuko> <http://example.org/cartoons#name> "Zuko" <http://example.org/cartoons> .
@@ -332,7 +184,3 @@ Removed Quads:
 <http://example.org/cartoons#Zuko> <http://example.org/cartoons#hasEnemy> <http://example.org/cartoons#Katara> <http://example.org/cartoons> .
 */
 transactionalDataset.commit();
-```
-
-## Liscense
-MIT

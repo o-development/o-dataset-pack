@@ -1,3 +1,5 @@
+subscribable-dataset / [Exports](modules.md)
+
 # O Dataset Pack
 
 A library of RDFJS Datasets that have many uses including subscribing to node changes and making transactions on a dataset.
@@ -242,7 +244,6 @@ Added Quads:
 Removed Quads:
 undefined
 
-
 CARTOON GRAPH CHANGED ============
 <http://example.org/cartoons#Zuko> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/cartoons#Firebender> <http://example.org/cartoons> .
 <http://example.org/cartoons#Zuko> <http://example.org/cartoons#name> "Zuko" <http://example.org/cartoons> .
@@ -313,7 +314,6 @@ Added Quads:
 Removed Quads:
 <http://example.org/cartoons#Katara> <http://example.org/cartoons#hasEnemy> <http://example.org/cartoons#Zuko> <http://example.org/cartoons> .
 <http://example.org/cartoons#Zuko> <http://example.org/cartoons#hasEnemy> <http://example.org/cartoons#Katara> <http://example.org/cartoons> .
-
 
 CARTOON GRAPH CHANGED ============
 <http://example.org/cartoons#Zuko> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/cartoons#Firebender> <http://example.org/cartoons> .
