@@ -1,8 +1,8 @@
 {
-  "name": "subscribable-dataset",
-  "version": "1.0.0",
+  "name": "o-dataset-pack",
+  "version": "0.0.1",
   "description": "An RDFJS dataset that alerts upon the update of a node",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest --coverage",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/o-development/subscribable-dataset.git"
+    "url": "git+https://github.com/o-development/o-dataset-pack.git"
   },
   "author": "Jackson Morgan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/o-development/subscribable-dataset/issues"
+    "url": "https://github.com/o-development/o-dataset-pack/issues"
   },
-  "homepage": "https://github.com/o-development/subscribable-dataset#readme",
+  "homepage": "https://github.com/o-development/o-dataset-pack#readme",
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "@types/n3": "^1.8.0",
