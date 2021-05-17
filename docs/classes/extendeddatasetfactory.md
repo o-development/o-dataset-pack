@@ -1,4 +1,4 @@
-[subscribable-dataset](../README.md) / [Exports](../modules.md) / ExtendedDatasetFactory
+[o-dataset-pack](../README.md) / [Exports](../modules.md) / ExtendedDatasetFactory
 
 # Class: ExtendedDatasetFactory<InAndOutQuad\>
 
@@ -46,7 +46,7 @@
 
 **Returns:** [*ExtendedDatasetFactory*](extendeddatasetfactory.md)<InAndOutQuad\>
 
-Defined in: [lib/ExtendedDatasetFactory.ts:7](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/ExtendedDatasetFactory.ts#L7)
+Defined in: [lib/ExtendedDatasetFactory.ts:7](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDatasetFactory.ts#L7)
 
 ## Properties
 
@@ -54,7 +54,7 @@ Defined in: [lib/ExtendedDatasetFactory.ts:7](https://github.com/o-development/s
 
 • `Private` **datasetCoreFactory**: *DatasetCoreFactory*<InAndOutQuad, InAndOutQuad, DatasetCore<InAndOutQuad, InAndOutQuad\>\>
 
-Defined in: [lib/ExtendedDatasetFactory.ts:7](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/ExtendedDatasetFactory.ts#L7)
+Defined in: [lib/ExtendedDatasetFactory.ts:7](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDatasetFactory.ts#L7)
 
 ## Methods
 
@@ -72,4 +72,4 @@ Defined in: [lib/ExtendedDatasetFactory.ts:7](https://github.com/o-development/s
 
 Implementation of: DatasetFactory.dataset
 
-Defined in: [lib/ExtendedDatasetFactory.ts:14](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/ExtendedDatasetFactory.ts#L14)
+Defined in: [lib/ExtendedDatasetFactory.ts:14](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDatasetFactory.ts#L14)

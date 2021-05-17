@@ -1,4 +1,4 @@
-[subscribable-dataset](../README.md) / [Exports](../modules.md) / BulkEditableDataset
+[o-dataset-pack](../README.md) / [Exports](../modules.md) / BulkEditableDataset
 
 # Interface: BulkEditableDataset<InAndOutQuad\>
 
@@ -138,7 +138,7 @@ ___
 
 **Returns:** [*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:28](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L28)
+Defined in: [lib/types.ts:28](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L28)
 
 ___
 

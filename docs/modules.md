@@ -1,6 +1,6 @@
-[subscribable-dataset](README.md) / Exports
+[o-dataset-pack](README.md) / Exports
 
-# subscribable-dataset
+# o-dataset-pack
 
 ## Table of contents
 
@@ -37,7 +37,7 @@
 
 Types of nodes a subscribable dataset can subscribe to
 
-Defined in: [lib/types.ts:13](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L13)
+Defined in: [lib/types.ts:13](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L13)
 
 ___
 
@@ -66,7 +66,7 @@ An event listeners for nodes
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:18](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L18)
+Defined in: [lib/types.ts:18](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L18)
 
 ## Functions
 
@@ -82,7 +82,7 @@ Defined in: [lib/types.ts:18](https://github.com/o-development/subscribable-data
 
 **Returns:** Dataset
 
-Defined in: [lib/createExtendedDataset.ts:5](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/createExtendedDataset.ts#L5)
+Defined in: [lib/createExtendedDataset.ts:5](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/createExtendedDataset.ts#L5)
 
 ___
 
@@ -98,4 +98,4 @@ ___
 
 **Returns:** [*SubscribableDataset*](interfaces/subscribabledataset.md)<Quad\>
 
-Defined in: [lib/createWrapperSubscribableDataset.ts:6](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/createWrapperSubscribableDataset.ts#L6)
+Defined in: [lib/createWrapperSubscribableDataset.ts:6](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/createWrapperSubscribableDataset.ts#L6)

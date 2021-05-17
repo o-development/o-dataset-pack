@@ -1,4 +1,4 @@
-subscribable-dataset / [Exports](modules.md)
+o-dataset-pack / [Exports](modules.md)
 
 # O Dataset Pack
 

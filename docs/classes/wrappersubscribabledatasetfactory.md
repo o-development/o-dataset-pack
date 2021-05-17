@@ -1,4 +1,4 @@
-[subscribable-dataset](../README.md) / [Exports](../modules.md) / WrapperSubscribableDatasetFactory
+[o-dataset-pack](../README.md) / [Exports](../modules.md) / WrapperSubscribableDatasetFactory
 
 # Class: WrapperSubscribableDatasetFactory<InAndOutQuad\>
 
@@ -46,7 +46,7 @@
 
 **Returns:** [*WrapperSubscribableDatasetFactory*](wrappersubscribabledatasetfactory.md)<InAndOutQuad\>
 
-Defined in: [lib/WrapperSubscribableDatasetFactory.ts:8](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/WrapperSubscribableDatasetFactory.ts#L8)
+Defined in: [lib/WrapperSubscribableDatasetFactory.ts:8](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/WrapperSubscribableDatasetFactory.ts#L8)
 
 ## Properties
 
@@ -54,7 +54,7 @@ Defined in: [lib/WrapperSubscribableDatasetFactory.ts:8](https://github.com/o-de
 
 • `Private` **datasetFactory**: *DatasetFactory*<InAndOutQuad, InAndOutQuad, Dataset<InAndOutQuad, InAndOutQuad\>\>
 
-Defined in: [lib/WrapperSubscribableDatasetFactory.ts:8](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/WrapperSubscribableDatasetFactory.ts#L8)
+Defined in: [lib/WrapperSubscribableDatasetFactory.ts:8](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/WrapperSubscribableDatasetFactory.ts#L8)
 
 ## Methods
 
@@ -72,4 +72,4 @@ Defined in: [lib/WrapperSubscribableDatasetFactory.ts:8](https://github.com/o-de
 
 Implementation of: DatasetFactory.dataset
 
-Defined in: [lib/WrapperSubscribableDatasetFactory.ts:13](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/WrapperSubscribableDatasetFactory.ts#L13)
+Defined in: [lib/WrapperSubscribableDatasetFactory.ts:13](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/WrapperSubscribableDatasetFactory.ts#L13)

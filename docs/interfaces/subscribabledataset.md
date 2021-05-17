@@ -1,4 +1,4 @@
-[subscribable-dataset](../README.md) / [Exports](../modules.md) / SubscribableDataset
+[o-dataset-pack](../README.md) / [Exports](../modules.md) / SubscribableDataset
 
 # Interface: SubscribableDataset<InAndOutQuad\>
 
@@ -157,7 +157,7 @@ Alias for emitter.on(eventName, listener).
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:53](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L53)
+Defined in: [lib/types.ts:53](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L53)
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: [lib/types.ts:28](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L28)
+Defined in: [lib/types.ts:28](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L28)
 
 ___
 
@@ -286,7 +286,7 @@ Synchronously calls each of the listeners registered for the event named eventNa
 
 true if the event had listeners, false otherwise.
 
-Defined in: [lib/types.ts:65](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L65)
+Defined in: [lib/types.ts:65](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L65)
 
 ___
 
@@ -320,7 +320,7 @@ Returns an array listing the events for which the emitter has registered listene
 
 **Returns:** [*SubscribableTerms*](../modules.md#subscribableterms)[]
 
-Defined in: [lib/types.ts:74](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L74)
+Defined in: [lib/types.ts:74](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L74)
 
 ___
 
@@ -403,7 +403,7 @@ Returns the current max listener value for the EventEmitter which is either set 
 
 **Returns:** *number*
 
-Defined in: [lib/types.ts:79](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L79)
+Defined in: [lib/types.ts:79](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L79)
 
 ___
 
@@ -483,7 +483,7 @@ Returns the number of listeners listening to the event named eventName.
 
 **Returns:** *number*
 
-Defined in: [lib/types.ts:84](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L84)
+Defined in: [lib/types.ts:84](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L84)
 
 ___
 
@@ -501,7 +501,7 @@ Returns a copy of the array of listeners for the event named eventName.
 
 **Returns:** [*nodeEventListener*](../modules.md#nodeeventlistener)<InAndOutQuad\>[]
 
-Defined in: [lib/types.ts:89](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L89)
+Defined in: [lib/types.ts:89](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L89)
 
 ___
 
@@ -561,7 +561,7 @@ Alias for emitter.removeListener()
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:94](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L94)
+Defined in: [lib/types.ts:94](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L94)
 
 ___
 
@@ -580,7 +580,7 @@ Adds the listener function to the end of the listeners array for the event named
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:102](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L102)
+Defined in: [lib/types.ts:102](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L102)
 
 ___
 
@@ -599,7 +599,7 @@ Adds a one-time listener function for the event named eventName. The next time e
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:110](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L110)
+Defined in: [lib/types.ts:110](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L110)
 
 ___
 
@@ -618,7 +618,7 @@ Adds the listener function to the beginning of the listeners array for the event
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:118](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L118)
+Defined in: [lib/types.ts:118](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L118)
 
 ___
 
@@ -637,7 +637,7 @@ Adds a one-time listener function for the event named eventName to the beginning
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:126](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L126)
+Defined in: [lib/types.ts:126](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L126)
 
 ___
 
@@ -655,7 +655,7 @@ Returns a copy of the array of listeners for the event named eventName, includin
 
 **Returns:** [*nodeEventListener*](../modules.md#nodeeventlistener)<InAndOutQuad\>[]
 
-Defined in: [lib/types.ts:152](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L152)
+Defined in: [lib/types.ts:152](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L152)
 
 ___
 
@@ -706,7 +706,7 @@ Removes all listeners, or those of the specified eventName.
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:134](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L134)
+Defined in: [lib/types.ts:134](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L134)
 
 ___
 
@@ -725,7 +725,7 @@ Removes the specified listener from the listener array for the event named event
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:139](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L139)
+Defined in: [lib/types.ts:139](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L139)
 
 ___
 
@@ -743,7 +743,7 @@ By default EventEmitters will print a warning if more than 10 listeners are adde
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:147](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L147)
+Defined in: [lib/types.ts:147](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L147)
 
 ___
 
@@ -780,7 +780,7 @@ Returns a transactional dataset that will update this dataset when its transacti
 
 **Returns:** [*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:163](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L163)
+Defined in: [lib/types.ts:163](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L163)
 
 ___
 

@@ -1,4 +1,4 @@
-[subscribable-dataset](../README.md) / [Exports](../modules.md) / TransactionalDataset
+[o-dataset-pack](../README.md) / [Exports](../modules.md) / TransactionalDataset
 
 # Interface: TransactionalDataset<InAndOutQuad\>
 
@@ -131,7 +131,7 @@ ___
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:37](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L37)
+Defined in: [lib/types.ts:37](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L37)
 
 ___
 
@@ -459,7 +459,7 @@ ___
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:36](https://github.com/o-development/subscribable-dataset/blob/d03a0f0/lib/types.ts#L36)
+Defined in: [lib/types.ts:36](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L36)
 
 ___
 
