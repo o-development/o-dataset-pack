@@ -100,7 +100,7 @@ Constructor
 
 Overrides: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ProxyTransactionalDataset.ts:46](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L46)
+Defined in: [lib/ProxyTransactionalDataset.ts:46](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L46)
 
 ## Properties
 
@@ -114,7 +114,7 @@ with the parent dataset.
 For example, the parent dataset may already have triple A, and datasetChanges can
 also have triple A.
 
-Defined in: [lib/ProxyTransactionalDataset.ts:46](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L46)
+Defined in: [lib/ProxyTransactionalDataset.ts:46](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L46)
 
 ___
 
@@ -126,7 +126,7 @@ The main backing dataset
 
 Inherited from: [ExtendedDataset](extendeddataset.md).[dataset](extendeddataset.md#dataset)
 
-Defined in: [lib/ExtendedDataset.ts:18](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L18)
+Defined in: [lib/ExtendedDataset.ts:18](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L18)
 
 ___
 
@@ -136,7 +136,7 @@ ___
 
 The changes made that are ready to commit
 
-Defined in: [lib/ProxyTransactionalDataset.ts:37](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L37)
+Defined in: [lib/ProxyTransactionalDataset.ts:37](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L37)
 
 ___
 
@@ -148,7 +148,7 @@ A factory that generates datasets for the methods
 
 Inherited from: [ExtendedDataset](extendeddataset.md).[datasetCoreFactory](extendeddataset.md#datasetcorefactory)
 
-Defined in: [lib/ExtendedDataset.ts:23](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L23)
+Defined in: [lib/ExtendedDataset.ts:23](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L23)
 
 ___
 
@@ -158,7 +158,7 @@ ___
 
 A factory for creating new datasets to be added to the update method
 
-Defined in: [lib/ProxyTransactionalDataset.ts:32](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L32)
+Defined in: [lib/ProxyTransactionalDataset.ts:32](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L32)
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
 The parent dataset that will be updated upon commit
 
-Defined in: [lib/ProxyTransactionalDataset.ts:27](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L27)
+Defined in: [lib/ProxyTransactionalDataset.ts:27](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L27)
 
 ## Accessors
 
@@ -182,7 +182,7 @@ A non-negative integer that specifies the number of quads in the set.
 
 Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md).[size](../interfaces/transactionaldataset.md#size)
 
-Defined in: [lib/ProxyTransactionalDataset.ts:146](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L146)
+Defined in: [lib/ProxyTransactionalDataset.ts:146](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L146)
 
 ## Methods
 
@@ -198,7 +198,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Overrides: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ProxyTransactionalDataset.ts:189](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L189)
+Defined in: [lib/ProxyTransactionalDataset.ts:189](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L189)
 
 ___
 
@@ -223,7 +223,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Overrides: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ProxyTransactionalDataset.ts:160](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L160)
+Defined in: [lib/ProxyTransactionalDataset.ts:160](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L160)
 
 ___
 
@@ -248,7 +248,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Overrides: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ProxyTransactionalDataset.ts:74](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L74)
+Defined in: [lib/ProxyTransactionalDataset.ts:74](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L74)
 
 ___
 
@@ -268,7 +268,7 @@ Bulk add and remove triples
 
 Implementation of: [BulkEditableDataset](../interfaces/bulkeditabledataset.md)
 
-Defined in: [lib/ProxyTransactionalDataset.ts:85](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L85)
+Defined in: [lib/ProxyTransactionalDataset.ts:85](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L85)
 
 ___
 
@@ -280,7 +280,7 @@ Checks if the transaction has been committed and throws an error if it has
 
 **Returns:** *void*
 
-Defined in: [lib/ProxyTransactionalDataset.ts:232](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L232)
+Defined in: [lib/ProxyTransactionalDataset.ts:232](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L232)
 
 ___
 
@@ -294,7 +294,7 @@ Commits changes made to the parent dataset
 
 Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
-Defined in: [lib/ProxyTransactionalDataset.ts:314](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L314)
+Defined in: [lib/ProxyTransactionalDataset.ts:314](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L314)
 
 ___
 
@@ -317,7 +317,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:64](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L64)
+Defined in: [lib/ExtendedDataset.ts:64](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L64)
 
 ___
 
@@ -340,7 +340,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Overrides: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ProxyTransactionalDataset.ts:170](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L170)
+Defined in: [lib/ProxyTransactionalDataset.ts:170](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L170)
 
 ___
 
@@ -367,7 +367,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Overrides: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ProxyTransactionalDataset.ts:98](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L98)
+Defined in: [lib/ProxyTransactionalDataset.ts:98](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L98)
 
 ___
 
@@ -389,7 +389,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:101](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L101)
+Defined in: [lib/ExtendedDataset.ts:101](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L101)
 
 ___
 
@@ -411,7 +411,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:117](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L117)
+Defined in: [lib/ExtendedDataset.ts:117](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L117)
 
 ___
 
@@ -436,7 +436,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:136](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L136)
+Defined in: [lib/ExtendedDataset.ts:136](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L136)
 
 ___
 
@@ -459,7 +459,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:155](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L155)
+Defined in: [lib/ExtendedDataset.ts:155](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L155)
 
 ___
 
@@ -482,7 +482,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:175](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L175)
+Defined in: [lib/ExtendedDataset.ts:175](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L175)
 
 ___
 
@@ -504,7 +504,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Overrides: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ProxyTransactionalDataset.ts:179](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L179)
+Defined in: [lib/ProxyTransactionalDataset.ts:179](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L179)
 
 ___
 
@@ -527,7 +527,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:191](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L191)
+Defined in: [lib/ExtendedDataset.ts:191](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L191)
 
 ___
 
@@ -549,7 +549,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:211](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L211)
+Defined in: [lib/ExtendedDataset.ts:211](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L211)
 
 ___
 
@@ -571,7 +571,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:229](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L229)
+Defined in: [lib/ExtendedDataset.ts:229](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L229)
 
 ___
 
@@ -598,7 +598,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Overrides: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ProxyTransactionalDataset.ts:120](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L120)
+Defined in: [lib/ProxyTransactionalDataset.ts:120](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L120)
 
 ___
 
@@ -629,7 +629,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:249](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L249)
+Defined in: [lib/ExtendedDataset.ts:249](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L249)
 
 ___
 
@@ -643,7 +643,7 @@ Rolls back changes made to the parent dataset
 
 Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
-Defined in: [lib/ProxyTransactionalDataset.ts:326](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L326)
+Defined in: [lib/ProxyTransactionalDataset.ts:326](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L326)
 
 ___
 
@@ -668,7 +668,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:278](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L278)
+Defined in: [lib/ExtendedDataset.ts:278](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L278)
 
 ___
 
@@ -680,7 +680,7 @@ Starts a new transaction with this transactional dataset as the parent
 
 **Returns:** [*TransactionalDataset*](../interfaces/transactionaldataset.md)<InAndOutQuad\>
 
-Defined in: [lib/ProxyTransactionalDataset.ts:343](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L343)
+Defined in: [lib/ProxyTransactionalDataset.ts:343](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L343)
 
 ___
 
@@ -697,7 +697,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:296](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L296)
+Defined in: [lib/ExtendedDataset.ts:296](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L296)
 
 ___
 
@@ -713,7 +713,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:307](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L307)
+Defined in: [lib/ExtendedDataset.ts:307](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L307)
 
 ___
 
@@ -729,7 +729,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:314](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L314)
+Defined in: [lib/ExtendedDataset.ts:314](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L314)
 
 ___
 
@@ -746,7 +746,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:335](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L335)
+Defined in: [lib/ExtendedDataset.ts:335](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L335)
 
 ___
 
@@ -768,7 +768,7 @@ Implementation of: [TransactionalDataset](../interfaces/transactionaldataset.md)
 
 Inherited from: [ExtendedDataset](extendeddataset.md)
 
-Defined in: [lib/ExtendedDataset.ts:344](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ExtendedDataset.ts#L344)
+Defined in: [lib/ExtendedDataset.ts:344](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDataset.ts#L344)
 
 ___
 
@@ -788,7 +788,7 @@ Helper method to update the changes made
 
 **Returns:** *void*
 
-Defined in: [lib/ProxyTransactionalDataset.ts:242](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L242)
+Defined in: [lib/ProxyTransactionalDataset.ts:242](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L242)
 
 ___
 
@@ -806,4 +806,4 @@ Helper method to update the parent dataset or any other provided dataset
 
 **Returns:** *void*
 
-Defined in: [lib/ProxyTransactionalDataset.ts:294](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/ProxyTransactionalDataset.ts#L294)
+Defined in: [lib/ProxyTransactionalDataset.ts:294](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ProxyTransactionalDataset.ts#L294)

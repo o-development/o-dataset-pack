@@ -37,7 +37,7 @@
 
 Types of nodes a subscribable dataset can subscribe to
 
-Defined in: [lib/types.ts:13](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L13)
+Defined in: [lib/types.ts:13](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L13)
 
 ___
 
@@ -66,36 +66,38 @@ An event listeners for nodes
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:18](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L18)
+Defined in: [lib/types.ts:18](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L18)
 
 ## Functions
 
 ### createDataset
 
-▸ **createDataset**(`quads?`: Dataset \| Quad[]): Dataset
+▸ **createDataset**(`input?`: *unknown*, `parserOptions?`: *unknown*): Dataset
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `quads?` | Dataset \| Quad[] |
+| `input?` | *unknown* |
+| `parserOptions?` | *unknown* |
 
 **Returns:** Dataset
 
-Defined in: [lib/createExtendedDataset.ts:5](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/createExtendedDataset.ts#L5)
+Defined in: [lib/createExtendedDataset.ts:11](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/createExtendedDataset.ts#L11)
 
 ___
 
 ### createSubscribableDataset
 
-▸ **createSubscribableDataset**(`quads?`: Dataset \| Quad[]): [*SubscribableDataset*](interfaces/subscribabledataset.md)<Quad\>
+▸ **createSubscribableDataset**(`input?`: *unknown*, `parserOptions?`: *unknown*): Dataset
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `quads?` | Dataset \| Quad[] |
+| `input?` | *unknown* |
+| `parserOptions?` | *unknown* |
 
-**Returns:** [*SubscribableDataset*](interfaces/subscribabledataset.md)<Quad\>
+**Returns:** Dataset
 
-Defined in: [lib/createWrapperSubscribableDataset.ts:6](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/createWrapperSubscribableDataset.ts#L6)
+Defined in: [lib/createWrapperSubscribableDataset.ts:14](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/createWrapperSubscribableDataset.ts#L14)

@@ -1,9 +1,16 @@
 import { Dataset, Quad, DatasetCoreFactory, DatasetCore } from "rdf-js";
 import ExtendedDatasetFactory from "./ExtendedDatasetFactory";
 import { dataset as initializeDatasetCore } from "@rdfjs/dataset";
+import { Parser, ParserOptions } from "n3";
 
+export function createExtendedDataset(quads?: Dataset | Quad[]): Dataset;
+export function createExtendedDataset(
+  input: string,
+  parserOptions?: ParserOptions
+): Dataset;
 export default function createExtendedDataset(
-  quads?: Dataset | Quad[]
+  input?: unknown,
+  parserOptions?: unknown
 ): Dataset {
   const datasetFactory: DatasetCoreFactory = {
     dataset: (quads?: Dataset | Quad[]): DatasetCore => {
@@ -14,5 +21,10 @@ export default function createExtendedDataset(
     },
   };
   const extendedDatasetFactory = new ExtendedDatasetFactory(datasetFactory);
-  return extendedDatasetFactory.dataset(quads);
+  if (typeof input === "string") {
+    const parser = new Parser(parserOptions as ParserOptions);
+    const quads = parser.parse(input);
+    return extendedDatasetFactory.dataset(quads);
+  }
+  return extendedDatasetFactory.dataset(input as Dataset | Quad[]);
 }

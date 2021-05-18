@@ -131,7 +131,7 @@ ___
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:37](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L37)
+Defined in: [lib/types.ts:37](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L37)
 
 ___
 
@@ -459,7 +459,7 @@ ___
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:36](https://github.com/o-development/subscribable-dataset/blob/8558099/lib/types.ts#L36)
+Defined in: [lib/types.ts:36](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L36)
 
 ___
 
