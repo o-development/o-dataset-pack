@@ -1,7 +1,9 @@
-import { DatasetFactory, BaseQuad, Dataset } from "rdf-js";
-import { SubscribableDataset } from "./types";
+import { DatasetFactory, BaseQuad, Dataset } from "@rdfjs/types";
 import WrapperSubscribableDataset from "./WrapperSubscribableDataset";
 
+/**
+ * A DatasetFactory that returns a WrapperSubscribableDataset given a generic DatasetFactory.
+ */
 export default class WrapperSubscribableDatasetFactory<
   InAndOutQuad extends BaseQuad = BaseQuad
 > implements DatasetFactory<InAndOutQuad, InAndOutQuad> {
@@ -12,7 +14,7 @@ export default class WrapperSubscribableDatasetFactory<
 
   dataset(
     quads?: Dataset<InAndOutQuad, InAndOutQuad> | InAndOutQuad[]
-  ): SubscribableDataset<InAndOutQuad> {
+  ): WrapperSubscribableDataset<InAndOutQuad> {
     // Typings are wrong
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore

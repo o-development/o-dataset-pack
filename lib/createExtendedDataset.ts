@@ -1,30 +1,31 @@
-import { Dataset, Quad, DatasetCoreFactory, DatasetCore } from "rdf-js";
+import { Dataset, DatasetCoreFactory, DatasetCore, Quad } from "@rdfjs/types";
 import ExtendedDatasetFactory from "./ExtendedDatasetFactory";
 import { dataset as initializeDatasetCore } from "@rdfjs/dataset";
-import { Parser, ParserOptions } from "n3";
+import { ExtendedDataset } from ".";
 
-export function createExtendedDataset(quads?: Dataset | Quad[]): Dataset;
-export function createExtendedDataset(
-  input: string,
-  parserOptions?: ParserOptions
-): Dataset;
-export default function createExtendedDataset(
-  input?: unknown,
-  parserOptions?: unknown
-): Dataset {
-  const datasetFactory: DatasetCoreFactory = {
-    dataset: (quads?: Dataset | Quad[]): DatasetCore => {
-      // Bad typings. These will be fixed
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      return initializeDatasetCore(quads);
+/**
+ * Creates a dataset factory that generates ExtendedDatasets
+ * @returns DatasetFactory
+ */
+export function createExtendedDatasetFactory(): ExtendedDatasetFactory<Quad> {
+  const datasetFactory: DatasetCoreFactory<Quad> = {
+    dataset: (quads?: Dataset<Quad> | Quad[]): DatasetCore<Quad> => {
+      return initializeDatasetCore<Quad>(
+        Array.isArray(quads) ? quads : quads?.toArray()
+      );
     },
   };
-  const extendedDatasetFactory = new ExtendedDatasetFactory(datasetFactory);
-  if (typeof input === "string") {
-    const parser = new Parser(parserOptions as ParserOptions);
-    const quads = parser.parse(input);
-    return extendedDatasetFactory.dataset(quads);
-  }
-  return extendedDatasetFactory.dataset(input as Dataset | Quad[]);
+  return new ExtendedDatasetFactory<Quad>(datasetFactory);
+}
+
+/**
+ * Creates an ExtendedDataset
+ * @param quads: A dataset or array of Quads to initialize the dataset.
+ * @returns Dataset
+ */
+export default function createExtendedDataset(
+  quads?: Dataset<Quad> | Quad[]
+): ExtendedDataset<Quad> {
+  const extendedDatasetFactory = createExtendedDatasetFactory();
+  return extendedDatasetFactory.dataset(quads);
 }

@@ -1,6 +1,11 @@
 import {
   createDataset,
   createSubscribableDataset,
+  createDatasetFactory,
+  createSubscribableDatasetFactory,
+  createDatasetFromSerializedInput,
+  serializedToDataset,
+  serializedToSubscribableDataset,
   ExtendedDataset,
   ExtendedDatasetFactory,
   ProxyTransactionalDataset,
@@ -17,5 +22,10 @@ describe("Exports", () => {
     expect(ProxyTransactionalDataset);
     expect(WrapperSubscribableDataset);
     expect(WrapperSubscribableDatasetFactory);
+    expect(serializedToSubscribableDataset);
+    expect(serializedToDataset);
+    expect(createDatasetFactory);
+    expect(createSubscribableDatasetFactory);
+    expect(createDatasetFromSerializedInput);
   });
 });

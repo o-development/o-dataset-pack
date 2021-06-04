@@ -2,6 +2,8 @@
 
 # Class: WrapperSubscribableDatasetFactory<InAndOutQuad\>
 
+A DatasetFactory that returns a WrapperSubscribableDataset given a generic DatasetFactory.
+
 ## Type parameters
 
 | Name | Type | Default |
@@ -46,7 +48,7 @@
 
 **Returns:** [*WrapperSubscribableDatasetFactory*](wrappersubscribabledatasetfactory.md)<InAndOutQuad\>
 
-Defined in: [lib/WrapperSubscribableDatasetFactory.ts:8](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDatasetFactory.ts#L8)
+Defined in: [lib/WrapperSubscribableDatasetFactory.ts:10](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDatasetFactory.ts#L10)
 
 ## Properties
 
@@ -54,13 +56,13 @@ Defined in: [lib/WrapperSubscribableDatasetFactory.ts:8](https://github.com/o-de
 
 • `Private` **datasetFactory**: *DatasetFactory*<InAndOutQuad, InAndOutQuad, Dataset<InAndOutQuad, InAndOutQuad\>\>
 
-Defined in: [lib/WrapperSubscribableDatasetFactory.ts:8](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDatasetFactory.ts#L8)
+Defined in: [lib/WrapperSubscribableDatasetFactory.ts:10](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDatasetFactory.ts#L10)
 
 ## Methods
 
 ### dataset
 
-▸ **dataset**(`quads?`: *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[]): [*SubscribableDataset*](../interfaces/subscribabledataset.md)<InAndOutQuad\>
+▸ **dataset**(`quads?`: *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[]): [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>
 
 #### Parameters
 
@@ -68,8 +70,8 @@ Defined in: [lib/WrapperSubscribableDatasetFactory.ts:8](https://github.com/o-de
 | :------ | :------ |
 | `quads?` | *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[] |
 
-**Returns:** [*SubscribableDataset*](../interfaces/subscribabledataset.md)<InAndOutQuad\>
+**Returns:** [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>
 
 Implementation of: DatasetFactory.dataset
 
-Defined in: [lib/WrapperSubscribableDatasetFactory.ts:13](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDatasetFactory.ts#L13)
+Defined in: [lib/WrapperSubscribableDatasetFactory.ts:15](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDatasetFactory.ts#L15)

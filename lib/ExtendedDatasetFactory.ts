@@ -1,6 +1,14 @@
-import { DatasetFactory, BaseQuad, Dataset, DatasetCoreFactory } from "rdf-js";
+import {
+  DatasetFactory,
+  BaseQuad,
+  Dataset,
+  DatasetCoreFactory,
+} from "@rdfjs/types";
 import ExtendedDataset from "./ExtendedDataset";
 
+/**
+ * A DatasetFactory that creates an ExtendedDataset given a DatasetCoreFactory.
+ */
 export default class ExtendedDatasetFactory<
   InAndOutQuad extends BaseQuad = BaseQuad
 > implements DatasetFactory<InAndOutQuad, InAndOutQuad> {
@@ -13,7 +21,7 @@ export default class ExtendedDatasetFactory<
 
   dataset(
     quads?: Dataset<InAndOutQuad, InAndOutQuad> | InAndOutQuad[]
-  ): Dataset<InAndOutQuad, InAndOutQuad> {
+  ): ExtendedDataset<InAndOutQuad> {
     return new ExtendedDataset(
       // The typings are incorrect on the dataset core factory
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment

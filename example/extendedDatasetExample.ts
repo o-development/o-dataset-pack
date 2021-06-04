@@ -3,7 +3,7 @@ import { quad, namedNode, literal } from "@rdfjs/data-model";
 // Required for advanced features:
 import { dataset as initializeDatasetCore } from "@rdfjs/dataset";
 import { ExtendedDatasetFactory } from "../lib";
-import { Dataset, Quad, DatasetCoreFactory, DatasetCore } from "rdf-js";
+import { Dataset, Quad, DatasetCoreFactory, DatasetCore } from "@rdfjs/types";
 
 /**
  * Create a dataset with default settings
@@ -31,11 +31,10 @@ const defaultDataset2 = createDataset(initializedQuads);
  * (Advanced Feature) Create a dataset by injecting a chosen datasetCore and datasetCoreFactory
  */
 const datasetFactory: DatasetCoreFactory = {
-  dataset: (quads?: Dataset | Quad[]): DatasetCore => {
-    // Bad typings. These will be fixed https://github.com/rdfjs/types/pull/11
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    return initializeDatasetCore(quads);
+  dataset: (quads?: Dataset<Quad> | Quad[]): DatasetCore => {
+    return initializeDatasetCore(
+      Array.isArray(quads) ? quads : quads?.toArray()
+    );
   },
 };
 const extendedDatasetFactory = new ExtendedDatasetFactory(datasetFactory);

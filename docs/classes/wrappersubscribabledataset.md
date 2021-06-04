@@ -103,7 +103,7 @@ be triggered whenever a quad containing that added or removed.
 
 **Returns:** [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/WrapperSubscribableDataset.ts:31](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L31)
+Defined in: [lib/WrapperSubscribableDataset.ts:31](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L31)
 
 ## Properties
 
@@ -111,7 +111,7 @@ Defined in: [lib/WrapperSubscribableDataset.ts:31](https://github.com/o-developm
 
 • `Private` **BLANK\_NODE\_KEY\_PREFIX**: *string*= "BlankNode"
 
-Defined in: [lib/WrapperSubscribableDataset.ts:360](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L360)
+Defined in: [lib/WrapperSubscribableDataset.ts:360](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L360)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 • `Private` **DEFAULT\_GRAPH\_KEY\_PREFIX**: *string*= "DefaultGraph"
 
-Defined in: [lib/WrapperSubscribableDataset.ts:361](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L361)
+Defined in: [lib/WrapperSubscribableDataset.ts:361](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L361)
 
 ___
 
@@ -131,7 +131,7 @@ ___
 EVENTEMITTER METHODS
 ==================================================================
 
-Defined in: [lib/WrapperSubscribableDataset.ts:359](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L359)
+Defined in: [lib/WrapperSubscribableDataset.ts:359](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L359)
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 • `Private` **SUBSCRIBABLE\_TERMS**: *string*[]
 
-Defined in: [lib/WrapperSubscribableDataset.ts:362](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L362)
+Defined in: [lib/WrapperSubscribableDataset.ts:362](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L362)
 
 ___
 
@@ -149,7 +149,7 @@ ___
 
 The underlying dataset
 
-Defined in: [lib/WrapperSubscribableDataset.ts:27](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L27)
+Defined in: [lib/WrapperSubscribableDataset.ts:27](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L27)
 
 ___
 
@@ -159,7 +159,7 @@ ___
 
 The underlying dataset factory
 
-Defined in: [lib/WrapperSubscribableDataset.ts:23](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L23)
+Defined in: [lib/WrapperSubscribableDataset.ts:23](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L23)
 
 ___
 
@@ -169,7 +169,7 @@ ___
 
 The underlying event emitter
 
-Defined in: [lib/WrapperSubscribableDataset.ts:31](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L31)
+Defined in: [lib/WrapperSubscribableDataset.ts:31](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L31)
 
 ## Accessors
 
@@ -183,7 +183,7 @@ A non-negative integer that specifies the number of quads in the set.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md).[size](../interfaces/subscribabledataset.md#size)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:308](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L308)
+Defined in: [lib/WrapperSubscribableDataset.ts:308](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L308)
 
 ## Methods
 
@@ -197,7 +197,7 @@ Returns an iterator
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:350](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L350)
+Defined in: [lib/WrapperSubscribableDataset.ts:350](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L350)
 
 ___
 
@@ -220,7 +220,7 @@ the dataset instance it was called on.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:318](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L318)
+Defined in: [lib/WrapperSubscribableDataset.ts:318](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L318)
 
 ___
 
@@ -243,7 +243,7 @@ the dataset instance it was called on.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:59](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L59)
+Defined in: [lib/WrapperSubscribableDataset.ts:59](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L59)
 
 ___
 
@@ -264,7 +264,7 @@ Alias for emitter.on(eventName, listener).
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:490](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L490)
+Defined in: [lib/WrapperSubscribableDataset.ts:490](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L490)
 
 ___
 
@@ -284,7 +284,7 @@ Bulk add and remove triples
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:73](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L73)
+Defined in: [lib/WrapperSubscribableDataset.ts:73](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L73)
 
 ___
 
@@ -305,7 +305,7 @@ Blank Nodes will be normalized.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:91](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L91)
+Defined in: [lib/WrapperSubscribableDataset.ts:91](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L91)
 
 ___
 
@@ -326,7 +326,7 @@ This method returns the dataset instance it was called on.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:331](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L331)
+Defined in: [lib/WrapperSubscribableDataset.ts:331](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L331)
 
 ___
 
@@ -351,7 +351,7 @@ the dataset instance it was called on.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:103](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L103)
+Defined in: [lib/WrapperSubscribableDataset.ts:103](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L103)
 
 ___
 
@@ -371,7 +371,7 @@ Returns a new dataset that contains alls quads from the current dataset, not inc
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:121](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L121)
+Defined in: [lib/WrapperSubscribableDataset.ts:121](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L121)
 
 ___
 
@@ -395,7 +395,7 @@ true if the event had listeners, false otherwise.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:504](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L504)
+Defined in: [lib/WrapperSubscribableDataset.ts:504](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L504)
 
 ___
 
@@ -415,7 +415,7 @@ Returns true if the current instance contains the same graph structure as the gi
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:131](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L131)
+Defined in: [lib/WrapperSubscribableDataset.ts:131](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L131)
 
 ___
 
@@ -429,7 +429,7 @@ Returns an array listing the events for which the emitter has registered listene
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:519](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L519)
+Defined in: [lib/WrapperSubscribableDataset.ts:519](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L519)
 
 ___
 
@@ -452,7 +452,7 @@ Note: This method is aligned with Array.prototype.every() in ECMAScript-262.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:142](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L142)
+Defined in: [lib/WrapperSubscribableDataset.ts:142](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L142)
 
 ___
 
@@ -473,7 +473,7 @@ Note: This method is aligned with Array.prototype.filter() in ECMAScript-262.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:156](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L156)
+Defined in: [lib/WrapperSubscribableDataset.ts:156](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L156)
 
 ___
 
@@ -494,7 +494,7 @@ Note: This method is aligned with Array.prototype.forEach() in ECMAScript-262.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:170](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L170)
+Defined in: [lib/WrapperSubscribableDataset.ts:170](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L170)
 
 ___
 
@@ -512,7 +512,7 @@ Given a term, returns the string key to be used in an event emitter
 
 **Returns:** *string*
 
-Defined in: [lib/WrapperSubscribableDataset.ts:371](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L371)
+Defined in: [lib/WrapperSubscribableDataset.ts:371](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L371)
 
 ___
 
@@ -526,7 +526,7 @@ Returns the current max listener value for the EventEmitter which is either set 
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:528](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L528)
+Defined in: [lib/WrapperSubscribableDataset.ts:528](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L528)
 
 ___
 
@@ -544,7 +544,7 @@ Given a key, returns the node
 
 **Returns:** [*SubscribableTerms*](../modules.md#subscribableterms)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:385](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L385)
+Defined in: [lib/WrapperSubscribableDataset.ts:385](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L385)
 
 ___
 
@@ -564,7 +564,7 @@ Determines whether a dataset includes a certain quad, returning true or false as
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:343](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L343)
+Defined in: [lib/WrapperSubscribableDataset.ts:343](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L343)
 
 ___
 
@@ -585,7 +585,7 @@ The stream events end and error are wrapped in a Promise.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:184](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L184)
+Defined in: [lib/WrapperSubscribableDataset.ts:184](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L184)
 
 ___
 
@@ -605,7 +605,7 @@ Returns a new dataset containing alls quads from the current dataset that are al
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:196](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L196)
+Defined in: [lib/WrapperSubscribableDataset.ts:196](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L196)
 
 ___
 
@@ -625,7 +625,7 @@ Returns the number of listeners listening to the event named eventName.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:535](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L535)
+Defined in: [lib/WrapperSubscribableDataset.ts:535](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L535)
 
 ___
 
@@ -645,7 +645,7 @@ Returns a copy of the array of listeners for the event named eventName.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:542](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L542)
+Defined in: [lib/WrapperSubscribableDataset.ts:542](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L542)
 
 ___
 
@@ -665,7 +665,7 @@ Returns a new dataset containing all quads returned by applying iteratee to each
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:206](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L206)
+Defined in: [lib/WrapperSubscribableDataset.ts:206](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L206)
 
 ___
 
@@ -690,7 +690,7 @@ a Dataset with matching triples
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:296](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L296)
+Defined in: [lib/WrapperSubscribableDataset.ts:296](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L296)
 
 ___
 
@@ -711,7 +711,7 @@ Alias for emitter.removeListener()
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:553](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L553)
+Defined in: [lib/WrapperSubscribableDataset.ts:553](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L553)
 
 ___
 
@@ -732,7 +732,7 @@ Adds the listener function to the end of the listeners array for the event named
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:563](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L563)
+Defined in: [lib/WrapperSubscribableDataset.ts:563](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L563)
 
 ___
 
@@ -753,7 +753,7 @@ Adds a one-time listener function for the event named eventName. The next time e
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:574](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L574)
+Defined in: [lib/WrapperSubscribableDataset.ts:574](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L574)
 
 ___
 
@@ -774,7 +774,7 @@ Adds the listener function to the beginning of the listeners array for the event
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:585](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L585)
+Defined in: [lib/WrapperSubscribableDataset.ts:585](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L585)
 
 ___
 
@@ -795,7 +795,7 @@ Adds a one-time listener function for the event named eventName to the beginning
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:596](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L596)
+Defined in: [lib/WrapperSubscribableDataset.ts:596](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L596)
 
 ___
 
@@ -815,7 +815,7 @@ Returns a copy of the array of listeners for the event named eventName, includin
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:637](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L637)
+Defined in: [lib/WrapperSubscribableDataset.ts:637](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L637)
 
 ___
 
@@ -844,7 +844,7 @@ Note: This method is aligned with Array.prototype.reduce() in ECMAScript-262.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:222](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L222)
+Defined in: [lib/WrapperSubscribableDataset.ts:222](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L222)
 
 ___
 
@@ -864,7 +864,7 @@ Removes all listeners, or those of the specified eventName.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:610](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L610)
+Defined in: [lib/WrapperSubscribableDataset.ts:610](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L610)
 
 ___
 
@@ -885,7 +885,7 @@ Removes the specified listener from the listener array for the event named event
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:618](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L618)
+Defined in: [lib/WrapperSubscribableDataset.ts:618](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L618)
 
 ___
 
@@ -905,7 +905,7 @@ By default EventEmitters will print a warning if more than 10 listeners are adde
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:629](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L629)
+Defined in: [lib/WrapperSubscribableDataset.ts:629](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L629)
 
 ___
 
@@ -928,7 +928,7 @@ boolean true once a quad that passes the test is found.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:239](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L239)
+Defined in: [lib/WrapperSubscribableDataset.ts:239](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L239)
 
 ___
 
@@ -942,7 +942,7 @@ Returns a transactional dataset that will update this dataset when its transacti
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:654](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L654)
+Defined in: [lib/WrapperSubscribableDataset.ts:654](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L654)
 
 ___
 
@@ -957,7 +957,7 @@ Note: Since a DatasetCore is an unordered set, the order of the quads within the
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:252](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L252)
+Defined in: [lib/WrapperSubscribableDataset.ts:252](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L252)
 
 ___
 
@@ -971,7 +971,7 @@ Returns an N-Quads string representation of the dataset, preprocessed with RDF D
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:259](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L259)
+Defined in: [lib/WrapperSubscribableDataset.ts:259](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L259)
 
 ___
 
@@ -985,7 +985,7 @@ Returns a stream that contains all quads of the dataset.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:266](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L266)
+Defined in: [lib/WrapperSubscribableDataset.ts:266](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L266)
 
 ___
 
@@ -1000,7 +1000,7 @@ No prior normalization is required, therefore the results for the same quads may
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:274](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L274)
+Defined in: [lib/WrapperSubscribableDataset.ts:274](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L274)
 
 ___
 
@@ -1019,7 +1019,7 @@ Triggers all subscriptions for a given term
 
 **Returns:** *void*
 
-Defined in: [lib/WrapperSubscribableDataset.ts:431](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L431)
+Defined in: [lib/WrapperSubscribableDataset.ts:431](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L431)
 
 ___
 
@@ -1037,7 +1037,7 @@ Triggers all subscriptions based on an updated quads
 
 **Returns:** *void*
 
-Defined in: [lib/WrapperSubscribableDataset.ts:400](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L400)
+Defined in: [lib/WrapperSubscribableDataset.ts:400](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L400)
 
 ___
 
@@ -1057,4 +1057,4 @@ Returns a new Dataset that is a concatenation of this dataset and the quads give
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:282](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/WrapperSubscribableDataset.ts#L282)
+Defined in: [lib/WrapperSubscribableDataset.ts:282](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/WrapperSubscribableDataset.ts#L282)

@@ -2,6 +2,8 @@
 
 # Class: ExtendedDatasetFactory<InAndOutQuad\>
 
+A DatasetFactory that creates an ExtendedDataset given a DatasetCoreFactory.
+
 ## Type parameters
 
 | Name | Type | Default |
@@ -46,7 +48,7 @@
 
 **Returns:** [*ExtendedDatasetFactory*](extendeddatasetfactory.md)<InAndOutQuad\>
 
-Defined in: [lib/ExtendedDatasetFactory.ts:7](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDatasetFactory.ts#L7)
+Defined in: [lib/ExtendedDatasetFactory.ts:15](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/ExtendedDatasetFactory.ts#L15)
 
 ## Properties
 
@@ -54,13 +56,13 @@ Defined in: [lib/ExtendedDatasetFactory.ts:7](https://github.com/o-development/s
 
 • `Private` **datasetCoreFactory**: *DatasetCoreFactory*<InAndOutQuad, InAndOutQuad, DatasetCore<InAndOutQuad, InAndOutQuad\>\>
 
-Defined in: [lib/ExtendedDatasetFactory.ts:7](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDatasetFactory.ts#L7)
+Defined in: [lib/ExtendedDatasetFactory.ts:15](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/ExtendedDatasetFactory.ts#L15)
 
 ## Methods
 
 ### dataset
 
-▸ **dataset**(`quads?`: *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[]): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **dataset**(`quads?`: *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[]): [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
 
 #### Parameters
 
@@ -68,8 +70,8 @@ Defined in: [lib/ExtendedDatasetFactory.ts:7](https://github.com/o-development/s
 | :------ | :------ |
 | `quads?` | *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[] |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+**Returns:** [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
 
 Implementation of: DatasetFactory.dataset
 
-Defined in: [lib/ExtendedDatasetFactory.ts:14](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/ExtendedDatasetFactory.ts#L14)
+Defined in: [lib/ExtendedDatasetFactory.ts:22](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/ExtendedDatasetFactory.ts#L22)

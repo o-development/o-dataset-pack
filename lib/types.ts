@@ -1,4 +1,10 @@
-import { Dataset, NamedNode, BlankNode, DefaultGraph, BaseQuad } from "rdf-js";
+import {
+  Dataset,
+  NamedNode,
+  BlankNode,
+  DefaultGraph,
+  BaseQuad,
+} from "@rdfjs/types";
 /**
  * An interface representing the changes made
  */

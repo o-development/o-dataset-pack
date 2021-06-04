@@ -1,4 +1,4 @@
-import { Dataset, BaseQuad, Term, DatasetFactory } from "rdf-js";
+import { Dataset, BaseQuad, Term, DatasetFactory } from "@rdfjs/types";
 import {
   BulkEditableDataset,
   DatasetChanges,
@@ -11,9 +11,6 @@ import ExtendedDataset from "./ExtendedDataset";
  * the parent dataset, it will dynamically determine the correct return value for
  * methods in real time when the method is called.
  */
-// This is caused by the typings being incorrect for the intersect method
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 export default class ProxyTransactionalDataset<
     InAndOutQuad extends BaseQuad = BaseQuad
   >
@@ -292,7 +289,8 @@ export default class ProxyTransactionalDataset<
    * Helper method to update the parent dataset or any other provided dataset
    */
   private updateParentDataset(datasetChanges: DatasetChanges<InAndOutQuad>) {
-    if ((this.parentDataset as BulkEditableDataset<InAndOutQuad>).bulk) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    if ((this.parentDataset as any).bulk) {
       (this.parentDataset as BulkEditableDataset<InAndOutQuad>).bulk(
         datasetChanges
       );

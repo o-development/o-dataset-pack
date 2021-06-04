@@ -27,7 +27,12 @@
 ### Functions
 
 - [createDataset](modules.md#createdataset)
+- [createDatasetFactory](modules.md#createdatasetfactory)
+- [createDatasetFromSerializedInput](modules.md#createdatasetfromserializedinput)
 - [createSubscribableDataset](modules.md#createsubscribabledataset)
+- [createSubscribableDatasetFactory](modules.md#createsubscribabledatasetfactory)
+- [serializedToDataset](modules.md#serializedtodataset)
+- [serializedToSubscribableDataset](modules.md#serializedtosubscribabledataset)
 
 ## Type aliases
 
@@ -37,7 +42,7 @@
 
 Types of nodes a subscribable dataset can subscribe to
 
-Defined in: [lib/types.ts:13](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L13)
+Defined in: [lib/types.ts:19](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L19)
 
 ___
 
@@ -66,38 +71,142 @@ An event listeners for nodes
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:18](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L18)
+Defined in: [lib/types.ts:24](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L24)
 
 ## Functions
 
 ### createDataset
 
-▸ **createDataset**(`input?`: *unknown*, `parserOptions?`: *unknown*): Dataset
+▸ **createDataset**(`quads?`: *Dataset*<Quad\> \| Quad[]): [*ExtendedDataset*](classes/extendeddataset.md)<Quad\>
+
+Creates an ExtendedDataset
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `input?` | *unknown* |
-| `parserOptions?` | *unknown* |
+| `quads?` | *Dataset*<Quad\> \| Quad[] |
 
-**Returns:** Dataset
+**Returns:** [*ExtendedDataset*](classes/extendeddataset.md)<Quad\>
 
-Defined in: [lib/createExtendedDataset.ts:11](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/createExtendedDataset.ts#L11)
+Dataset
+
+Defined in: [lib/createExtendedDataset.ts:26](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/createExtendedDataset.ts#L26)
+
+___
+
+### createDatasetFactory
+
+▸ **createDatasetFactory**(): [*ExtendedDatasetFactory*](classes/extendeddatasetfactory.md)<Quad\>
+
+Creates a dataset factory that generates ExtendedDatasets
+
+**Returns:** [*ExtendedDatasetFactory*](classes/extendeddatasetfactory.md)<Quad\>
+
+DatasetFactory
+
+Defined in: [lib/createExtendedDataset.ts:10](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/createExtendedDataset.ts#L10)
+
+___
+
+### createDatasetFromSerializedInput
+
+▸ **createDatasetFromSerializedInput**<ReturnDataset\>(`datasetFactory`: *DatasetFactory*<Quad\>, `data`: *string*, `options?`: ParserOptions): *Promise*<ReturnDataset\>
+
+Creates a dataset with a string input that could be SON-LD, Turtle, N-Triples, TriG, RDF*, or N3.
+
+#### Type parameters
+
+| Name | Type | Default |
+| :------ | :------ | :------ |
+| `ReturnDataset` | *Dataset*<Quad, Quad, ReturnDataset\> | *Dataset*<Quad, Quad\> |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `datasetFactory` | *DatasetFactory*<Quad\> | A datasetFactory that will initialize a returned dataset.\ |
+| `data` | *string* | A string representation of RDF Data in JSON-LD, Turtle, N-Triples, TriG, RDF*, or N3. |
+| `options?` | ParserOptions | Parser options: {   format?: string;   factory?: RDF.DataFactory;   baseIRI?: string;   blankNodePrefix?: string; } |
+
+**Returns:** *Promise*<ReturnDataset\>
+
+A dataset
+
+Defined in: [lib/createDatasetFromSerializedInput.ts:18](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/createDatasetFromSerializedInput.ts#L18)
 
 ___
 
 ### createSubscribableDataset
 
-▸ **createSubscribableDataset**(`input?`: *unknown*, `parserOptions?`: *unknown*): Dataset
+▸ **createSubscribableDataset**(`quads?`: *Dataset*<Quad\> \| Quad[]): [*WrapperSubscribableDataset*](classes/wrappersubscribabledataset.md)<Quad\>
+
+Creates a SubscribableDataset
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `input?` | *unknown* |
-| `parserOptions?` | *unknown* |
+| `quads?` | *Dataset*<Quad\> \| Quad[] |
 
-**Returns:** Dataset
+**Returns:** [*WrapperSubscribableDataset*](classes/wrappersubscribabledataset.md)<Quad\>
 
-Defined in: [lib/createWrapperSubscribableDataset.ts:14](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/createWrapperSubscribableDataset.ts#L14)
+Dataset
+
+Defined in: [lib/createWrapperSubscribableDataset.ts:24](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/createWrapperSubscribableDataset.ts#L24)
+
+___
+
+### createSubscribableDatasetFactory
+
+▸ **createSubscribableDatasetFactory**(): [*WrapperSubscribableDatasetFactory*](classes/wrappersubscribabledatasetfactory.md)<Quad\>
+
+Creates a dataset factory that generates a SubscribableDataset
+
+**Returns:** [*WrapperSubscribableDatasetFactory*](classes/wrappersubscribabledatasetfactory.md)<Quad\>
+
+DatasetFactory for SubscribableDataset
+
+Defined in: [lib/createWrapperSubscribableDataset.ts:10](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/createWrapperSubscribableDataset.ts#L10)
+
+___
+
+### serializedToDataset
+
+▸ **serializedToDataset**(`data`: *string*, `options?`: ParserOptions): *Promise*<[*ExtendedDataset*](classes/extendeddataset.md)<Quad\>\>
+
+Creates an ExtendedDataset with a string input that could be JSON-LD, Turtle, N-Triples, TriG, RDF*, or N3.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | *string* | A string representation of RDF Data in JSON-LD, Turtle, N-Triples, TriG, RDF*, or N3. |
+| `options?` | ParserOptions | Parser options: {   format?: string;   factory?: RDF.DataFactory;   baseIRI?: string;   blankNodePrefix?: string; } |
+
+**Returns:** *Promise*<[*ExtendedDataset*](classes/extendeddataset.md)<Quad\>\>
+
+A dataset
+
+Defined in: [lib/createExtendedDatasetFromSerializedInput.ts:18](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/createExtendedDatasetFromSerializedInput.ts#L18)
+
+___
+
+### serializedToSubscribableDataset
+
+▸ **serializedToSubscribableDataset**(`data`: *string*, `options?`: ParserOptions): *Promise*<[*WrapperSubscribableDataset*](classes/wrappersubscribabledataset.md)<Quad\>\>
+
+Creates a SubscribableDataset with a string input that could be JSON-LD, Turtle, N-Triples, TriG, RDF*, or N3.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | *string* | A string representation of RDF Data in JSON-LD, Turtle, N-Triples, TriG, RDF*, or N3. |
+| `options?` | ParserOptions | Parser options: {   format?: string;   factory?: RDF.DataFactory;   baseIRI?: string;   blankNodePrefix?: string; } |
+
+**Returns:** *Promise*<[*WrapperSubscribableDataset*](classes/wrappersubscribabledataset.md)<Quad\>\>
+
+A dataset
+
+Defined in: [lib/createWrapperSubscribableDatasetFromSerializedInput.ts:18](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/createWrapperSubscribableDatasetFromSerializedInput.ts#L18)

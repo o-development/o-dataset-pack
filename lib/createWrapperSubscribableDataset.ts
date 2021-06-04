@@ -1,32 +1,29 @@
-import { Parser, ParserOptions } from "n3";
-import { Dataset, Quad, DatasetFactory } from "rdf-js";
+import { Dataset, DatasetFactory, Quad } from "@rdfjs/types";
+import { WrapperSubscribableDataset } from ".";
 import createExtendedDataset from "./createExtendedDataset";
-import { SubscribableDataset } from "./types";
 import WrapperSubscribableDatasetFactory from "./WrapperSubscribableDatasetFactory";
 
-export function createWrapperSubscribableDataset(
-  quads?: Dataset | Quad[]
-): Dataset;
-export function createWrapperSubscribableDataset(
-  input: string,
-  parserOptions?: ParserOptions
-): SubscribableDataset<Quad>;
-export default function createWrapperSubscribableDataset(
-  input?: unknown,
-  parserOptions?: unknown
-): Dataset {
-  const datasetFactory: DatasetFactory = {
-    dataset: (quads?: Dataset | Quad[]): Dataset => {
+/**
+ * Creates a dataset factory that generates a SubscribableDataset
+ * @returns DatasetFactory for SubscribableDataset
+ */
+export function createWrapperSubscribableDatasetFactory(): WrapperSubscribableDatasetFactory<Quad> {
+  const datasetFactory: DatasetFactory<Quad> = {
+    dataset: (quads?: Dataset<Quad> | Quad[]): Dataset<Quad> => {
       return createExtendedDataset(quads);
     },
   };
-  const wrapperSubscribableDatasetFactory = new WrapperSubscribableDatasetFactory(
-    datasetFactory
-  );
-  if (typeof input === "string") {
-    const parser = new Parser(parserOptions as ParserOptions);
-    const quads = parser.parse(input);
-    return wrapperSubscribableDatasetFactory.dataset(quads);
-  }
-  return wrapperSubscribableDatasetFactory.dataset(input as Dataset | Quad[]);
+  return new WrapperSubscribableDatasetFactory(datasetFactory);
+}
+
+/**
+ * Creates a SubscribableDataset
+ * @param quads: A dataset or array of Quads to initialize the dataset.
+ * @returns Dataset
+ */
+export default function createWrapperSubscribableDataset(
+  quads?: Dataset<Quad> | Quad[]
+): WrapperSubscribableDataset<Quad> {
+  const wrapperSubscribableDatasetFactory = createWrapperSubscribableDatasetFactory();
+  return wrapperSubscribableDatasetFactory.dataset(quads);
 }

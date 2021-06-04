@@ -81,7 +81,7 @@ A non-negative integer that specifies the number of quads in the set.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md).[size](bulkeditabledataset.md#size)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:426
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:11
 
 ## Methods
 
@@ -93,7 +93,7 @@ Defined in: node_modules/@types/rdf-js/index.d.ts:426
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:462
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:47
 
 ___
 
@@ -115,7 +115,7 @@ Existing quads, as defined in `Quad.equals`, will be ignored.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:433
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:18
 
 ___
 
@@ -138,7 +138,7 @@ combining `quads` and the current instance to create a new instance.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:479
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:64
 
 ___
 
@@ -157,7 +157,7 @@ Alias for emitter.on(eventName, listener).
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:53](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L53)
+Defined in: [lib/types.ts:59](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L59)
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: [lib/types.ts:28](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L28)
+Defined in: [lib/types.ts:34](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L34)
 
 ___
 
@@ -198,7 +198,7 @@ Blank Nodes will be normalized.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:487
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:72
 
 ___
 
@@ -218,7 +218,7 @@ Removes the specified quad from the dataset.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:438
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:23
 
 ___
 
@@ -244,7 +244,7 @@ quad in this dataset to select the quads which will be deleted.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:500
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:85
 
 ___
 
@@ -264,7 +264,7 @@ Returns a new dataset that contains all quads from the current dataset, not incl
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:505
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:90
 
 ___
 
@@ -286,7 +286,7 @@ Synchronously calls each of the listeners registered for the event named eventNa
 
 true if the event had listeners, false otherwise.
 
-Defined in: [lib/types.ts:65](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L65)
+Defined in: [lib/types.ts:71](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L71)
 
 ___
 
@@ -308,7 +308,7 @@ Blank Nodes will be normalized.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:512
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:97
 
 ___
 
@@ -320,7 +320,7 @@ Returns an array listing the events for which the emitter has registered listene
 
 **Returns:** [*SubscribableTerms*](../modules.md#subscribableterms)[]
 
-Defined in: [lib/types.ts:74](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L74)
+Defined in: [lib/types.ts:80](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L80)
 
 ___
 
@@ -347,7 +347,7 @@ This method is aligned with `Array.prototype.every()` in ECMAScript-262.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:524
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:109
 
 ___
 
@@ -369,7 +369,7 @@ This method is aligned with Array.prototype.filter() in ECMAScript-262.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:531
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:116
 
 ___
 
@@ -391,7 +391,7 @@ This method is aligned with `Array.prototype.forEach()` in ECMAScript-262.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:538
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:123
 
 ___
 
@@ -403,7 +403,7 @@ Returns the current max listener value for the EventEmitter which is either set 
 
 **Returns:** *number*
 
-Defined in: [lib/types.ts:79](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L79)
+Defined in: [lib/types.ts:85](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L85)
 
 ___
 
@@ -423,7 +423,7 @@ Determines whether a dataset includes a certain quad.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:443
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:28
 
 ___
 
@@ -445,13 +445,13 @@ The stream events `end` and `error` are wrapped in a Promise.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:545
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:130
 
 ___
 
 ### intersection
 
-▸ **intersection**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
+▸ **intersection**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *Dataset*<InAndOutQuad, InAndOutQuad\>
 
 Returns a new dataset containing alls quads from the current dataset that are also included in the given dataset.
 
@@ -461,11 +461,11 @@ Returns a new dataset containing alls quads from the current dataset that are al
 | :------ | :------ |
 | `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
 
-**Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
+**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:550
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:135
 
 ___
 
@@ -483,7 +483,7 @@ Returns the number of listeners listening to the event named eventName.
 
 **Returns:** *number*
 
-Defined in: [lib/types.ts:84](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L84)
+Defined in: [lib/types.ts:90](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L90)
 
 ___
 
@@ -501,7 +501,7 @@ Returns a copy of the array of listeners for the event named eventName.
 
 **Returns:** [*nodeEventListener*](../modules.md#nodeeventlistener)<InAndOutQuad\>[]
 
-Defined in: [lib/types.ts:89](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L89)
+Defined in: [lib/types.ts:95](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L95)
 
 ___
 
@@ -521,7 +521,7 @@ Returns a new dataset containing all quads returned by applying `iteratee` to ea
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:555
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:140
 
 ___
 
@@ -542,7 +542,7 @@ ___
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:610
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:195
 
 ___
 
@@ -561,7 +561,7 @@ Alias for emitter.removeListener()
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:94](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L94)
+Defined in: [lib/types.ts:100](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L100)
 
 ___
 
@@ -580,7 +580,7 @@ Adds the listener function to the end of the listeners array for the event named
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:102](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L102)
+Defined in: [lib/types.ts:108](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L108)
 
 ___
 
@@ -599,7 +599,7 @@ Adds a one-time listener function for the event named eventName. The next time e
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:110](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L110)
+Defined in: [lib/types.ts:116](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L116)
 
 ___
 
@@ -618,7 +618,7 @@ Adds the listener function to the beginning of the listeners array for the event
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:118](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L118)
+Defined in: [lib/types.ts:124](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L124)
 
 ___
 
@@ -637,7 +637,7 @@ Adds a one-time listener function for the event named eventName to the beginning
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:126](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L126)
+Defined in: [lib/types.ts:132](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L132)
 
 ___
 
@@ -655,7 +655,7 @@ Returns a copy of the array of listeners for the event named eventName, includin
 
 **Returns:** [*nodeEventListener*](../modules.md#nodeeventlistener)<InAndOutQuad\>[]
 
-Defined in: [lib/types.ts:152](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L152)
+Defined in: [lib/types.ts:158](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L158)
 
 ___
 
@@ -688,7 +688,7 @@ This method is aligned with `Array.prototype.reduce()` in ECMAScript-262.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:566
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:151
 
 ___
 
@@ -706,7 +706,7 @@ Removes all listeners, or those of the specified eventName.
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:134](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L134)
+Defined in: [lib/types.ts:140](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L140)
 
 ___
 
@@ -725,7 +725,7 @@ Removes the specified listener from the listener array for the event named event
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:139](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L139)
+Defined in: [lib/types.ts:145](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L145)
 
 ___
 
@@ -743,7 +743,7 @@ By default EventEmitters will print a warning if more than 10 listeners are adde
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:147](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L147)
+Defined in: [lib/types.ts:153](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L153)
 
 ___
 
@@ -768,7 +768,7 @@ This method is aligned with `Array.prototype.some()` in ECMAScript-262.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:576
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:161
 
 ___
 
@@ -780,7 +780,7 @@ Returns a transactional dataset that will update this dataset when its transacti
 
 **Returns:** [*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:163](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L163)
+Defined in: [lib/types.ts:169](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L169)
 
 ___
 
@@ -797,7 +797,7 @@ Since a `Dataset` is an unordered set, the order of the quads within the returne
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:584
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:169
 
 ___
 
@@ -812,7 +812,7 @@ Returns an N-Quads string representation of the dataset, preprocessed with
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:590
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:175
 
 ___
 
@@ -826,7 +826,7 @@ Returns a stream that contains all quads of the dataset.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:595
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:180
 
 ___
 
@@ -843,7 +843,7 @@ implementation.
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:603
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:188
 
 ___
 
@@ -863,4 +863,4 @@ Returns a new `Dataset` that is a concatenation of this dataset and the quads gi
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:608
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:193

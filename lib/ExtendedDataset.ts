@@ -6,10 +6,13 @@ import {
   Term,
   DatasetCoreFactory,
   Quad,
-} from "rdf-js";
+} from "@rdfjs/types";
 import { Writer } from "n3";
 import { Readable } from "stream";
 
+/**
+ * A full implementation of the RDF JS Dataset interface.
+ */
 export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
   implements Dataset<InAndOutQuad, InAndOutQuad> {
   /**
@@ -205,9 +208,6 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * Returns a new dataset containing alls quads from the current dataset that are also included in the given dataset.
    * @param other
    */
-  // Typescript disabled because rdf-js has incorrect typings
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
   intersection(
     other: Dataset<InAndOutQuad, InAndOutQuad>
   ): Dataset<InAndOutQuad, InAndOutQuad> {

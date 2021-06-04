@@ -67,6 +67,9 @@ subscribableDataset.add(
 );
 ```
 
+### Loading from Serialized Data
+
+
 ## API
 
 See the [full API docs](docs/modules.md).
@@ -81,7 +84,7 @@ import { createDataset } from "o-dataset-pack";
 import { quad, namedNode, literal } from "@rdfjs/data-model";
 // Required for advanced features:
 import { dataset as initializeDatasetCore } from "@rdfjs/dataset";
-import { ExtendendedDatasetFactory } from "o-dataset-pack";
+import { ExtendedDatasetFactory } from "o-dataset-pack";
 import { Dataset, Quad, DatasetCoreFactory, DatasetCore } from "rdf-js";
 
 /**
@@ -110,14 +113,13 @@ const defaultDataset2 = createDataset(initializedQuads);
  * (Advanced Feature) Create a dataset by injecting a chosen datasetCore and datasetCoreFactory
  */
 const datasetFactory: DatasetCoreFactory = {
-  dataset: (quads?: Dataset | Quad[]): DatasetCore => {
-    // Bad typings. These will be fixed https://github.com/rdfjs/types/pull/11
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    return initializeDatasetCore(quads);
+  dataset: (quads?: Dataset<Quad> | Quad[]): DatasetCore => {
+    return initializeDatasetCore(
+      Array.isArray(quads) ? quads : quads?.toArray()
+    );
   },
 };
-const extendedDatasetFactory = new ExtendendedDatasetFactory(datasetFactory);
+const extendedDatasetFactory = new ExtendedDatasetFactory(datasetFactory);
 const customDataset = extendedDatasetFactory.dataset(initializedQuads);
 
 /**
@@ -138,7 +140,6 @@ const differenceDataset = combinedDataset.difference(customDataset);
 // differenceDatasset = defaultDataset \ customDataset
 // Therefore differenceDataset == defaultDataset
 console.log(differenceDataset.equals(defaultDataset));
-
 ```
 
 ## SubscribableDataset
@@ -146,7 +147,7 @@ console.log(differenceDataset.equals(defaultDataset));
 ```typescript
 import { createSubscribableDataset, DatasetChanges } from "o-dataset-pack";
 import { quad, namedNode, literal } from "@rdfjs/data-model";
-import { Dataset } from "rdf-js";
+import { Dataset } from "@rdfjs/types";
 
 // Create an empty subscribable dataset
 const subscribableDataset = createSubscribableDataset();

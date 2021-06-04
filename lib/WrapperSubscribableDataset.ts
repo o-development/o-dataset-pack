@@ -1,5 +1,5 @@
 import { EventEmitter } from "events";
-import { Dataset, BaseQuad, Stream, Term, DatasetFactory } from "rdf-js";
+import { Dataset, BaseQuad, Stream, Term, DatasetFactory } from "@rdfjs/types";
 import { namedNode, blankNode, defaultGraph } from "@rdfjs/data-model";
 import {
   SubscribableTerms,

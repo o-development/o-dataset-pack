@@ -64,7 +64,7 @@ A non-negative integer that specifies the number of quads in the set.
 
 Inherited from: Dataset.size
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:426
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:11
 
 ## Methods
 
@@ -76,7 +76,7 @@ Defined in: node_modules/@types/rdf-js/index.d.ts:426
 
 Inherited from: Dataset.\_\_@iterator
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:462
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:47
 
 ___
 
@@ -98,7 +98,7 @@ Existing quads, as defined in `Quad.equals`, will be ignored.
 
 Inherited from: Dataset.add
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:433
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:18
 
 ___
 
@@ -121,7 +121,7 @@ combining `quads` and the current instance to create a new instance.
 
 Inherited from: Dataset.addAll
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:479
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:64
 
 ___
 
@@ -131,7 +131,7 @@ ___
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:37](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L37)
+Defined in: [lib/types.ts:43](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L43)
 
 ___
 
@@ -154,7 +154,7 @@ Blank Nodes will be normalized.
 
 Inherited from: Dataset.contains
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:487
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:72
 
 ___
 
@@ -174,7 +174,7 @@ Removes the specified quad from the dataset.
 
 Inherited from: Dataset.delete
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:438
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:23
 
 ___
 
@@ -200,7 +200,7 @@ quad in this dataset to select the quads which will be deleted.
 
 Inherited from: Dataset.deleteMatches
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:500
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:85
 
 ___
 
@@ -220,7 +220,7 @@ Returns a new dataset that contains all quads from the current dataset, not incl
 
 Inherited from: Dataset.difference
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:505
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:90
 
 ___
 
@@ -242,7 +242,7 @@ Blank Nodes will be normalized.
 
 Inherited from: Dataset.equals
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:512
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:97
 
 ___
 
@@ -269,7 +269,7 @@ This method is aligned with `Array.prototype.every()` in ECMAScript-262.
 
 Inherited from: Dataset.every
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:524
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:109
 
 ___
 
@@ -291,7 +291,7 @@ This method is aligned with Array.prototype.filter() in ECMAScript-262.
 
 Inherited from: Dataset.filter
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:531
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:116
 
 ___
 
@@ -313,7 +313,7 @@ This method is aligned with `Array.prototype.forEach()` in ECMAScript-262.
 
 Inherited from: Dataset.forEach
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:538
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:123
 
 ___
 
@@ -333,7 +333,7 @@ Determines whether a dataset includes a certain quad.
 
 Inherited from: Dataset.has
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:443
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:28
 
 ___
 
@@ -355,13 +355,13 @@ The stream events `end` and `error` are wrapped in a Promise.
 
 Inherited from: Dataset.import
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:545
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:130
 
 ___
 
 ### intersection
 
-▸ **intersection**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): [*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>
+▸ **intersection**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *Dataset*<InAndOutQuad, InAndOutQuad\>
 
 Returns a new dataset containing alls quads from the current dataset that are also included in the given dataset.
 
@@ -371,11 +371,11 @@ Returns a new dataset containing alls quads from the current dataset that are al
 | :------ | :------ |
 | `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
 
-**Returns:** [*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>
+**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
 
 Inherited from: Dataset.intersection
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:550
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:135
 
 ___
 
@@ -395,7 +395,7 @@ Returns a new dataset containing all quads returned by applying `iteratee` to ea
 
 Inherited from: Dataset.map
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:555
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:140
 
 ___
 
@@ -416,7 +416,7 @@ ___
 
 Inherited from: Dataset.match
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:610
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:195
 
 ___
 
@@ -449,7 +449,7 @@ This method is aligned with `Array.prototype.reduce()` in ECMAScript-262.
 
 Inherited from: Dataset.reduce
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:566
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:151
 
 ___
 
@@ -459,7 +459,7 @@ ___
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:36](https://github.com/o-development/subscribable-dataset/blob/4db7246/lib/types.ts#L36)
+Defined in: [lib/types.ts:42](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L42)
 
 ___
 
@@ -484,7 +484,7 @@ This method is aligned with `Array.prototype.some()` in ECMAScript-262.
 
 Inherited from: Dataset.some
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:576
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:161
 
 ___
 
@@ -501,7 +501,7 @@ Since a `Dataset` is an unordered set, the order of the quads within the returne
 
 Inherited from: Dataset.toArray
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:584
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:169
 
 ___
 
@@ -516,7 +516,7 @@ Returns an N-Quads string representation of the dataset, preprocessed with
 
 Inherited from: Dataset.toCanonical
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:590
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:175
 
 ___
 
@@ -530,7 +530,7 @@ Returns a stream that contains all quads of the dataset.
 
 Inherited from: Dataset.toStream
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:595
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:180
 
 ___
 
@@ -547,7 +547,7 @@ implementation.
 
 Inherited from: Dataset.toString
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:603
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:188
 
 ___
 
@@ -567,4 +567,4 @@ Returns a new `Dataset` that is a concatenation of this dataset and the quads gi
 
 Inherited from: Dataset.union
 
-Defined in: node_modules/@types/rdf-js/index.d.ts:608
+Defined in: node_modules/@rdfjs/types/dataset.d.ts:193
