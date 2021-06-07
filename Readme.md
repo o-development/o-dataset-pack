@@ -382,5 +382,5 @@ Removed Quads:
 transactionalDataset.commit();
 ```
 
-## Liscense
+## License
 MIT
