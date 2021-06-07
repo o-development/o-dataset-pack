@@ -33,7 +33,7 @@ console.log(dataset.toString());
 ### SubscribableDataset
 ```typescript
 import { createSubscribableDataset, DatasetChanges } from "o-dataset-pack";
-import { Dataset } from "rdf-js";
+import { Dataset } from "@rdfjs/types";
 import { quad, namedNode, literal } from "@rdfjs/data-model";
 
 const subscribableDataset = createSubscribableDataset([
