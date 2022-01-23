@@ -581,6 +581,19 @@ export default function testDataset(
       );
     });
 
+    it("runs toString and gets a compliant N-Triple", () => {
+      const dataset = datasetFactory.dataset([
+        quad(
+          namedNode("http://example.org/cartoons#Tom"),
+          namedNode("https://example.org/age"),
+          literal("6", "http://www.w3.org/2001/XMLSchema#integer")
+        ),
+      ]);
+      expect(dataset.toString()).toBe(
+        '<http://example.org/cartoons#Tom> <https://example.org/age> "6"^^<http://www.w3.org/2001/XMLSchema#integer> .\n'
+      );
+    });
+
     it("Finds a union", () => {
       initializeDataset();
       const otherDataset = datasetFactory.dataset([
