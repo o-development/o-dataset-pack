@@ -333,7 +333,7 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * No prior normalization is required, therefore the results for the same quads may vary depending on the Dataset implementation.
    */
   toString(): string {
-    const writer = new Writer<InAndOutQuad>({ format: 'N-Triples' });
+    const writer = new Writer<InAndOutQuad>({ format: "N-Triples" });
     return writer.quadsToString(this.toArray() as Quad[]);
   }
 

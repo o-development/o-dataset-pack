@@ -23,7 +23,7 @@ An interface representing the changes made
 
 • `Optional` **added**: *Dataset*<InAndOutQuad, InAndOutQuad\>
 
-Defined in: [lib/types.ts:12](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L12)
+Defined in: [lib/types.ts:12](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/types.ts#L12)
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 • `Optional` **removed**: *Dataset*<InAndOutQuad, InAndOutQuad\>
 
-Defined in: [lib/types.ts:13](https://github.com/o-development/subscribable-dataset/blob/b0143d9/lib/types.ts#L13)
+Defined in: [lib/types.ts:13](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/types.ts#L13)

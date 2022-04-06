@@ -35,7 +35,7 @@ console.log(dataset.toString());
 ### SubscribableDataset
 ```typescript
 import { createSubscribableDataset, DatasetChanges } from "o-dataset-pack";
-import { Dataset } from "rdf-js";
+import { Dataset } from "@rdfjs/types";
 import { quad, namedNode, literal } from "@rdfjs/data-model";
 
 const subscribableDataset = createSubscribableDataset([
@@ -70,6 +70,54 @@ subscribableDataset.add(
 ```
 
 ### Loading from Serialized Data
+
+```typescript
+import { serializedToDataset, serializedToSubscribableDataset } from "o-dataset-pack";
+
+async function run(): Promise<void> {
+  // Create an ExtendedDataset using Turtle
+  const turtleData = `
+    @prefix : <#>.
+    @prefix elem: <http://purl.org/dc/elements/1.1/>.
+    @prefix card: </profile/card#>.
+    
+    :this
+        elem:author card:me.
+  `;
+  const turtleDataset = await serializedToDataset(turtleData, {
+    baseIRI:
+      "https://jackson.solidcommunity.net/IndividualChats/jackson.solidcommunity.net/index.ttl#",
+    // NOTE: the "format" field isn't required because Turtle is the default parser
+  });
+
+  // Create a SubcribableDataset using JSON-LD
+  const jsonLdData = [
+    {
+      "@id":
+        "https://jackson.solidcommunity.net/IndividualChats/jackson.solidcommunity.net/index.ttl#this",
+      "http://purl.org/dc/elements/1.1/author": [
+        {
+          "@id": "https://jackson.solidcommunity.net/profile/card#me",
+        },
+      ],
+    },
+    {
+      "@id": "https://jackson.solidcommunity.net/profile/card#me",
+    },
+  ];
+  const jsonLdDataset = await serializedToSubscribableDataset(
+    JSON.stringify(jsonLdData),
+    {
+      baseIRI:
+        "https://jackson.solidcommunity.net/IndividualChats/jackson.solidcommunity.net/index.ttl#",
+      format: "application/json-ld",
+    }
+  );
+  // Returns true because the input data describes the same triple.
+  console.log(turtleDataset.equals(jsonLdDataset));
+}
+run();
+```
 
 ## API
 
@@ -334,5 +382,5 @@ Removed Quads:
 transactionalDataset.commit();
 ```
 
-## Liscense
+## License
 MIT

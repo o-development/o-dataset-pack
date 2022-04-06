@@ -21,6 +21,19 @@ export const turtleData = `
           ui:sharedPreferences :SharedPreferences.
     `;
 
+export const turtleData2 = `
+      @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+      @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+      @prefix ic: <http://www.w3.org/2002/12/cal/ical#>.
+      <http://a.example/Employee7>
+        foaf:givenName  "Robert"^^xsd:string, "Taylor"^^xsd:string ;
+        foaf:familyName "Johnson"^^xsd:string ;
+        ic:dtstart "2020-11-04T00:01:22Z"^^xsd:string ;
+        # no phone number needed
+        foaf:mbox       <mailto:rtj@example.com>
+        .
+    `;
+
 export const jsonLdData = [
   {
     "@id": "http://www.w3.org/ns/pim/meeting#LongChat",

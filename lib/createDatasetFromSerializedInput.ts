@@ -1,7 +1,7 @@
 import { Dataset, DatasetFactory, Quad } from "@rdfjs/types";
 import { JsonLdParser } from "jsonld-streaming-parser";
 import { Readable } from "stream";
-import { Parser, ParserOptions } from "n3";
+import { Parser, ParserOptions, BlankNode } from "n3";
 
 /**
  * Creates a dataset with a string input that could be SON-LD, Turtle, N-Triples, TriG, RDF*, or N3.
