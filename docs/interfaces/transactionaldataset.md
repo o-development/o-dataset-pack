@@ -40,6 +40,7 @@ A dataset that allows you to modify the dataset and
 - [every](transactionaldataset.md#every)
 - [filter](transactionaldataset.md#filter)
 - [forEach](transactionaldataset.md#foreach)
+- [getChanges](transactionaldataset.md#getchanges)
 - [has](transactionaldataset.md#has)
 - [import](transactionaldataset.md#import)
 - [intersection](transactionaldataset.md#intersection)
@@ -131,7 +132,7 @@ ___
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:43](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/types.ts#L43)
+Defined in: [lib/types.ts:43](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L43)
 
 ___
 
@@ -317,6 +318,16 @@ Defined in: node_modules/@rdfjs/types/dataset.d.ts:123
 
 ___
 
+### getChanges
+
+▸ **getChanges**(): [*DatasetChanges*](datasetchanges.md)<InAndOutQuad\>
+
+**Returns:** [*DatasetChanges*](datasetchanges.md)<InAndOutQuad\>
+
+Defined in: [lib/types.ts:44](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L44)
+
+___
+
 ### has
 
 ▸ **has**(`quad`: InAndOutQuad): *boolean*
@@ -459,7 +470,7 @@ ___
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:42](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/types.ts#L42)
+Defined in: [lib/types.ts:42](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L42)
 
 ___
 

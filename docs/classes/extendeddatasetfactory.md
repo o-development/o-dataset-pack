@@ -48,7 +48,7 @@ A DatasetFactory that creates an ExtendedDataset given a DatasetCoreFactory.
 
 **Returns:** [*ExtendedDatasetFactory*](extendeddatasetfactory.md)<InAndOutQuad\>
 
-Defined in: [lib/ExtendedDatasetFactory.ts:15](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDatasetFactory.ts#L15)
+Defined in: [lib/ExtendedDatasetFactory.ts:15](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/ExtendedDatasetFactory.ts#L15)
 
 ## Properties
 
@@ -56,7 +56,7 @@ Defined in: [lib/ExtendedDatasetFactory.ts:15](https://github.com/o-development/
 
 • `Private` **datasetCoreFactory**: *DatasetCoreFactory*<InAndOutQuad, InAndOutQuad, DatasetCore<InAndOutQuad, InAndOutQuad\>\>
 
-Defined in: [lib/ExtendedDatasetFactory.ts:15](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDatasetFactory.ts#L15)
+Defined in: [lib/ExtendedDatasetFactory.ts:15](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/ExtendedDatasetFactory.ts#L15)
 
 ## Methods
 
@@ -74,4 +74,4 @@ Defined in: [lib/ExtendedDatasetFactory.ts:15](https://github.com/o-development/
 
 Implementation of: DatasetFactory.dataset
 
-Defined in: [lib/ExtendedDatasetFactory.ts:22](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDatasetFactory.ts#L22)
+Defined in: [lib/ExtendedDatasetFactory.ts:22](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/ExtendedDatasetFactory.ts#L22)

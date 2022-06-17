@@ -41,6 +41,7 @@ export interface TransactionalDataset<InAndOutQuad extends BaseQuad = BaseQuad>
   extends Dataset<InAndOutQuad, InAndOutQuad> {
   rollback(): void;
   commit(): void;
+  getChanges(): DatasetChanges<InAndOutQuad>;
 }
 
 /**
