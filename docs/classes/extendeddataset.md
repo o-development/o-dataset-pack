@@ -85,7 +85,7 @@ Constructor
 
 **Returns:** [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
 
-Defined in: [lib/ExtendedDataset.ts:26](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L26)
+Defined in: [lib/ExtendedDataset.ts:26](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L26)
 
 ## Properties
 
@@ -95,7 +95,7 @@ Defined in: [lib/ExtendedDataset.ts:26](https://github.com/o-development/o-datas
 
 The main backing dataset
 
-Defined in: [lib/ExtendedDataset.ts:21](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L21)
+Defined in: [lib/ExtendedDataset.ts:21](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L21)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 A factory that generates datasets for the methods
 
-Defined in: [lib/ExtendedDataset.ts:26](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L26)
+Defined in: [lib/ExtendedDataset.ts:26](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L26)
 
 ## Accessors
 
@@ -117,7 +117,7 @@ A non-negative integer that specifies the number of quads in the set.
 
 **Returns:** *number*
 
-Defined in: [lib/ExtendedDataset.ts:380](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L380)
+Defined in: [lib/ExtendedDataset.ts:380](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L380)
 
 ## Methods
 
@@ -131,7 +131,7 @@ Returns an iterator
 
 Implementation of: Dataset.\_\_@iterator
 
-Defined in: [lib/ExtendedDataset.ts:416](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L416)
+Defined in: [lib/ExtendedDataset.ts:416](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L416)
 
 ___
 
@@ -154,7 +154,7 @@ the dataset instance it was called on.
 
 Implementation of: Dataset.add
 
-Defined in: [lib/ExtendedDataset.ts:390](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L390)
+Defined in: [lib/ExtendedDataset.ts:390](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L390)
 
 ___
 
@@ -177,7 +177,7 @@ the dataset instance it was called on.
 
 Implementation of: Dataset.addAll
 
-Defined in: [lib/ExtendedDataset.ts:55](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L55)
+Defined in: [lib/ExtendedDataset.ts:55](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L55)
 
 ___
 
@@ -198,7 +198,7 @@ Blank Nodes will be normalized.
 
 Implementation of: Dataset.contains
 
-Defined in: [lib/ExtendedDataset.ts:67](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L67)
+Defined in: [lib/ExtendedDataset.ts:67](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L67)
 
 ___
 
@@ -210,7 +210,7 @@ Creates a blank dataset using the dataset factory
 
 **Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
 
-Defined in: [lib/ExtendedDataset.ts:42](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L42)
+Defined in: [lib/ExtendedDataset.ts:42](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L42)
 
 ___
 
@@ -231,7 +231,7 @@ This method returns the dataset instance it was called on.
 
 Implementation of: Dataset.delete
 
-Defined in: [lib/ExtendedDataset.ts:400](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L400)
+Defined in: [lib/ExtendedDataset.ts:400](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L400)
 
 ___
 
@@ -256,7 +256,7 @@ the dataset instance it was called on.
 
 Implementation of: Dataset.deleteMatches
 
-Defined in: [lib/ExtendedDataset.ts:87](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L87)
+Defined in: [lib/ExtendedDataset.ts:87](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L87)
 
 ___
 
@@ -276,7 +276,7 @@ Returns a new dataset that contains alls quads from the current dataset, not inc
 
 Implementation of: Dataset.difference
 
-Defined in: [lib/ExtendedDataset.ts:104](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L104)
+Defined in: [lib/ExtendedDataset.ts:104](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L104)
 
 ___
 
@@ -296,7 +296,7 @@ Returns true if the current instance contains the same graph structure as the gi
 
 Implementation of: Dataset.equals
 
-Defined in: [lib/ExtendedDataset.ts:120](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L120)
+Defined in: [lib/ExtendedDataset.ts:120](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L120)
 
 ___
 
@@ -319,7 +319,7 @@ Note: This method is aligned with Array.prototype.every() in ECMAScript-262.
 
 Implementation of: Dataset.every
 
-Defined in: [lib/ExtendedDataset.ts:139](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L139)
+Defined in: [lib/ExtendedDataset.ts:139](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L139)
 
 ___
 
@@ -340,7 +340,7 @@ Note: This method is aligned with Array.prototype.filter() in ECMAScript-262.
 
 Implementation of: Dataset.filter
 
-Defined in: [lib/ExtendedDataset.ts:158](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L158)
+Defined in: [lib/ExtendedDataset.ts:158](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L158)
 
 ___
 
@@ -361,7 +361,7 @@ Note: This method is aligned with Array.prototype.forEach() in ECMAScript-262.
 
 Implementation of: Dataset.forEach
 
-Defined in: [lib/ExtendedDataset.ts:178](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L178)
+Defined in: [lib/ExtendedDataset.ts:178](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L178)
 
 ___
 
@@ -381,7 +381,7 @@ Determines whether a dataset includes a certain quad, returning true or false as
 
 Implementation of: Dataset.has
 
-Defined in: [lib/ExtendedDataset.ts:409](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L409)
+Defined in: [lib/ExtendedDataset.ts:409](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L409)
 
 ___
 
@@ -402,7 +402,7 @@ The stream events end and error are wrapped in a Promise.
 
 Implementation of: Dataset.import
 
-Defined in: [lib/ExtendedDataset.ts:194](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L194)
+Defined in: [lib/ExtendedDataset.ts:194](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L194)
 
 ___
 
@@ -422,7 +422,7 @@ Returns a new dataset containing alls quads from the current dataset that are al
 
 Implementation of: Dataset.intersection
 
-Defined in: [lib/ExtendedDataset.ts:211](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L211)
+Defined in: [lib/ExtendedDataset.ts:211](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L211)
 
 ___
 
@@ -442,7 +442,7 @@ Returns a new dataset containing all quads returned by applying iteratee to each
 
 Implementation of: Dataset.map
 
-Defined in: [lib/ExtendedDataset.ts:229](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L229)
+Defined in: [lib/ExtendedDataset.ts:229](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L229)
 
 ___
 
@@ -467,7 +467,7 @@ a Dataset with matching triples
 
 Implementation of: Dataset.match
 
-Defined in: [lib/ExtendedDataset.ts:365](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L365)
+Defined in: [lib/ExtendedDataset.ts:365](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L365)
 
 ___
 
@@ -496,7 +496,7 @@ Note: This method is aligned with Array.prototype.reduce() in ECMAScript-262.
 
 Implementation of: Dataset.reduce
 
-Defined in: [lib/ExtendedDataset.ts:249](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L249)
+Defined in: [lib/ExtendedDataset.ts:249](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L249)
 
 ___
 
@@ -519,7 +519,7 @@ boolean true once a quad that passes the test is found.
 
 Implementation of: Dataset.some
 
-Defined in: [lib/ExtendedDataset.ts:278](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L278)
+Defined in: [lib/ExtendedDataset.ts:278](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L278)
 
 ___
 
@@ -534,7 +534,7 @@ Note: Since a DatasetCore is an unordered set, the order of the quads within the
 
 Implementation of: Dataset.toArray
 
-Defined in: [lib/ExtendedDataset.ts:296](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L296)
+Defined in: [lib/ExtendedDataset.ts:296](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L296)
 
 ___
 
@@ -548,7 +548,7 @@ Returns an N-Quads string representation of the dataset, preprocessed with RDF D
 
 Implementation of: Dataset.toCanonical
 
-Defined in: [lib/ExtendedDataset.ts:307](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L307)
+Defined in: [lib/ExtendedDataset.ts:307](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L307)
 
 ___
 
@@ -562,7 +562,7 @@ Returns a stream that contains all quads of the dataset.
 
 Implementation of: Dataset.toStream
 
-Defined in: [lib/ExtendedDataset.ts:314](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L314)
+Defined in: [lib/ExtendedDataset.ts:314](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L314)
 
 ___
 
@@ -577,7 +577,7 @@ No prior normalization is required, therefore the results for the same quads may
 
 Implementation of: Dataset.toString
 
-Defined in: [lib/ExtendedDataset.ts:335](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L335)
+Defined in: [lib/ExtendedDataset.ts:335](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L335)
 
 ___
 
@@ -597,4 +597,4 @@ Returns a new Dataset that is a concatenation of this dataset and the quads give
 
 Implementation of: Dataset.union
 
-Defined in: [lib/ExtendedDataset.ts:344](https://github.com/o-development/o-dataset-pack/blob/631ca3e/lib/ExtendedDataset.ts#L344)
+Defined in: [lib/ExtendedDataset.ts:344](https://github.com/o-development/o-dataset-pack/blob/5e6d39e/lib/ExtendedDataset.ts#L344)
