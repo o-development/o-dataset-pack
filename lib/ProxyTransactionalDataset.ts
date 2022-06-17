@@ -344,4 +344,8 @@ export default class ProxyTransactionalDataset<
     // @ts-ignore
     return new ProxyTransactionalDataset(this, this.datasetFactory);
   }
+
+  public getChanges(): DatasetChanges<InAndOutQuad> {
+    return this.datasetChanges;
+  }
 }

@@ -317,4 +317,12 @@ describe("ProxyTransactionalDataset", () => {
   it("Checks if it has a quad when it wasn't added to the transaction but was in the original dataset", () => {
     expect(transactionalDataset.has(tomTypeQuad)).toBe(true);
   });
+
+  it("returns the dataset changes", () => {
+    const addedQuad = lickyNameQuad;
+    transactionalDataset.add(addedQuad);
+    const datasetChanges = transactionalDataset.getChanges();
+    expect(datasetChanges.added?.size).toBe(1);
+    expect(datasetChanges.removed).toBe(undefined);
+  });
 });

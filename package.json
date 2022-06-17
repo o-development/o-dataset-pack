@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+    "watch": "tsc --watch",
     "test": "jest --coverage",
     "example:extendedDataset": "ts-node ./example/extendedDatasetExample.ts",
     "example:subscribableDataset": "ts-node ./example/subscribableDatasetExample.ts",
@@ -29,11 +30,13 @@
     "@types/rdfjs__dataset": "^1.0.4",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
+    "buffer": "^6.0.3",
     "eslint": "^7.10.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.6.3",
     "prettier": "^2.1.2",
+    "stream": "^0.0.2",
     "ts-jest": "^26.5.6",
     "ts-node": "^9.1.1",
     "typedoc": "^0.20.36",
@@ -43,7 +46,7 @@
   "dependencies": {
     "@rdfjs/data-model": "^1.2.0",
     "@rdfjs/dataset": "^1.1.0",
-    "jsonld-streaming-parser": "^2.3.0",
+    "jsonld-streaming-parser": "^2.4.3",
     "n3": "^1.10.0"
   },
   "files": [
