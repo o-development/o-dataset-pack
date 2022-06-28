@@ -157,7 +157,7 @@ Alias for emitter.on(eventName, listener).
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:60](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L60)
+Defined in: [lib/types.ts:60](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L60)
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 Inherited from: [BulkEditableDataset](bulkeditabledataset.md)
 
-Defined in: [lib/types.ts:34](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L34)
+Defined in: [lib/types.ts:34](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L34)
 
 ___
 
@@ -286,7 +286,7 @@ Synchronously calls each of the listeners registered for the event named eventNa
 
 true if the event had listeners, false otherwise.
 
-Defined in: [lib/types.ts:72](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L72)
+Defined in: [lib/types.ts:72](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L72)
 
 ___
 
@@ -320,7 +320,7 @@ Returns an array listing the events for which the emitter has registered listene
 
 **Returns:** [*SubscribableTerms*](../modules.md#subscribableterms)[]
 
-Defined in: [lib/types.ts:81](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L81)
+Defined in: [lib/types.ts:81](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L81)
 
 ___
 
@@ -403,7 +403,7 @@ Returns the current max listener value for the EventEmitter which is either set 
 
 **Returns:** *number*
 
-Defined in: [lib/types.ts:86](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L86)
+Defined in: [lib/types.ts:86](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L86)
 
 ___
 
@@ -483,7 +483,7 @@ Returns the number of listeners listening to the event named eventName.
 
 **Returns:** *number*
 
-Defined in: [lib/types.ts:91](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L91)
+Defined in: [lib/types.ts:91](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L91)
 
 ___
 
@@ -501,7 +501,7 @@ Returns a copy of the array of listeners for the event named eventName.
 
 **Returns:** [*nodeEventListener*](../modules.md#nodeeventlistener)<InAndOutQuad\>[]
 
-Defined in: [lib/types.ts:96](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L96)
+Defined in: [lib/types.ts:96](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L96)
 
 ___
 
@@ -561,7 +561,7 @@ Alias for emitter.removeListener()
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:101](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L101)
+Defined in: [lib/types.ts:101](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L101)
 
 ___
 
@@ -580,7 +580,7 @@ Adds the listener function to the end of the listeners array for the event named
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:109](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L109)
+Defined in: [lib/types.ts:109](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L109)
 
 ___
 
@@ -599,7 +599,7 @@ Adds a one-time listener function for the event named eventName. The next time e
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:117](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L117)
+Defined in: [lib/types.ts:117](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L117)
 
 ___
 
@@ -618,7 +618,7 @@ Adds the listener function to the beginning of the listeners array for the event
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:125](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L125)
+Defined in: [lib/types.ts:125](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L125)
 
 ___
 
@@ -637,7 +637,7 @@ Adds a one-time listener function for the event named eventName to the beginning
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:133](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L133)
+Defined in: [lib/types.ts:133](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L133)
 
 ___
 
@@ -655,7 +655,7 @@ Returns a copy of the array of listeners for the event named eventName, includin
 
 **Returns:** [*nodeEventListener*](../modules.md#nodeeventlistener)<InAndOutQuad\>[]
 
-Defined in: [lib/types.ts:159](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L159)
+Defined in: [lib/types.ts:159](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L159)
 
 ___
 
@@ -706,7 +706,7 @@ Removes all listeners, or those of the specified eventName.
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:141](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L141)
+Defined in: [lib/types.ts:141](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L141)
 
 ___
 
@@ -725,7 +725,7 @@ Removes the specified listener from the listener array for the event named event
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:146](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L146)
+Defined in: [lib/types.ts:146](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L146)
 
 ___
 
@@ -743,7 +743,7 @@ By default EventEmitters will print a warning if more than 10 listeners are adde
 
 **Returns:** [*SubscribableDataset*](subscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:154](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L154)
+Defined in: [lib/types.ts:154](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L154)
 
 ___
 
@@ -780,7 +780,7 @@ Returns a transactional dataset that will update this dataset when its transacti
 
 **Returns:** [*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:170](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L170)
+Defined in: [lib/types.ts:170](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L170)
 
 ___
 

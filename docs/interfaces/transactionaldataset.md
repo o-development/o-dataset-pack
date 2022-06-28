@@ -132,7 +132,7 @@ ___
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:43](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L43)
+Defined in: [lib/types.ts:43](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L43)
 
 ___
 
@@ -324,7 +324,7 @@ ___
 
 **Returns:** [*DatasetChanges*](datasetchanges.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:44](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L44)
+Defined in: [lib/types.ts:44](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L44)
 
 ___
 
@@ -470,7 +470,7 @@ ___
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:42](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L42)
+Defined in: [lib/types.ts:42](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L42)
 
 ___
 

@@ -103,7 +103,7 @@ be triggered whenever a quad containing that added or removed.
 
 **Returns:** [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/WrapperSubscribableDataset.ts:31](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L31)
+Defined in: [lib/WrapperSubscribableDataset.ts:31](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L31)
 
 ## Properties
 
@@ -111,7 +111,7 @@ Defined in: [lib/WrapperSubscribableDataset.ts:31](https://github.com/o-developm
 
 • `Private` **BLANK\_NODE\_KEY\_PREFIX**: *string*= "BlankNode"
 
-Defined in: [lib/WrapperSubscribableDataset.ts:360](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L360)
+Defined in: [lib/WrapperSubscribableDataset.ts:339](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L339)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 • `Private` **DEFAULT\_GRAPH\_KEY\_PREFIX**: *string*= "DefaultGraph"
 
-Defined in: [lib/WrapperSubscribableDataset.ts:361](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L361)
+Defined in: [lib/WrapperSubscribableDataset.ts:340](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L340)
 
 ___
 
@@ -131,7 +131,7 @@ ___
 EVENTEMITTER METHODS
 ==================================================================
 
-Defined in: [lib/WrapperSubscribableDataset.ts:359](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L359)
+Defined in: [lib/WrapperSubscribableDataset.ts:338](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L338)
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 • `Private` **SUBSCRIBABLE\_TERMS**: *string*[]
 
-Defined in: [lib/WrapperSubscribableDataset.ts:362](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L362)
+Defined in: [lib/WrapperSubscribableDataset.ts:341](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L341)
 
 ___
 
@@ -149,7 +149,7 @@ ___
 
 The underlying dataset
 
-Defined in: [lib/WrapperSubscribableDataset.ts:27](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L27)
+Defined in: [lib/WrapperSubscribableDataset.ts:27](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L27)
 
 ___
 
@@ -159,7 +159,7 @@ ___
 
 The underlying dataset factory
 
-Defined in: [lib/WrapperSubscribableDataset.ts:23](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L23)
+Defined in: [lib/WrapperSubscribableDataset.ts:23](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L23)
 
 ___
 
@@ -169,7 +169,7 @@ ___
 
 The underlying event emitter
 
-Defined in: [lib/WrapperSubscribableDataset.ts:31](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L31)
+Defined in: [lib/WrapperSubscribableDataset.ts:31](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L31)
 
 ## Accessors
 
@@ -183,7 +183,7 @@ A non-negative integer that specifies the number of quads in the set.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md).[size](../interfaces/subscribabledataset.md#size)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:308](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L308)
+Defined in: [lib/WrapperSubscribableDataset.ts:287](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L287)
 
 ## Methods
 
@@ -197,7 +197,7 @@ Returns an iterator
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:350](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L350)
+Defined in: [lib/WrapperSubscribableDataset.ts:329](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L329)
 
 ___
 
@@ -220,7 +220,7 @@ the dataset instance it was called on.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:318](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L318)
+Defined in: [lib/WrapperSubscribableDataset.ts:297](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L297)
 
 ___
 
@@ -243,7 +243,7 @@ the dataset instance it was called on.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:59](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L59)
+Defined in: [lib/WrapperSubscribableDataset.ts:59](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L59)
 
 ___
 
@@ -264,7 +264,7 @@ Alias for emitter.on(eventName, listener).
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:490](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L490)
+Defined in: [lib/WrapperSubscribableDataset.ts:469](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L469)
 
 ___
 
@@ -284,7 +284,7 @@ Bulk add and remove triples
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:73](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L73)
+Defined in: [lib/WrapperSubscribableDataset.ts:73](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L73)
 
 ___
 
@@ -305,7 +305,7 @@ Blank Nodes will be normalized.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:91](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L91)
+Defined in: [lib/WrapperSubscribableDataset.ts:91](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L91)
 
 ___
 
@@ -326,7 +326,7 @@ This method returns the dataset instance it was called on.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:331](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L331)
+Defined in: [lib/WrapperSubscribableDataset.ts:310](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L310)
 
 ___
 
@@ -351,7 +351,7 @@ the dataset instance it was called on.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:103](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L103)
+Defined in: [lib/WrapperSubscribableDataset.ts:103](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L103)
 
 ___
 
@@ -371,7 +371,7 @@ Returns a new dataset that contains alls quads from the current dataset, not inc
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:121](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L121)
+Defined in: [lib/WrapperSubscribableDataset.ts:121](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L121)
 
 ___
 
@@ -395,7 +395,7 @@ true if the event had listeners, false otherwise.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:504](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L504)
+Defined in: [lib/WrapperSubscribableDataset.ts:483](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L483)
 
 ___
 
@@ -415,7 +415,7 @@ Returns true if the current instance contains the same graph structure as the gi
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:131](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L131)
+Defined in: [lib/WrapperSubscribableDataset.ts:131](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L131)
 
 ___
 
@@ -429,13 +429,13 @@ Returns an array listing the events for which the emitter has registered listene
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:519](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L519)
+Defined in: [lib/WrapperSubscribableDataset.ts:498](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L498)
 
 ___
 
 ### every
 
-▸ **every**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean*): *boolean*
+▸ **every**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>) => *boolean*): *boolean*
 
 Universal quantification method, tests whether every quad in the dataset passes the test implemented by the provided iteratee.
 This method immediately returns boolean false once a quad that does not pass the test is found.
@@ -446,19 +446,19 @@ Note: This method is aligned with Array.prototype.every() in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean* |
+| `iteratee` | (`quad`: InAndOutQuad, `dataset`: [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>) => *boolean* |
 
 **Returns:** *boolean*
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:142](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L142)
+Defined in: [lib/WrapperSubscribableDataset.ts:142](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L142)
 
 ___
 
 ### filter
 
-▸ **filter**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean*): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **filter**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>) => *boolean*): *Dataset*<InAndOutQuad, InAndOutQuad\>
 
 Creates a new dataset with all the quads that pass the test implemented by the provided iteratee.
 Note: This method is aligned with Array.prototype.filter() in ECMAScript-262.
@@ -467,19 +467,19 @@ Note: This method is aligned with Array.prototype.filter() in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean* |
+| `iteratee` | (`quad`: InAndOutQuad, `dataset`: [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>) => *boolean* |
 
 **Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:156](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L156)
+Defined in: [lib/WrapperSubscribableDataset.ts:153](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L153)
 
 ___
 
 ### forEach
 
-▸ **forEach**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *void*): *void*
+▸ **forEach**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>) => *void*): *void*
 
 Executes the provided iteratee once on each quad in the dataset.
 Note: This method is aligned with Array.prototype.forEach() in ECMAScript-262.
@@ -488,13 +488,13 @@ Note: This method is aligned with Array.prototype.forEach() in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *void* |
+| `iteratee` | (`quad`: InAndOutQuad, `dataset`: [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>) => *void* |
 
 **Returns:** *void*
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:170](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L170)
+Defined in: [lib/WrapperSubscribableDataset.ts:164](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L164)
 
 ___
 
@@ -512,7 +512,7 @@ Given a term, returns the string key to be used in an event emitter
 
 **Returns:** *string*
 
-Defined in: [lib/WrapperSubscribableDataset.ts:371](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L371)
+Defined in: [lib/WrapperSubscribableDataset.ts:350](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L350)
 
 ___
 
@@ -526,7 +526,7 @@ Returns the current max listener value for the EventEmitter which is either set 
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:528](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L528)
+Defined in: [lib/WrapperSubscribableDataset.ts:507](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L507)
 
 ___
 
@@ -544,7 +544,7 @@ Given a key, returns the node
 
 **Returns:** [*SubscribableTerms*](../modules.md#subscribableterms)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:385](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L385)
+Defined in: [lib/WrapperSubscribableDataset.ts:364](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L364)
 
 ___
 
@@ -564,7 +564,7 @@ Determines whether a dataset includes a certain quad, returning true or false as
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:343](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L343)
+Defined in: [lib/WrapperSubscribableDataset.ts:322](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L322)
 
 ___
 
@@ -585,7 +585,7 @@ The stream events end and error are wrapped in a Promise.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:184](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L184)
+Defined in: [lib/WrapperSubscribableDataset.ts:173](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L173)
 
 ___
 
@@ -605,7 +605,7 @@ Returns a new dataset containing alls quads from the current dataset that are al
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:196](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L196)
+Defined in: [lib/WrapperSubscribableDataset.ts:185](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L185)
 
 ___
 
@@ -625,7 +625,7 @@ Returns the number of listeners listening to the event named eventName.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:535](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L535)
+Defined in: [lib/WrapperSubscribableDataset.ts:514](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L514)
 
 ___
 
@@ -645,13 +645,13 @@ Returns a copy of the array of listeners for the event named eventName.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:542](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L542)
+Defined in: [lib/WrapperSubscribableDataset.ts:521](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L521)
 
 ___
 
 ### map
 
-▸ **map**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => InAndOutQuad): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **map**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>) => InAndOutQuad): *Dataset*<InAndOutQuad, InAndOutQuad\>
 
 Returns a new dataset containing all quads returned by applying iteratee to each quad in the current dataset.
 
@@ -659,13 +659,13 @@ Returns a new dataset containing all quads returned by applying iteratee to each
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => InAndOutQuad |
+| `iteratee` | (`quad`: InAndOutQuad, `dataset`: [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>) => InAndOutQuad |
 
 **Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:206](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L206)
+Defined in: [lib/WrapperSubscribableDataset.ts:195](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L195)
 
 ___
 
@@ -690,7 +690,7 @@ a Dataset with matching triples
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:296](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L296)
+Defined in: [lib/WrapperSubscribableDataset.ts:275](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L275)
 
 ___
 
@@ -711,7 +711,7 @@ Alias for emitter.removeListener()
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:553](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L553)
+Defined in: [lib/WrapperSubscribableDataset.ts:532](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L532)
 
 ___
 
@@ -732,7 +732,7 @@ Adds the listener function to the end of the listeners array for the event named
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:563](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L563)
+Defined in: [lib/WrapperSubscribableDataset.ts:542](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L542)
 
 ___
 
@@ -753,7 +753,7 @@ Adds a one-time listener function for the event named eventName. The next time e
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:574](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L574)
+Defined in: [lib/WrapperSubscribableDataset.ts:553](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L553)
 
 ___
 
@@ -774,7 +774,7 @@ Adds the listener function to the beginning of the listeners array for the event
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:585](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L585)
+Defined in: [lib/WrapperSubscribableDataset.ts:564](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L564)
 
 ___
 
@@ -795,7 +795,7 @@ Adds a one-time listener function for the event named eventName to the beginning
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:596](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L596)
+Defined in: [lib/WrapperSubscribableDataset.ts:575](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L575)
 
 ___
 
@@ -815,13 +815,13 @@ Returns a copy of the array of listeners for the event named eventName, includin
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:637](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L637)
+Defined in: [lib/WrapperSubscribableDataset.ts:616](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L616)
 
 ___
 
 ### reduce
 
-▸ **reduce**<A\>(`iteratee`: (`accumulator`: A, `quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => A, `initialValue?`: A): A
+▸ **reduce**<A\>(`iteratee`: (`accumulator`: A, `quad`: InAndOutQuad, `dataset`: [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>) => A, `initialValue?`: A): A
 
 This method calls the iteratee on each quad of the DatasetCore. The first time the iteratee is called, the accumulator value is the initialValue or, if not given, equals to the first quad of the Dataset. The return value of the iteratee is used as accumulator value for the next calls.
 This method returns the return value of the last iteratee call.
@@ -837,14 +837,14 @@ Note: This method is aligned with Array.prototype.reduce() in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`accumulator`: A, `quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => A |
+| `iteratee` | (`accumulator`: A, `quad`: InAndOutQuad, `dataset`: [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>) => A |
 | `initialValue?` | A |
 
 **Returns:** A
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:222](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L222)
+Defined in: [lib/WrapperSubscribableDataset.ts:208](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L208)
 
 ___
 
@@ -864,7 +864,7 @@ Removes all listeners, or those of the specified eventName.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:610](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L610)
+Defined in: [lib/WrapperSubscribableDataset.ts:589](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L589)
 
 ___
 
@@ -885,7 +885,7 @@ Removes the specified listener from the listener array for the event named event
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:618](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L618)
+Defined in: [lib/WrapperSubscribableDataset.ts:597](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L597)
 
 ___
 
@@ -905,13 +905,13 @@ By default EventEmitters will print a warning if more than 10 listeners are adde
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:629](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L629)
+Defined in: [lib/WrapperSubscribableDataset.ts:608](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L608)
 
 ___
 
 ### some
 
-▸ **some**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean*): *boolean*
+▸ **some**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>) => *boolean*): *boolean*
 
 Existential quantification method, tests whether some quads in the dataset pass the test implemented by the provided iteratee.
 Note: This method is aligned with Array.prototype.some() in ECMAScript-262.
@@ -920,7 +920,7 @@ Note: This method is aligned with Array.prototype.some() in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean* |
+| `iteratee` | (`quad`: InAndOutQuad, `dataset`: [*WrapperSubscribableDataset*](wrappersubscribabledataset.md)<InAndOutQuad\>) => *boolean* |
 
 **Returns:** *boolean*
 
@@ -928,7 +928,7 @@ boolean true once a quad that passes the test is found.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:239](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L239)
+Defined in: [lib/WrapperSubscribableDataset.ts:221](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L221)
 
 ___
 
@@ -942,7 +942,7 @@ Returns a transactional dataset that will update this dataset when its transacti
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:654](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L654)
+Defined in: [lib/WrapperSubscribableDataset.ts:633](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L633)
 
 ___
 
@@ -957,7 +957,7 @@ Note: Since a DatasetCore is an unordered set, the order of the quads within the
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:252](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L252)
+Defined in: [lib/WrapperSubscribableDataset.ts:231](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L231)
 
 ___
 
@@ -971,7 +971,7 @@ Returns an N-Quads string representation of the dataset, preprocessed with RDF D
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:259](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L259)
+Defined in: [lib/WrapperSubscribableDataset.ts:238](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L238)
 
 ___
 
@@ -985,7 +985,7 @@ Returns a stream that contains all quads of the dataset.
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:266](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L266)
+Defined in: [lib/WrapperSubscribableDataset.ts:245](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L245)
 
 ___
 
@@ -1000,7 +1000,7 @@ No prior normalization is required, therefore the results for the same quads may
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:274](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L274)
+Defined in: [lib/WrapperSubscribableDataset.ts:253](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L253)
 
 ___
 
@@ -1019,7 +1019,7 @@ Triggers all subscriptions for a given term
 
 **Returns:** *void*
 
-Defined in: [lib/WrapperSubscribableDataset.ts:431](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L431)
+Defined in: [lib/WrapperSubscribableDataset.ts:410](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L410)
 
 ___
 
@@ -1037,7 +1037,7 @@ Triggers all subscriptions based on an updated quads
 
 **Returns:** *void*
 
-Defined in: [lib/WrapperSubscribableDataset.ts:400](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L400)
+Defined in: [lib/WrapperSubscribableDataset.ts:379](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L379)
 
 ___
 
@@ -1057,4 +1057,4 @@ Returns a new Dataset that is a concatenation of this dataset and the quads give
 
 Implementation of: [SubscribableDataset](../interfaces/subscribabledataset.md)
 
-Defined in: [lib/WrapperSubscribableDataset.ts:282](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/WrapperSubscribableDataset.ts#L282)
+Defined in: [lib/WrapperSubscribableDataset.ts:261](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/WrapperSubscribableDataset.ts#L261)

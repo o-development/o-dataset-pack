@@ -136,12 +136,7 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * Note: This method is aligned with Array.prototype.every() in ECMAScript-262.
    * @param iteratee
    */
-  every(
-    iteratee: (
-      quad: InAndOutQuad,
-      dataset: Dataset<InAndOutQuad, InAndOutQuad>
-    ) => boolean
-  ): boolean {
+  every(iteratee: (quad: InAndOutQuad, dataset: this) => boolean): boolean {
     for (const quad of this) {
       if (!iteratee(quad, this)) {
         return false;
@@ -156,10 +151,7 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * @param iteratee
    */
   filter(
-    iteratee: (
-      quad: InAndOutQuad,
-      dataset: Dataset<InAndOutQuad, InAndOutQuad>
-    ) => boolean
+    iteratee: (quad: InAndOutQuad, dataset: this) => boolean
   ): Dataset<InAndOutQuad, InAndOutQuad> {
     const dataset = this.createBlankDataset();
     for (const quad of this) {
@@ -175,12 +167,7 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * Note: This method is aligned with Array.prototype.forEach() in ECMAScript-262.
    * @param iteratee
    */
-  forEach(
-    iteratee: (
-      quad: InAndOutQuad,
-      dataset: Dataset<InAndOutQuad, InAndOutQuad>
-    ) => void
-  ): void {
+  forEach(iteratee: (quad: InAndOutQuad, dataset: this) => void): void {
     for (const quad of this) {
       iteratee(quad, this);
     }
@@ -227,10 +214,7 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * @param iteratee
    */
   map(
-    iteratee: (
-      quad: InAndOutQuad,
-      dataset: Dataset<InAndOutQuad, InAndOutQuad>
-    ) => InAndOutQuad
+    iteratee: (quad: InAndOutQuad, dataset: this) => InAndOutQuad
   ): Dataset<InAndOutQuad, InAndOutQuad> {
     const dataset = this.createBlankDataset();
     for (const quad of this) {
@@ -247,11 +231,7 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * @param initialValue
    */
   reduce<A = unknown>(
-    iteratee: (
-      accumulator: A,
-      quad: InAndOutQuad,
-      dataset: Dataset<InAndOutQuad, InAndOutQuad>
-    ) => A,
+    iteratee: (accumulator: A, quad: InAndOutQuad, dataset: this) => A,
     initialValue?: A
   ): A {
     if (this.size === 0 && initialValue == undefined) {
@@ -275,12 +255,7 @@ export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
    * @param iteratee
    * @returns boolean true once a quad that passes the test is found.
    */
-  some(
-    iteratee: (
-      quad: InAndOutQuad,
-      dataset: Dataset<InAndOutQuad, InAndOutQuad>
-    ) => boolean
-  ): boolean {
+  some(iteratee: (quad: InAndOutQuad, dataset: this) => boolean): boolean {
     for (const quad of this) {
       if (iteratee(quad, this)) {
         return true;

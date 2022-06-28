@@ -42,7 +42,7 @@
 
 Types of nodes a subscribable dataset can subscribe to
 
-Defined in: [lib/types.ts:19](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L19)
+Defined in: [lib/types.ts:19](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L19)
 
 ___
 
@@ -71,7 +71,7 @@ An event listeners for nodes
 
 **Returns:** *void*
 
-Defined in: [lib/types.ts:24](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L24)
+Defined in: [lib/types.ts:24](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L24)
 
 ## Functions
 
@@ -91,7 +91,7 @@ Creates an ExtendedDataset
 
 Dataset
 
-Defined in: [lib/createExtendedDataset.ts:26](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/createExtendedDataset.ts#L26)
+Defined in: [lib/createExtendedDataset.ts:26](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/createExtendedDataset.ts#L26)
 
 ___
 
@@ -105,7 +105,7 @@ Creates a dataset factory that generates ExtendedDatasets
 
 DatasetFactory
 
-Defined in: [lib/createExtendedDataset.ts:10](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/createExtendedDataset.ts#L10)
+Defined in: [lib/createExtendedDataset.ts:10](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/createExtendedDataset.ts#L10)
 
 ___
 
@@ -133,7 +133,7 @@ Creates a dataset with a string input that could be SON-LD, Turtle, N-Triples, T
 
 A dataset
 
-Defined in: [lib/createDatasetFromSerializedInput.ts:18](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/createDatasetFromSerializedInput.ts#L18)
+Defined in: [lib/createDatasetFromSerializedInput.ts:18](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/createDatasetFromSerializedInput.ts#L18)
 
 ___
 
@@ -153,7 +153,7 @@ Creates a SubscribableDataset
 
 Dataset
 
-Defined in: [lib/createWrapperSubscribableDataset.ts:24](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/createWrapperSubscribableDataset.ts#L24)
+Defined in: [lib/createWrapperSubscribableDataset.ts:24](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/createWrapperSubscribableDataset.ts#L24)
 
 ___
 
@@ -167,7 +167,7 @@ Creates a dataset factory that generates a SubscribableDataset
 
 DatasetFactory for SubscribableDataset
 
-Defined in: [lib/createWrapperSubscribableDataset.ts:10](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/createWrapperSubscribableDataset.ts#L10)
+Defined in: [lib/createWrapperSubscribableDataset.ts:10](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/createWrapperSubscribableDataset.ts#L10)
 
 ___
 
@@ -188,7 +188,7 @@ Creates an ExtendedDataset with a string input that could be JSON-LD, Turtle, N-
 
 A dataset
 
-Defined in: [lib/createExtendedDatasetFromSerializedInput.ts:18](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/createExtendedDatasetFromSerializedInput.ts#L18)
+Defined in: [lib/createExtendedDatasetFromSerializedInput.ts:18](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/createExtendedDatasetFromSerializedInput.ts#L18)
 
 ___
 
@@ -209,4 +209,4 @@ Creates a SubscribableDataset with a string input that could be JSON-LD, Turtle,
 
 A dataset
 
-Defined in: [lib/createWrapperSubscribableDatasetFromSerializedInput.ts:18](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/createWrapperSubscribableDatasetFromSerializedInput.ts#L18)
+Defined in: [lib/createWrapperSubscribableDatasetFromSerializedInput.ts:18](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/createWrapperSubscribableDatasetFromSerializedInput.ts#L18)

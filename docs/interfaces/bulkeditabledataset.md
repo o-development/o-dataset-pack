@@ -138,7 +138,7 @@ ___
 
 **Returns:** [*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>
 
-Defined in: [lib/types.ts:34](https://github.com/o-development/o-dataset-pack/blob/2ac25ff/lib/types.ts#L34)
+Defined in: [lib/types.ts:34](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L34)
 
 ___
 

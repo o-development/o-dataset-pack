@@ -140,10 +140,7 @@ export default class WrapperSubscribableDataset<
    * @param iteratee
    */
   public every(
-    iteratee: (
-      quad: InAndOutQuad,
-      dataset: Dataset<InAndOutQuad, InAndOutQuad>
-    ) => boolean
+    iteratee: (quad: InAndOutQuad, dataset: this) => boolean
   ): boolean {
     return this.dataset.every(iteratee);
   }
@@ -154,10 +151,7 @@ export default class WrapperSubscribableDataset<
    * @param iteratee
    */
   public filter(
-    iteratee: (
-      quad: InAndOutQuad,
-      dataset: Dataset<InAndOutQuad, InAndOutQuad>
-    ) => boolean
+    iteratee: (quad: InAndOutQuad, dataset: this) => boolean
   ): Dataset<InAndOutQuad, InAndOutQuad> {
     return this.dataset.filter(iteratee);
   }
@@ -167,12 +161,7 @@ export default class WrapperSubscribableDataset<
    * Note: This method is aligned with Array.prototype.forEach() in ECMAScript-262.
    * @param iteratee
    */
-  public forEach(
-    iteratee: (
-      quad: InAndOutQuad,
-      dataset: Dataset<InAndOutQuad, InAndOutQuad>
-    ) => void
-  ): void {
+  public forEach(iteratee: (quad: InAndOutQuad, dataset: this) => void): void {
     return this.dataset.forEach(iteratee);
   }
 
@@ -204,10 +193,7 @@ export default class WrapperSubscribableDataset<
    * @param iteratee
    */
   public map(
-    iteratee: (
-      quad: InAndOutQuad,
-      dataset: Dataset<InAndOutQuad, InAndOutQuad>
-    ) => InAndOutQuad
+    iteratee: (quad: InAndOutQuad, dataset: this) => InAndOutQuad
   ): Dataset<InAndOutQuad, InAndOutQuad> {
     return this.dataset.map(iteratee);
   }
@@ -220,11 +206,7 @@ export default class WrapperSubscribableDataset<
    * @param initialValue
    */
   public reduce<A = unknown>(
-    iteratee: (
-      accumulator: A,
-      quad: InAndOutQuad,
-      dataset: Dataset<InAndOutQuad, InAndOutQuad>
-    ) => A,
+    iteratee: (accumulator: A, quad: InAndOutQuad, dataset: this) => A,
     initialValue?: A
   ): A {
     return this.dataset.reduce(iteratee, initialValue);
@@ -237,10 +219,7 @@ export default class WrapperSubscribableDataset<
    * @returns boolean true once a quad that passes the test is found.
    */
   public some(
-    iteratee: (
-      quad: InAndOutQuad,
-      dataset: Dataset<InAndOutQuad, InAndOutQuad>
-    ) => boolean
+    iteratee: (quad: InAndOutQuad, dataset: this) => boolean
   ): boolean {
     return this.dataset.some(iteratee);
   }
