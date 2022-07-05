@@ -6,72 +6,72 @@ A DatasetFactory that creates an ExtendedDataset given a DatasetCoreFactory.
 
 ## Type parameters
 
-| Name | Type | Default |
-| :------ | :------ | :------ |
-| `InAndOutQuad` | BaseQuad | BaseQuad |
+| Name | Type |
+| :------ | :------ |
+| `InAndOutQuad` | extends `BaseQuad` = `BaseQuad` |
 
 ## Implements
 
-- *DatasetFactory*<InAndOutQuad, InAndOutQuad\>
+- `DatasetFactory`<`InAndOutQuad`, `InAndOutQuad`\>
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](extendeddatasetfactory.md#constructor)
+- [constructor](ExtendedDatasetFactory.md#constructor)
 
 ### Properties
 
-- [datasetCoreFactory](extendeddatasetfactory.md#datasetcorefactory)
+- [datasetCoreFactory](ExtendedDatasetFactory.md#datasetcorefactory)
 
 ### Methods
 
-- [dataset](extendeddatasetfactory.md#dataset)
+- [dataset](ExtendedDatasetFactory.md#dataset)
 
 ## Constructors
 
 ### constructor
 
-\+ **new ExtendedDatasetFactory**<InAndOutQuad\>(`datasetCoreFactory`: *DatasetCoreFactory*<InAndOutQuad, InAndOutQuad, DatasetCore<InAndOutQuad, InAndOutQuad\>\>): [*ExtendedDatasetFactory*](extendeddatasetfactory.md)<InAndOutQuad\>
+• **new ExtendedDatasetFactory**<`InAndOutQuad`\>(`datasetCoreFactory`)
 
 #### Type parameters
 
-| Name | Type | Default |
-| :------ | :------ | :------ |
-| `InAndOutQuad` | BaseQuad | BaseQuad |
+| Name | Type |
+| :------ | :------ |
+| `InAndOutQuad` | extends `BaseQuad` = `BaseQuad` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `datasetCoreFactory` | *DatasetCoreFactory*<InAndOutQuad, InAndOutQuad, DatasetCore<InAndOutQuad, InAndOutQuad\>\> |
-
-**Returns:** [*ExtendedDatasetFactory*](extendeddatasetfactory.md)<InAndOutQuad\>
-
-Defined in: [lib/ExtendedDatasetFactory.ts:15](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDatasetFactory.ts#L15)
+| `datasetCoreFactory` | `DatasetCoreFactory`<`InAndOutQuad`, `InAndOutQuad`, `DatasetCore`<`InAndOutQuad`, `InAndOutQuad`\>\> |
 
 ## Properties
 
 ### datasetCoreFactory
 
-• `Private` **datasetCoreFactory**: *DatasetCoreFactory*<InAndOutQuad, InAndOutQuad, DatasetCore<InAndOutQuad, InAndOutQuad\>\>
+• `Private` **datasetCoreFactory**: `DatasetCoreFactory`<`InAndOutQuad`, `InAndOutQuad`, `DatasetCore`<`InAndOutQuad`, `InAndOutQuad`\>\>
 
-Defined in: [lib/ExtendedDatasetFactory.ts:15](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDatasetFactory.ts#L15)
+#### Defined in
+
+[lib/ExtendedDatasetFactory.ts:15](https://github.com/o-development/o-dataset-pack/blob/c640ede/lib/ExtendedDatasetFactory.ts#L15)
 
 ## Methods
 
 ### dataset
 
-▸ **dataset**(`quads?`: *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[]): [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
+▸ **dataset**(`quads?`): [`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `quads?` | *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[] |
+| `quads?` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> \| `InAndOutQuad`[] |
 
-**Returns:** [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
+#### Returns
 
-Implementation of: DatasetFactory.dataset
+[`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>
 
-Defined in: [lib/ExtendedDatasetFactory.ts:22](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDatasetFactory.ts#L22)
+#### Implementation of
+
+DatasetFactory.dataset

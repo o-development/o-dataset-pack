@@ -6,84 +6,90 @@ A dataset that allows you to modify the dataset and
 
 ## Type parameters
 
-| Name | Type | Default |
-| :------ | :------ | :------ |
-| `InAndOutQuad` | BaseQuad | BaseQuad |
+| Name | Type |
+| :------ | :------ |
+| `InAndOutQuad` | extends `BaseQuad` = `BaseQuad` |
 
 ## Hierarchy
 
-- *Dataset*<InAndOutQuad, InAndOutQuad\>
+- `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-  ↳ **TransactionalDataset**
+  ↳ **`TransactionalDataset`**
 
 ## Implemented by
 
-- [*ProxyTransactionalDataset*](../classes/proxytransactionaldataset.md)
+- [`ProxyTransactionalDataset`](../classes/ProxyTransactionalDataset.md)
 
 ## Table of contents
 
 ### Properties
 
-- [size](transactionaldataset.md#size)
+- [size](TransactionalDataset.md#size)
 
 ### Methods
 
-- [[Symbol.iterator]](transactionaldataset.md#[symbol.iterator])
-- [add](transactionaldataset.md#add)
-- [addAll](transactionaldataset.md#addall)
-- [commit](transactionaldataset.md#commit)
-- [contains](transactionaldataset.md#contains)
-- [delete](transactionaldataset.md#delete)
-- [deleteMatches](transactionaldataset.md#deletematches)
-- [difference](transactionaldataset.md#difference)
-- [equals](transactionaldataset.md#equals)
-- [every](transactionaldataset.md#every)
-- [filter](transactionaldataset.md#filter)
-- [forEach](transactionaldataset.md#foreach)
-- [getChanges](transactionaldataset.md#getchanges)
-- [has](transactionaldataset.md#has)
-- [import](transactionaldataset.md#import)
-- [intersection](transactionaldataset.md#intersection)
-- [map](transactionaldataset.md#map)
-- [match](transactionaldataset.md#match)
-- [reduce](transactionaldataset.md#reduce)
-- [rollback](transactionaldataset.md#rollback)
-- [some](transactionaldataset.md#some)
-- [toArray](transactionaldataset.md#toarray)
-- [toCanonical](transactionaldataset.md#tocanonical)
-- [toStream](transactionaldataset.md#tostream)
-- [toString](transactionaldataset.md#tostring)
-- [union](transactionaldataset.md#union)
+- [[iterator]](TransactionalDataset.md#[iterator])
+- [add](TransactionalDataset.md#add)
+- [addAll](TransactionalDataset.md#addall)
+- [commit](TransactionalDataset.md#commit)
+- [contains](TransactionalDataset.md#contains)
+- [delete](TransactionalDataset.md#delete)
+- [deleteMatches](TransactionalDataset.md#deletematches)
+- [difference](TransactionalDataset.md#difference)
+- [equals](TransactionalDataset.md#equals)
+- [every](TransactionalDataset.md#every)
+- [filter](TransactionalDataset.md#filter)
+- [forEach](TransactionalDataset.md#foreach)
+- [getChanges](TransactionalDataset.md#getchanges)
+- [has](TransactionalDataset.md#has)
+- [import](TransactionalDataset.md#import)
+- [intersection](TransactionalDataset.md#intersection)
+- [map](TransactionalDataset.md#map)
+- [match](TransactionalDataset.md#match)
+- [reduce](TransactionalDataset.md#reduce)
+- [rollback](TransactionalDataset.md#rollback)
+- [some](TransactionalDataset.md#some)
+- [toArray](TransactionalDataset.md#toarray)
+- [toCanonical](TransactionalDataset.md#tocanonical)
+- [toStream](TransactionalDataset.md#tostream)
+- [toString](TransactionalDataset.md#tostring)
+- [union](TransactionalDataset.md#union)
 
 ## Properties
 
 ### size
 
-• `Readonly` **size**: *number*
+• `Readonly` **size**: `number`
 
 A non-negative integer that specifies the number of quads in the set.
 
-Inherited from: Dataset.size
+#### Inherited from
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:11
+Dataset.size
+
+#### Defined in
+
+node_modules/@rdfjs/types/dataset.d.ts:11
 
 ## Methods
 
-### [Symbol.iterator]
+### [iterator]
 
-▸ **[Symbol.iterator]**(): *Iterator*<InAndOutQuad, any, undefined\>
+▸ **[iterator]**(): `Iterator`<`InAndOutQuad`, `any`, `undefined`\>
 
-**Returns:** *Iterator*<InAndOutQuad, any, undefined\>
+#### Returns
 
-Inherited from: Dataset.\_\_@iterator
+`Iterator`<`InAndOutQuad`, `any`, `undefined`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:47
+#### Inherited from
+
+Dataset.\_\_@iterator@87
 
 ___
 
 ### add
 
-▸ **add**(`quad`: InAndOutQuad): [*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>
+▸ **add**(`quad`): [`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>
 
 Adds the specified quad to the dataset.
 
@@ -93,19 +99,21 @@ Existing quads, as defined in `Quad.equals`, will be ignored.
 
 | Name | Type |
 | :------ | :------ |
-| `quad` | InAndOutQuad |
+| `quad` | `InAndOutQuad` |
 
-**Returns:** [*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.add
+[`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:18
+#### Inherited from
+
+Dataset.add
 
 ___
 
 ### addAll
 
-▸ **addAll**(`quads`: *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[]): [*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>
+▸ **addAll**(`quads`): [`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>
 
 Imports the quads into this dataset.
 
@@ -116,29 +124,31 @@ combining `quads` and the current instance to create a new instance.
 
 | Name | Type |
 | :------ | :------ |
-| `quads` | *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[] |
+| `quads` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> \| `InAndOutQuad`[] |
 
-**Returns:** [*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.addAll
+[`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:64
+#### Inherited from
+
+Dataset.addAll
 
 ___
 
 ### commit
 
-▸ **commit**(): *void*
+▸ **commit**(): `void`
 
-**Returns:** *void*
+#### Returns
 
-Defined in: [lib/types.ts:43](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L43)
+`void`
 
 ___
 
 ### contains
 
-▸ **contains**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *boolean*
+▸ **contains**(`other`): `boolean`
 
 Returns `true` if the current instance is a superset of the given dataset; differently put: if the given dataset
 is a subset of, is contained in the current dataset.
@@ -149,19 +159,21 @@ Blank Nodes will be normalized.
 
 | Name | Type |
 | :------ | :------ |
-| `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `other` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *boolean*
+#### Returns
 
-Inherited from: Dataset.contains
+`boolean`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:72
+#### Inherited from
+
+Dataset.contains
 
 ___
 
 ### delete
 
-▸ **delete**(`quad`: InAndOutQuad): [*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>
+▸ **delete**(`quad`): [`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>
 
 Removes the specified quad from the dataset.
 
@@ -169,19 +181,21 @@ Removes the specified quad from the dataset.
 
 | Name | Type |
 | :------ | :------ |
-| `quad` | InAndOutQuad |
+| `quad` | `InAndOutQuad` |
 
-**Returns:** [*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.delete
+[`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:23
+#### Inherited from
+
+Dataset.delete
 
 ___
 
 ### deleteMatches
 
-▸ **deleteMatches**(`subject?`: Term, `predicate?`: Term, `object?`: Term, `graph?`: Term): [*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>
+▸ **deleteMatches**(`subject?`, `predicate?`, `object?`, `graph?`): [`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>
 
 This method removes the quads in the current instance that match the given arguments.
 
@@ -192,22 +206,24 @@ quad in this dataset to select the quads which will be deleted.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `subject?` | Term | The optional exact subject to match. |
-| `predicate?` | Term | The optional exact predicate to match. |
-| `object?` | Term | The optional exact object to match. |
-| `graph?` | Term | The optional exact graph to match. |
+| `subject?` | `Term` | The optional exact subject to match. |
+| `predicate?` | `Term` | The optional exact predicate to match. |
+| `object?` | `Term` | The optional exact object to match. |
+| `graph?` | `Term` | The optional exact graph to match. |
 
-**Returns:** [*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.deleteMatches
+[`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:85
+#### Inherited from
+
+Dataset.deleteMatches
 
 ___
 
 ### difference
 
-▸ **difference**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **difference**(`other`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Returns a new dataset that contains all quads from the current dataset, not included in the given dataset.
 
@@ -215,19 +231,21 @@ Returns a new dataset that contains all quads from the current dataset, not incl
 
 | Name | Type |
 | :------ | :------ |
-| `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `other` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.difference
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:90
+#### Inherited from
+
+Dataset.difference
 
 ___
 
 ### equals
 
-▸ **equals**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *boolean*
+▸ **equals**(`other`): `boolean`
 
 Returns true if the current instance contains the same graph structure as the given dataset.
 
@@ -237,19 +255,21 @@ Blank Nodes will be normalized.
 
 | Name | Type |
 | :------ | :------ |
-| `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `other` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *boolean*
+#### Returns
 
-Inherited from: Dataset.equals
+`boolean`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:97
+#### Inherited from
+
+Dataset.equals
 
 ___
 
 ### every
 
-▸ **every**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean*): *boolean*
+▸ **every**(`iteratee`): `boolean`
 
 Universal quantification method, tests whether every quad in the dataset passes the test implemented by the
 provided `iteratee`.
@@ -264,19 +284,21 @@ This method is aligned with `Array.prototype.every()` in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean* |
+| `iteratee` | (`quad`: `InAndOutQuad`, `dataset`: [`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>) => `boolean` |
 
-**Returns:** *boolean*
+#### Returns
 
-Inherited from: Dataset.every
+`boolean`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:109
+#### Inherited from
+
+Dataset.every
 
 ___
 
 ### filter
 
-▸ **filter**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean*): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **filter**(`iteratee`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Creates a new dataset with all the quads that pass the test implemented by the provided `iteratee`.
 
@@ -286,19 +308,21 @@ This method is aligned with Array.prototype.filter() in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean* |
+| `iteratee` | (`quad`: `InAndOutQuad`, `dataset`: [`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>) => `boolean` |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.filter
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:116
+#### Inherited from
+
+Dataset.filter
 
 ___
 
 ### forEach
 
-▸ **forEach**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *void*): *void*
+▸ **forEach**(`callback`): `void`
 
 Executes the provided `iteratee` once on each quad in the dataset.
 
@@ -308,29 +332,31 @@ This method is aligned with `Array.prototype.forEach()` in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *void* |
+| `callback` | (`quad`: `InAndOutQuad`, `dataset`: [`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>) => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: Dataset.forEach
+`void`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:123
+#### Inherited from
+
+Dataset.forEach
 
 ___
 
 ### getChanges
 
-▸ **getChanges**(): [*DatasetChanges*](datasetchanges.md)<InAndOutQuad\>
+▸ **getChanges**(): [`DatasetChanges`](DatasetChanges.md)<`InAndOutQuad`\>
 
-**Returns:** [*DatasetChanges*](datasetchanges.md)<InAndOutQuad\>
+#### Returns
 
-Defined in: [lib/types.ts:44](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L44)
+[`DatasetChanges`](DatasetChanges.md)<`InAndOutQuad`\>
 
 ___
 
 ### has
 
-▸ **has**(`quad`: InAndOutQuad): *boolean*
+▸ **has**(`quad`): `boolean`
 
 Determines whether a dataset includes a certain quad.
 
@@ -338,19 +364,21 @@ Determines whether a dataset includes a certain quad.
 
 | Name | Type |
 | :------ | :------ |
-| `quad` | InAndOutQuad |
+| `quad` | `InAndOutQuad` |
 
-**Returns:** *boolean*
+#### Returns
 
-Inherited from: Dataset.has
+`boolean`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:28
+#### Inherited from
+
+Dataset.has
 
 ___
 
 ### import
 
-▸ **import**(`stream`: *Stream*<InAndOutQuad\>): *Promise*<[*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>\>
+▸ **import**(`stream`): `Promise`<[`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>\>
 
 Imports all quads from the given stream into the dataset.
 
@@ -360,19 +388,21 @@ The stream events `end` and `error` are wrapped in a Promise.
 
 | Name | Type |
 | :------ | :------ |
-| `stream` | *Stream*<InAndOutQuad\> |
+| `stream` | `Stream`<`InAndOutQuad`\> |
 
-**Returns:** *Promise*<[*TransactionalDataset*](transactionaldataset.md)<InAndOutQuad\>\>
+#### Returns
 
-Inherited from: Dataset.import
+`Promise`<[`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:130
+#### Inherited from
+
+Dataset.import
 
 ___
 
 ### intersection
 
-▸ **intersection**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **intersection**(`other`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Returns a new dataset containing alls quads from the current dataset that are also included in the given dataset.
 
@@ -380,19 +410,21 @@ Returns a new dataset containing alls quads from the current dataset that are al
 
 | Name | Type |
 | :------ | :------ |
-| `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `other` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.intersection
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:135
+#### Inherited from
+
+Dataset.intersection
 
 ___
 
 ### map
 
-▸ **map**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => InAndOutQuad): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **map**(`iteratee`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Returns a new dataset containing all quads returned by applying `iteratee` to each quad in the current dataset.
 
@@ -400,40 +432,44 @@ Returns a new dataset containing all quads returned by applying `iteratee` to ea
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => InAndOutQuad |
+| `iteratee` | (`quad`: `InAndOutQuad`, `dataset`: `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>) => `InAndOutQuad` |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.map
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:140
+#### Inherited from
+
+Dataset.map
 
 ___
 
 ### match
 
-▸ **match**(`subject?`: ``null`` \| Term, `predicate?`: ``null`` \| Term, `object?`: ``null`` \| Term, `graph?`: ``null`` \| Term): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **match**(`subject?`, `predicate?`, `object?`, `graph?`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `subject?` | ``null`` \| Term |
-| `predicate?` | ``null`` \| Term |
-| `object?` | ``null`` \| Term |
-| `graph?` | ``null`` \| Term |
+| `subject?` | ``null`` \| `Term` |
+| `predicate?` | ``null`` \| `Term` |
+| `object?` | ``null`` \| `Term` |
+| `graph?` | ``null`` \| `Term` |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.match
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:195
+#### Inherited from
+
+Dataset.match
 
 ___
 
 ### reduce
 
-▸ **reduce**<A\>(`iteratee`: (`accumulator`: A, `quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => A, `initialValue?`: A): A
+▸ **reduce**<`A`\>(`callback`, `initialValue?`): `A`
 
 This method calls the `iteratee` on each `quad` of the `Dataset`. The first time the `iteratee` is called, the
 `accumulator` value is the `initialValue` or, if not given, equals to the first quad of the `Dataset`. The return
@@ -445,38 +481,40 @@ This method is aligned with `Array.prototype.reduce()` in ECMAScript-262.
 
 #### Type parameters
 
-| Name | Default |
+| Name | Type |
 | :------ | :------ |
-| `A` | *any* |
+| `A` | `any` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`accumulator`: A, `quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => A |
-| `initialValue?` | A |
+| `callback` | (`accumulator`: `A`, `quad`: `InAndOutQuad`, `dataset`: [`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>) => `A` |
+| `initialValue?` | `A` |
 
-**Returns:** A
+#### Returns
 
-Inherited from: Dataset.reduce
+`A`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:151
+#### Inherited from
+
+Dataset.reduce
 
 ___
 
 ### rollback
 
-▸ **rollback**(): *void*
+▸ **rollback**(): `void`
 
-**Returns:** *void*
+#### Returns
 
-Defined in: [lib/types.ts:42](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L42)
+`void`
 
 ___
 
 ### some
 
-▸ **some**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean*): *boolean*
+▸ **some**(`iteratee`): `boolean`
 
 Existential quantification method, tests whether some quads in the dataset pass the test implemented by the
 provided `iteratee`.
@@ -489,82 +527,92 @@ This method is aligned with `Array.prototype.some()` in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean* |
+| `iteratee` | (`quad`: `InAndOutQuad`, `dataset`: [`TransactionalDataset`](TransactionalDataset.md)<`InAndOutQuad`\>) => `boolean` |
 
-**Returns:** *boolean*
+#### Returns
 
-Inherited from: Dataset.some
+`boolean`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:161
+#### Inherited from
+
+Dataset.some
 
 ___
 
 ### toArray
 
-▸ **toArray**(): InAndOutQuad[]
+▸ **toArray**(): `InAndOutQuad`[]
 
 Returns the set of quads within the dataset as a host language native sequence, for example an `Array` in
 ECMAScript-262.
 
 Since a `Dataset` is an unordered set, the order of the quads within the returned sequence is arbitrary.
 
-**Returns:** InAndOutQuad[]
+#### Returns
 
-Inherited from: Dataset.toArray
+`InAndOutQuad`[]
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:169
+#### Inherited from
+
+Dataset.toArray
 
 ___
 
 ### toCanonical
 
-▸ **toCanonical**(): *string*
+▸ **toCanonical**(): `string`
 
 Returns an N-Quads string representation of the dataset, preprocessed with
 [RDF Dataset Normalization](https://json-ld.github.io/normalization/spec/) algorithm.
 
-**Returns:** *string*
+#### Returns
 
-Inherited from: Dataset.toCanonical
+`string`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:175
+#### Inherited from
+
+Dataset.toCanonical
 
 ___
 
 ### toStream
 
-▸ **toStream**(): *Stream*<InAndOutQuad\>
+▸ **toStream**(): `Stream`<`InAndOutQuad`\>
 
 Returns a stream that contains all quads of the dataset.
 
-**Returns:** *Stream*<InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.toStream
+`Stream`<`InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:180
+#### Inherited from
+
+Dataset.toStream
 
 ___
 
 ### toString
 
-▸ **toString**(): *string*
+▸ **toString**(): `string`
 
 Returns an N-Quads string representation of the dataset.
 
 No prior normalization is required, therefore the results for the same quads may vary depending on the `Dataset`
 implementation.
 
-**Returns:** *string*
+#### Returns
 
-Inherited from: Dataset.toString
+`string`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:188
+#### Inherited from
+
+Dataset.toString
 
 ___
 
 ### union
 
-▸ **union**(`quads`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **union**(`quads`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Returns a new `Dataset` that is a concatenation of this dataset and the quads given as an argument.
 
@@ -572,10 +620,12 @@ Returns a new `Dataset` that is a concatenation of this dataset and the quads gi
 
 | Name | Type |
 | :------ | :------ |
-| `quads` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `quads` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.union
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:193
+#### Inherited from
+
+Dataset.union

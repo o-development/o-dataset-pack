@@ -6,29 +6,33 @@ An interface representing the changes made
 
 ## Type parameters
 
-| Name | Type | Default |
-| :------ | :------ | :------ |
-| `InAndOutQuad` | BaseQuad | BaseQuad |
+| Name | Type |
+| :------ | :------ |
+| `InAndOutQuad` | extends `BaseQuad` = `BaseQuad` |
 
 ## Table of contents
 
 ### Properties
 
-- [added](datasetchanges.md#added)
-- [removed](datasetchanges.md#removed)
+- [added](DatasetChanges.md#added)
+- [removed](DatasetChanges.md#removed)
 
 ## Properties
 
 ### added
 
-• `Optional` **added**: *Dataset*<InAndOutQuad, InAndOutQuad\>
+• `Optional` **added**: `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: [lib/types.ts:12](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L12)
+#### Defined in
+
+[lib/types.ts:12](https://github.com/o-development/o-dataset-pack/blob/c640ede/lib/types.ts#L12)
 
 ___
 
 ### removed
 
-• `Optional` **removed**: *Dataset*<InAndOutQuad, InAndOutQuad\>
+• `Optional` **removed**: `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: [lib/types.ts:13](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L13)
+#### Defined in
+
+[lib/types.ts:13](https://github.com/o-development/o-dataset-pack/blob/c640ede/lib/types.ts#L13)

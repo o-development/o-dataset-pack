@@ -6,84 +6,90 @@ Adds the bulk method for add and remove
 
 ## Type parameters
 
-| Name | Type | Default |
-| :------ | :------ | :------ |
-| `InAndOutQuad` | BaseQuad | BaseQuad |
+| Name | Type |
+| :------ | :------ |
+| `InAndOutQuad` | extends `BaseQuad` = `BaseQuad` |
 
 ## Hierarchy
 
-- *Dataset*<InAndOutQuad, InAndOutQuad\>
+- `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-  ↳ **BulkEditableDataset**
+  ↳ **`BulkEditableDataset`**
 
-  ↳↳ [*SubscribableDataset*](subscribabledataset.md)
+  ↳↳ [`SubscribableDataset`](SubscribableDataset.md)
 
 ## Implemented by
 
-- [*ProxyTransactionalDataset*](../classes/proxytransactionaldataset.md)
+- [`ProxyTransactionalDataset`](../classes/ProxyTransactionalDataset.md)
 
 ## Table of contents
 
 ### Properties
 
-- [size](bulkeditabledataset.md#size)
+- [size](BulkEditableDataset.md#size)
 
 ### Methods
 
-- [[Symbol.iterator]](bulkeditabledataset.md#[symbol.iterator])
-- [add](bulkeditabledataset.md#add)
-- [addAll](bulkeditabledataset.md#addall)
-- [bulk](bulkeditabledataset.md#bulk)
-- [contains](bulkeditabledataset.md#contains)
-- [delete](bulkeditabledataset.md#delete)
-- [deleteMatches](bulkeditabledataset.md#deletematches)
-- [difference](bulkeditabledataset.md#difference)
-- [equals](bulkeditabledataset.md#equals)
-- [every](bulkeditabledataset.md#every)
-- [filter](bulkeditabledataset.md#filter)
-- [forEach](bulkeditabledataset.md#foreach)
-- [has](bulkeditabledataset.md#has)
-- [import](bulkeditabledataset.md#import)
-- [intersection](bulkeditabledataset.md#intersection)
-- [map](bulkeditabledataset.md#map)
-- [match](bulkeditabledataset.md#match)
-- [reduce](bulkeditabledataset.md#reduce)
-- [some](bulkeditabledataset.md#some)
-- [toArray](bulkeditabledataset.md#toarray)
-- [toCanonical](bulkeditabledataset.md#tocanonical)
-- [toStream](bulkeditabledataset.md#tostream)
-- [toString](bulkeditabledataset.md#tostring)
-- [union](bulkeditabledataset.md#union)
+- [[iterator]](BulkEditableDataset.md#[iterator])
+- [add](BulkEditableDataset.md#add)
+- [addAll](BulkEditableDataset.md#addall)
+- [bulk](BulkEditableDataset.md#bulk)
+- [contains](BulkEditableDataset.md#contains)
+- [delete](BulkEditableDataset.md#delete)
+- [deleteMatches](BulkEditableDataset.md#deletematches)
+- [difference](BulkEditableDataset.md#difference)
+- [equals](BulkEditableDataset.md#equals)
+- [every](BulkEditableDataset.md#every)
+- [filter](BulkEditableDataset.md#filter)
+- [forEach](BulkEditableDataset.md#foreach)
+- [has](BulkEditableDataset.md#has)
+- [import](BulkEditableDataset.md#import)
+- [intersection](BulkEditableDataset.md#intersection)
+- [map](BulkEditableDataset.md#map)
+- [match](BulkEditableDataset.md#match)
+- [reduce](BulkEditableDataset.md#reduce)
+- [some](BulkEditableDataset.md#some)
+- [toArray](BulkEditableDataset.md#toarray)
+- [toCanonical](BulkEditableDataset.md#tocanonical)
+- [toStream](BulkEditableDataset.md#tostream)
+- [toString](BulkEditableDataset.md#tostring)
+- [union](BulkEditableDataset.md#union)
 
 ## Properties
 
 ### size
 
-• `Readonly` **size**: *number*
+• `Readonly` **size**: `number`
 
 A non-negative integer that specifies the number of quads in the set.
 
-Inherited from: Dataset.size
+#### Inherited from
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:11
+Dataset.size
+
+#### Defined in
+
+node_modules/@rdfjs/types/dataset.d.ts:11
 
 ## Methods
 
-### [Symbol.iterator]
+### [iterator]
 
-▸ **[Symbol.iterator]**(): *Iterator*<InAndOutQuad, any, undefined\>
+▸ **[iterator]**(): `Iterator`<`InAndOutQuad`, `any`, `undefined`\>
 
-**Returns:** *Iterator*<InAndOutQuad, any, undefined\>
+#### Returns
 
-Inherited from: Dataset.\_\_@iterator
+`Iterator`<`InAndOutQuad`, `any`, `undefined`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:47
+#### Inherited from
+
+Dataset.\_\_@iterator@87
 
 ___
 
 ### add
 
-▸ **add**(`quad`: InAndOutQuad): [*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>
+▸ **add**(`quad`): [`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>
 
 Adds the specified quad to the dataset.
 
@@ -93,19 +99,21 @@ Existing quads, as defined in `Quad.equals`, will be ignored.
 
 | Name | Type |
 | :------ | :------ |
-| `quad` | InAndOutQuad |
+| `quad` | `InAndOutQuad` |
 
-**Returns:** [*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.add
+[`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:18
+#### Inherited from
+
+Dataset.add
 
 ___
 
 ### addAll
 
-▸ **addAll**(`quads`: *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[]): [*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>
+▸ **addAll**(`quads`): [`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>
 
 Imports the quads into this dataset.
 
@@ -116,35 +124,37 @@ combining `quads` and the current instance to create a new instance.
 
 | Name | Type |
 | :------ | :------ |
-| `quads` | *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[] |
+| `quads` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> \| `InAndOutQuad`[] |
 
-**Returns:** [*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.addAll
+[`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:64
+#### Inherited from
+
+Dataset.addAll
 
 ___
 
 ### bulk
 
-▸ **bulk**(`changes`: [*DatasetChanges*](datasetchanges.md)<InAndOutQuad\>): [*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>
+▸ **bulk**(`changes`): [`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `changes` | [*DatasetChanges*](datasetchanges.md)<InAndOutQuad\> |
+| `changes` | [`DatasetChanges`](DatasetChanges.md)<`InAndOutQuad`\> |
 
-**Returns:** [*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>
+#### Returns
 
-Defined in: [lib/types.ts:34](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/types.ts#L34)
+[`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>
 
 ___
 
 ### contains
 
-▸ **contains**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *boolean*
+▸ **contains**(`other`): `boolean`
 
 Returns `true` if the current instance is a superset of the given dataset; differently put: if the given dataset
 is a subset of, is contained in the current dataset.
@@ -155,19 +165,21 @@ Blank Nodes will be normalized.
 
 | Name | Type |
 | :------ | :------ |
-| `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `other` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *boolean*
+#### Returns
 
-Inherited from: Dataset.contains
+`boolean`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:72
+#### Inherited from
+
+Dataset.contains
 
 ___
 
 ### delete
 
-▸ **delete**(`quad`: InAndOutQuad): [*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>
+▸ **delete**(`quad`): [`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>
 
 Removes the specified quad from the dataset.
 
@@ -175,19 +187,21 @@ Removes the specified quad from the dataset.
 
 | Name | Type |
 | :------ | :------ |
-| `quad` | InAndOutQuad |
+| `quad` | `InAndOutQuad` |
 
-**Returns:** [*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.delete
+[`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:23
+#### Inherited from
+
+Dataset.delete
 
 ___
 
 ### deleteMatches
 
-▸ **deleteMatches**(`subject?`: Term, `predicate?`: Term, `object?`: Term, `graph?`: Term): [*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>
+▸ **deleteMatches**(`subject?`, `predicate?`, `object?`, `graph?`): [`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>
 
 This method removes the quads in the current instance that match the given arguments.
 
@@ -198,22 +212,24 @@ quad in this dataset to select the quads which will be deleted.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `subject?` | Term | The optional exact subject to match. |
-| `predicate?` | Term | The optional exact predicate to match. |
-| `object?` | Term | The optional exact object to match. |
-| `graph?` | Term | The optional exact graph to match. |
+| `subject?` | `Term` | The optional exact subject to match. |
+| `predicate?` | `Term` | The optional exact predicate to match. |
+| `object?` | `Term` | The optional exact object to match. |
+| `graph?` | `Term` | The optional exact graph to match. |
 
-**Returns:** [*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.deleteMatches
+[`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:85
+#### Inherited from
+
+Dataset.deleteMatches
 
 ___
 
 ### difference
 
-▸ **difference**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **difference**(`other`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Returns a new dataset that contains all quads from the current dataset, not included in the given dataset.
 
@@ -221,19 +237,21 @@ Returns a new dataset that contains all quads from the current dataset, not incl
 
 | Name | Type |
 | :------ | :------ |
-| `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `other` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.difference
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:90
+#### Inherited from
+
+Dataset.difference
 
 ___
 
 ### equals
 
-▸ **equals**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *boolean*
+▸ **equals**(`other`): `boolean`
 
 Returns true if the current instance contains the same graph structure as the given dataset.
 
@@ -243,19 +261,21 @@ Blank Nodes will be normalized.
 
 | Name | Type |
 | :------ | :------ |
-| `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `other` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *boolean*
+#### Returns
 
-Inherited from: Dataset.equals
+`boolean`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:97
+#### Inherited from
+
+Dataset.equals
 
 ___
 
 ### every
 
-▸ **every**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean*): *boolean*
+▸ **every**(`iteratee`): `boolean`
 
 Universal quantification method, tests whether every quad in the dataset passes the test implemented by the
 provided `iteratee`.
@@ -270,19 +290,21 @@ This method is aligned with `Array.prototype.every()` in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean* |
+| `iteratee` | (`quad`: `InAndOutQuad`, `dataset`: [`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>) => `boolean` |
 
-**Returns:** *boolean*
+#### Returns
 
-Inherited from: Dataset.every
+`boolean`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:109
+#### Inherited from
+
+Dataset.every
 
 ___
 
 ### filter
 
-▸ **filter**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean*): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **filter**(`iteratee`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Creates a new dataset with all the quads that pass the test implemented by the provided `iteratee`.
 
@@ -292,19 +314,21 @@ This method is aligned with Array.prototype.filter() in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean* |
+| `iteratee` | (`quad`: `InAndOutQuad`, `dataset`: [`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>) => `boolean` |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.filter
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:116
+#### Inherited from
+
+Dataset.filter
 
 ___
 
 ### forEach
 
-▸ **forEach**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *void*): *void*
+▸ **forEach**(`callback`): `void`
 
 Executes the provided `iteratee` once on each quad in the dataset.
 
@@ -314,19 +338,21 @@ This method is aligned with `Array.prototype.forEach()` in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *void* |
+| `callback` | (`quad`: `InAndOutQuad`, `dataset`: [`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>) => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Inherited from: Dataset.forEach
+`void`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:123
+#### Inherited from
+
+Dataset.forEach
 
 ___
 
 ### has
 
-▸ **has**(`quad`: InAndOutQuad): *boolean*
+▸ **has**(`quad`): `boolean`
 
 Determines whether a dataset includes a certain quad.
 
@@ -334,19 +360,21 @@ Determines whether a dataset includes a certain quad.
 
 | Name | Type |
 | :------ | :------ |
-| `quad` | InAndOutQuad |
+| `quad` | `InAndOutQuad` |
 
-**Returns:** *boolean*
+#### Returns
 
-Inherited from: Dataset.has
+`boolean`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:28
+#### Inherited from
+
+Dataset.has
 
 ___
 
 ### import
 
-▸ **import**(`stream`: *Stream*<InAndOutQuad\>): *Promise*<[*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>\>
+▸ **import**(`stream`): `Promise`<[`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>\>
 
 Imports all quads from the given stream into the dataset.
 
@@ -356,19 +384,21 @@ The stream events `end` and `error` are wrapped in a Promise.
 
 | Name | Type |
 | :------ | :------ |
-| `stream` | *Stream*<InAndOutQuad\> |
+| `stream` | `Stream`<`InAndOutQuad`\> |
 
-**Returns:** *Promise*<[*BulkEditableDataset*](bulkeditabledataset.md)<InAndOutQuad\>\>
+#### Returns
 
-Inherited from: Dataset.import
+`Promise`<[`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:130
+#### Inherited from
+
+Dataset.import
 
 ___
 
 ### intersection
 
-▸ **intersection**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **intersection**(`other`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Returns a new dataset containing alls quads from the current dataset that are also included in the given dataset.
 
@@ -376,19 +406,21 @@ Returns a new dataset containing alls quads from the current dataset that are al
 
 | Name | Type |
 | :------ | :------ |
-| `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `other` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.intersection
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:135
+#### Inherited from
+
+Dataset.intersection
 
 ___
 
 ### map
 
-▸ **map**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => InAndOutQuad): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **map**(`iteratee`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Returns a new dataset containing all quads returned by applying `iteratee` to each quad in the current dataset.
 
@@ -396,40 +428,44 @@ Returns a new dataset containing all quads returned by applying `iteratee` to ea
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => InAndOutQuad |
+| `iteratee` | (`quad`: `InAndOutQuad`, `dataset`: `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>) => `InAndOutQuad` |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.map
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:140
+#### Inherited from
+
+Dataset.map
 
 ___
 
 ### match
 
-▸ **match**(`subject?`: ``null`` \| Term, `predicate?`: ``null`` \| Term, `object?`: ``null`` \| Term, `graph?`: ``null`` \| Term): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **match**(`subject?`, `predicate?`, `object?`, `graph?`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `subject?` | ``null`` \| Term |
-| `predicate?` | ``null`` \| Term |
-| `object?` | ``null`` \| Term |
-| `graph?` | ``null`` \| Term |
+| `subject?` | ``null`` \| `Term` |
+| `predicate?` | ``null`` \| `Term` |
+| `object?` | ``null`` \| `Term` |
+| `graph?` | ``null`` \| `Term` |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.match
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:195
+#### Inherited from
+
+Dataset.match
 
 ___
 
 ### reduce
 
-▸ **reduce**<A\>(`iteratee`: (`accumulator`: A, `quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => A, `initialValue?`: A): A
+▸ **reduce**<`A`\>(`callback`, `initialValue?`): `A`
 
 This method calls the `iteratee` on each `quad` of the `Dataset`. The first time the `iteratee` is called, the
 `accumulator` value is the `initialValue` or, if not given, equals to the first quad of the `Dataset`. The return
@@ -441,28 +477,30 @@ This method is aligned with `Array.prototype.reduce()` in ECMAScript-262.
 
 #### Type parameters
 
-| Name | Default |
+| Name | Type |
 | :------ | :------ |
-| `A` | *any* |
+| `A` | `any` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`accumulator`: A, `quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => A |
-| `initialValue?` | A |
+| `callback` | (`accumulator`: `A`, `quad`: `InAndOutQuad`, `dataset`: [`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>) => `A` |
+| `initialValue?` | `A` |
 
-**Returns:** A
+#### Returns
 
-Inherited from: Dataset.reduce
+`A`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:151
+#### Inherited from
+
+Dataset.reduce
 
 ___
 
 ### some
 
-▸ **some**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean*): *boolean*
+▸ **some**(`iteratee`): `boolean`
 
 Existential quantification method, tests whether some quads in the dataset pass the test implemented by the
 provided `iteratee`.
@@ -475,82 +513,92 @@ This method is aligned with `Array.prototype.some()` in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: *Dataset*<InAndOutQuad, InAndOutQuad\>) => *boolean* |
+| `iteratee` | (`quad`: `InAndOutQuad`, `dataset`: [`BulkEditableDataset`](BulkEditableDataset.md)<`InAndOutQuad`\>) => `boolean` |
 
-**Returns:** *boolean*
+#### Returns
 
-Inherited from: Dataset.some
+`boolean`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:161
+#### Inherited from
+
+Dataset.some
 
 ___
 
 ### toArray
 
-▸ **toArray**(): InAndOutQuad[]
+▸ **toArray**(): `InAndOutQuad`[]
 
 Returns the set of quads within the dataset as a host language native sequence, for example an `Array` in
 ECMAScript-262.
 
 Since a `Dataset` is an unordered set, the order of the quads within the returned sequence is arbitrary.
 
-**Returns:** InAndOutQuad[]
+#### Returns
 
-Inherited from: Dataset.toArray
+`InAndOutQuad`[]
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:169
+#### Inherited from
+
+Dataset.toArray
 
 ___
 
 ### toCanonical
 
-▸ **toCanonical**(): *string*
+▸ **toCanonical**(): `string`
 
 Returns an N-Quads string representation of the dataset, preprocessed with
 [RDF Dataset Normalization](https://json-ld.github.io/normalization/spec/) algorithm.
 
-**Returns:** *string*
+#### Returns
 
-Inherited from: Dataset.toCanonical
+`string`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:175
+#### Inherited from
+
+Dataset.toCanonical
 
 ___
 
 ### toStream
 
-▸ **toStream**(): *Stream*<InAndOutQuad\>
+▸ **toStream**(): `Stream`<`InAndOutQuad`\>
 
 Returns a stream that contains all quads of the dataset.
 
-**Returns:** *Stream*<InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.toStream
+`Stream`<`InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:180
+#### Inherited from
+
+Dataset.toStream
 
 ___
 
 ### toString
 
-▸ **toString**(): *string*
+▸ **toString**(): `string`
 
 Returns an N-Quads string representation of the dataset.
 
 No prior normalization is required, therefore the results for the same quads may vary depending on the `Dataset`
 implementation.
 
-**Returns:** *string*
+#### Returns
 
-Inherited from: Dataset.toString
+`string`
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:188
+#### Inherited from
+
+Dataset.toString
 
 ___
 
 ### union
 
-▸ **union**(`quads`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **union**(`quads`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Returns a new `Dataset` that is a concatenation of this dataset and the quads given as an argument.
 
@@ -558,10 +606,12 @@ Returns a new `Dataset` that is a concatenation of this dataset and the quads gi
 
 | Name | Type |
 | :------ | :------ |
-| `quads` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `quads` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Inherited from: Dataset.union
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: node_modules/@rdfjs/types/dataset.d.ts:193
+#### Inherited from
+
+Dataset.union

@@ -6,138 +6,144 @@ A full implementation of the RDF JS Dataset interface.
 
 ## Type parameters
 
-| Name | Type | Default |
-| :------ | :------ | :------ |
-| `InAndOutQuad` | BaseQuad | BaseQuad |
+| Name | Type |
+| :------ | :------ |
+| `InAndOutQuad` | extends `BaseQuad` = `BaseQuad` |
 
 ## Hierarchy
 
-- **ExtendedDataset**
+- **`ExtendedDataset`**
 
-  ↳ [*ProxyTransactionalDataset*](proxytransactionaldataset.md)
+  ↳ [`ProxyTransactionalDataset`](ProxyTransactionalDataset.md)
 
 ## Implements
 
-- *Dataset*<InAndOutQuad, InAndOutQuad\>
+- `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](extendeddataset.md#constructor)
+- [constructor](ExtendedDataset.md#constructor)
 
 ### Properties
 
-- [dataset](extendeddataset.md#dataset)
-- [datasetCoreFactory](extendeddataset.md#datasetcorefactory)
+- [dataset](ExtendedDataset.md#dataset)
+- [datasetCoreFactory](ExtendedDataset.md#datasetcorefactory)
 
 ### Accessors
 
-- [size](extendeddataset.md#size)
+- [size](ExtendedDataset.md#size)
 
 ### Methods
 
-- [[Symbol.iterator]](extendeddataset.md#[symbol.iterator])
-- [add](extendeddataset.md#add)
-- [addAll](extendeddataset.md#addall)
-- [contains](extendeddataset.md#contains)
-- [createBlankDataset](extendeddataset.md#createblankdataset)
-- [delete](extendeddataset.md#delete)
-- [deleteMatches](extendeddataset.md#deletematches)
-- [difference](extendeddataset.md#difference)
-- [equals](extendeddataset.md#equals)
-- [every](extendeddataset.md#every)
-- [filter](extendeddataset.md#filter)
-- [forEach](extendeddataset.md#foreach)
-- [has](extendeddataset.md#has)
-- [import](extendeddataset.md#import)
-- [intersection](extendeddataset.md#intersection)
-- [map](extendeddataset.md#map)
-- [match](extendeddataset.md#match)
-- [reduce](extendeddataset.md#reduce)
-- [some](extendeddataset.md#some)
-- [toArray](extendeddataset.md#toarray)
-- [toCanonical](extendeddataset.md#tocanonical)
-- [toStream](extendeddataset.md#tostream)
-- [toString](extendeddataset.md#tostring)
-- [union](extendeddataset.md#union)
+- [[iterator]](ExtendedDataset.md#[iterator])
+- [add](ExtendedDataset.md#add)
+- [addAll](ExtendedDataset.md#addall)
+- [contains](ExtendedDataset.md#contains)
+- [createBlankDataset](ExtendedDataset.md#createblankdataset)
+- [delete](ExtendedDataset.md#delete)
+- [deleteMatches](ExtendedDataset.md#deletematches)
+- [difference](ExtendedDataset.md#difference)
+- [equals](ExtendedDataset.md#equals)
+- [every](ExtendedDataset.md#every)
+- [filter](ExtendedDataset.md#filter)
+- [forEach](ExtendedDataset.md#foreach)
+- [has](ExtendedDataset.md#has)
+- [import](ExtendedDataset.md#import)
+- [intersection](ExtendedDataset.md#intersection)
+- [map](ExtendedDataset.md#map)
+- [match](ExtendedDataset.md#match)
+- [reduce](ExtendedDataset.md#reduce)
+- [some](ExtendedDataset.md#some)
+- [toArray](ExtendedDataset.md#toarray)
+- [toCanonical](ExtendedDataset.md#tocanonical)
+- [toStream](ExtendedDataset.md#tostream)
+- [toString](ExtendedDataset.md#tostring)
+- [union](ExtendedDataset.md#union)
 
 ## Constructors
 
 ### constructor
 
-\+ **new ExtendedDataset**<InAndOutQuad\>(`dataset`: *DatasetCore*<InAndOutQuad, InAndOutQuad\>, `datasetFactory`: *DatasetCoreFactory*<InAndOutQuad, InAndOutQuad, DatasetCore<InAndOutQuad, InAndOutQuad\>\>): [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
+• **new ExtendedDataset**<`InAndOutQuad`\>(`dataset`, `datasetFactory`)
 
 Constructor
 
 #### Type parameters
 
-| Name | Type | Default |
-| :------ | :------ | :------ |
-| `InAndOutQuad` | BaseQuad | BaseQuad |
+| Name | Type |
+| :------ | :------ |
+| `InAndOutQuad` | extends `BaseQuad` = `BaseQuad` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `dataset` | *DatasetCore*<InAndOutQuad, InAndOutQuad\> |
-| `datasetFactory` | *DatasetCoreFactory*<InAndOutQuad, InAndOutQuad, DatasetCore<InAndOutQuad, InAndOutQuad\>\> |
-
-**Returns:** [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
-
-Defined in: [lib/ExtendedDataset.ts:26](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L26)
+| `dataset` | `DatasetCore`<`InAndOutQuad`, `InAndOutQuad`\> |
+| `datasetFactory` | `DatasetCoreFactory`<`InAndOutQuad`, `InAndOutQuad`, `DatasetCore`<`InAndOutQuad`, `InAndOutQuad`\>\> |
 
 ## Properties
 
 ### dataset
 
-• `Protected` **dataset**: *DatasetCore*<InAndOutQuad, InAndOutQuad\>
+• `Protected` **dataset**: `DatasetCore`<`InAndOutQuad`, `InAndOutQuad`\>
 
 The main backing dataset
 
-Defined in: [lib/ExtendedDataset.ts:21](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L21)
+#### Defined in
+
+[lib/ExtendedDataset.ts:21](https://github.com/o-development/o-dataset-pack/blob/c640ede/lib/ExtendedDataset.ts#L21)
 
 ___
 
 ### datasetCoreFactory
 
-• `Protected` **datasetCoreFactory**: *DatasetCoreFactory*<InAndOutQuad, InAndOutQuad, DatasetCore<InAndOutQuad, InAndOutQuad\>\>
+• `Protected` **datasetCoreFactory**: `DatasetCoreFactory`<`InAndOutQuad`, `InAndOutQuad`, `DatasetCore`<`InAndOutQuad`, `InAndOutQuad`\>\>
 
 A factory that generates datasets for the methods
 
-Defined in: [lib/ExtendedDataset.ts:26](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L26)
+#### Defined in
+
+[lib/ExtendedDataset.ts:26](https://github.com/o-development/o-dataset-pack/blob/c640ede/lib/ExtendedDataset.ts#L26)
 
 ## Accessors
 
 ### size
 
-• get **size**(): *number*
+• `get` **size**(): `number`
 
 A non-negative integer that specifies the number of quads in the set.
 
-**Returns:** *number*
+#### Returns
 
-Defined in: [lib/ExtendedDataset.ts:355](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L355)
+`number`
+
+#### Implementation of
+
+Dataset.size
 
 ## Methods
 
-### [Symbol.iterator]
+### [iterator]
 
-▸ **[Symbol.iterator]**(): *Iterator*<InAndOutQuad, InAndOutQuad, undefined\>
+▸ **[iterator]**(): `Iterator`<`InAndOutQuad`, `InAndOutQuad`, `undefined`\>
 
 Returns an iterator
 
-**Returns:** *Iterator*<InAndOutQuad, InAndOutQuad, undefined\>
+#### Returns
 
-Implementation of: Dataset.\_\_@iterator
+`Iterator`<`InAndOutQuad`, `InAndOutQuad`, `undefined`\>
 
-Defined in: [lib/ExtendedDataset.ts:391](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L391)
+#### Implementation of
+
+Dataset.\_\_@iterator@87
 
 ___
 
 ### add
 
-▸ **add**(`quad`: InAndOutQuad): [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
+▸ **add**(`quad`): [`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>
 
 Adds the specified quad to the dataset.
 Existing quads, as defined in Quad.equals, will be ignored.
@@ -146,21 +152,23 @@ Existing quads, as defined in Quad.equals, will be ignored.
 
 | Name | Type |
 | :------ | :------ |
-| `quad` | InAndOutQuad |
+| `quad` | `InAndOutQuad` |
 
-**Returns:** [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
+#### Returns
+
+[`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>
 
 the dataset instance it was called on.
 
-Implementation of: Dataset.add
+#### Implementation of
 
-Defined in: [lib/ExtendedDataset.ts:365](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L365)
+Dataset.add
 
 ___
 
 ### addAll
 
-▸ **addAll**(`quads`: *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[]): [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
+▸ **addAll**(`quads`): [`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>
 
 Imports the quads into this dataset.
 This method differs from Dataset.union in that it adds all quads to the current instance, rather than combining quads and the current instance to create a new instance.
@@ -169,21 +177,23 @@ This method differs from Dataset.union in that it adds all quads to the current 
 
 | Name | Type |
 | :------ | :------ |
-| `quads` | *Dataset*<InAndOutQuad, InAndOutQuad\> \| InAndOutQuad[] |
+| `quads` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> \| `InAndOutQuad`[] |
 
-**Returns:** [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
+#### Returns
+
+[`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>
 
 the dataset instance it was called on.
 
-Implementation of: Dataset.addAll
+#### Implementation of
 
-Defined in: [lib/ExtendedDataset.ts:55](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L55)
+Dataset.addAll
 
 ___
 
 ### contains
 
-▸ **contains**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *boolean*
+▸ **contains**(`other`): `boolean`
 
 Returns true if the current instance is a superset of the given dataset; differently put: if the given dataset is a subset of, is contained in the current dataset.
 Blank Nodes will be normalized.
@@ -192,31 +202,33 @@ Blank Nodes will be normalized.
 
 | Name | Type |
 | :------ | :------ |
-| `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `other` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *boolean*
+#### Returns
 
-Implementation of: Dataset.contains
+`boolean`
 
-Defined in: [lib/ExtendedDataset.ts:67](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L67)
+#### Implementation of
+
+Dataset.contains
 
 ___
 
 ### createBlankDataset
 
-▸ `Private` **createBlankDataset**(): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ `Private` **createBlankDataset**(): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Creates a blank dataset using the dataset factory
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Defined in: [lib/ExtendedDataset.ts:42](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L42)
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 ___
 
 ### delete
 
-▸ **delete**(`quad`: InAndOutQuad): [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
+▸ **delete**(`quad`): [`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>
 
 Removes the specified quad from the dataset.
 This method returns the dataset instance it was called on.
@@ -225,44 +237,48 @@ This method returns the dataset instance it was called on.
 
 | Name | Type |
 | :------ | :------ |
-| `quad` | InAndOutQuad |
+| `quad` | `InAndOutQuad` |
 
-**Returns:** [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
+#### Returns
 
-Implementation of: Dataset.delete
+[`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>
 
-Defined in: [lib/ExtendedDataset.ts:375](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L375)
+#### Implementation of
+
+Dataset.delete
 
 ___
 
 ### deleteMatches
 
-▸ **deleteMatches**(`subject?`: Term, `predicate?`: Term, `object?`: Term, `graph?`: Term): [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
+▸ **deleteMatches**(`subject?`, `predicate?`, `object?`, `graph?`): [`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>
 
- This method removes the quads in the current instance that match the given arguments. The logic described in Quad Matching is applied for each quad in this dataset to select the quads which will be deleted.
+This method removes the quads in the current instance that match the given arguments. The logic described in Quad Matching is applied for each quad in this dataset to select the quads which will be deleted.
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `subject?` | Term |
-| `predicate?` | Term |
-| `object?` | Term |
-| `graph?` | Term |
+| `subject?` | `Term` |
+| `predicate?` | `Term` |
+| `object?` | `Term` |
+| `graph?` | `Term` |
 
-**Returns:** [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>
+#### Returns
+
+[`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>
 
 the dataset instance it was called on.
 
-Implementation of: Dataset.deleteMatches
+#### Implementation of
 
-Defined in: [lib/ExtendedDataset.ts:87](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L87)
+Dataset.deleteMatches
 
 ___
 
 ### difference
 
-▸ **difference**(`other`: *DatasetCore*<InAndOutQuad, InAndOutQuad\>): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **difference**(`other`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Returns a new dataset that contains alls quads from the current dataset, not included in the given dataset.
 
@@ -270,19 +286,21 @@ Returns a new dataset that contains alls quads from the current dataset, not inc
 
 | Name | Type |
 | :------ | :------ |
-| `other` | *DatasetCore*<InAndOutQuad, InAndOutQuad\> |
+| `other` | `DatasetCore`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Implementation of: Dataset.difference
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: [lib/ExtendedDataset.ts:104](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L104)
+#### Implementation of
+
+Dataset.difference
 
 ___
 
 ### equals
 
-▸ **equals**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *boolean*
+▸ **equals**(`other`): `boolean`
 
 Returns true if the current instance contains the same graph structure as the given dataset.
 
@@ -290,19 +308,21 @@ Returns true if the current instance contains the same graph structure as the gi
 
 | Name | Type |
 | :------ | :------ |
-| `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `other` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *boolean*
+#### Returns
 
-Implementation of: Dataset.equals
+`boolean`
 
-Defined in: [lib/ExtendedDataset.ts:120](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L120)
+#### Implementation of
+
+Dataset.equals
 
 ___
 
 ### every
 
-▸ **every**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>) => *boolean*): *boolean*
+▸ **every**(`iteratee`): `boolean`
 
 Universal quantification method, tests whether every quad in the dataset passes the test implemented by the provided iteratee.
 This method immediately returns boolean false once a quad that does not pass the test is found.
@@ -313,19 +333,21 @@ Note: This method is aligned with Array.prototype.every() in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>) => *boolean* |
+| `iteratee` | (`quad`: `InAndOutQuad`, `dataset`: [`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>) => `boolean` |
 
-**Returns:** *boolean*
+#### Returns
 
-Implementation of: Dataset.every
+`boolean`
 
-Defined in: [lib/ExtendedDataset.ts:139](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L139)
+#### Implementation of
+
+Dataset.every
 
 ___
 
 ### filter
 
-▸ **filter**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>) => *boolean*): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **filter**(`iteratee`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Creates a new dataset with all the quads that pass the test implemented by the provided iteratee.
 Note: This method is aligned with Array.prototype.filter() in ECMAScript-262.
@@ -334,19 +356,21 @@ Note: This method is aligned with Array.prototype.filter() in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>) => *boolean* |
+| `iteratee` | (`quad`: `InAndOutQuad`, `dataset`: [`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>) => `boolean` |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Implementation of: Dataset.filter
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: [lib/ExtendedDataset.ts:153](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L153)
+#### Implementation of
+
+Dataset.filter
 
 ___
 
 ### forEach
 
-▸ **forEach**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>) => *void*): *void*
+▸ **forEach**(`iteratee`): `void`
 
 Executes the provided iteratee once on each quad in the dataset.
 Note: This method is aligned with Array.prototype.forEach() in ECMAScript-262.
@@ -355,19 +379,21 @@ Note: This method is aligned with Array.prototype.forEach() in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>) => *void* |
+| `iteratee` | (`quad`: `InAndOutQuad`, `dataset`: [`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>) => `void` |
 
-**Returns:** *void*
+#### Returns
 
-Implementation of: Dataset.forEach
+`void`
 
-Defined in: [lib/ExtendedDataset.ts:170](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L170)
+#### Implementation of
+
+Dataset.forEach
 
 ___
 
 ### has
 
-▸ **has**(`quad`: InAndOutQuad): *boolean*
+▸ **has**(`quad`): `boolean`
 
 Determines whether a dataset includes a certain quad, returning true or false as appropriate.
 
@@ -375,19 +401,21 @@ Determines whether a dataset includes a certain quad, returning true or false as
 
 | Name | Type |
 | :------ | :------ |
-| `quad` | InAndOutQuad |
+| `quad` | `InAndOutQuad` |
 
-**Returns:** *boolean*
+#### Returns
 
-Implementation of: Dataset.has
+`boolean`
 
-Defined in: [lib/ExtendedDataset.ts:384](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L384)
+#### Implementation of
+
+Dataset.has
 
 ___
 
 ### import
 
-▸ **import**(`stream`: *Stream*<InAndOutQuad\>): *Promise*<[*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>\>
+▸ **import**(`stream`): `Promise`<[`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>\>
 
 Imports all quads from the given stream into the dataset.
 The stream events end and error are wrapped in a Promise.
@@ -396,19 +424,21 @@ The stream events end and error are wrapped in a Promise.
 
 | Name | Type |
 | :------ | :------ |
-| `stream` | *Stream*<InAndOutQuad\> |
+| `stream` | `Stream`<`InAndOutQuad`\> |
 
-**Returns:** *Promise*<[*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>\>
+#### Returns
 
-Implementation of: Dataset.import
+`Promise`<[`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>\>
 
-Defined in: [lib/ExtendedDataset.ts:181](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L181)
+#### Implementation of
+
+Dataset.import
 
 ___
 
 ### intersection
 
-▸ **intersection**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **intersection**(`other`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Returns a new dataset containing alls quads from the current dataset that are also included in the given dataset.
 
@@ -416,19 +446,21 @@ Returns a new dataset containing alls quads from the current dataset that are al
 
 | Name | Type |
 | :------ | :------ |
-| `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `other` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Implementation of: Dataset.intersection
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: [lib/ExtendedDataset.ts:198](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L198)
+#### Implementation of
+
+Dataset.intersection
 
 ___
 
 ### map
 
-▸ **map**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>) => InAndOutQuad): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **map**(`iteratee`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Returns a new dataset containing all quads returned by applying iteratee to each quad in the current dataset.
 
@@ -436,19 +468,21 @@ Returns a new dataset containing all quads returned by applying iteratee to each
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>) => InAndOutQuad |
+| `iteratee` | (`quad`: `InAndOutQuad`, `dataset`: [`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>) => `InAndOutQuad` |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Implementation of: Dataset.map
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: [lib/ExtendedDataset.ts:216](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L216)
+#### Implementation of
+
+Dataset.map
 
 ___
 
 ### match
 
-▸ **match**(`subject?`: ``null`` \| Term, `predicate?`: ``null`` \| Term, `object?`: ``null`` \| Term, `graph?`: ``null`` \| Term): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **match**(`subject?`, `predicate?`, `object?`, `graph?`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 This method returns a new dataset that is comprised of all quads in the current instance matching the given arguments. The logic described in Quad Matching is applied for each quad in this dataset to check if it should be included in the output dataset.
 
@@ -456,24 +490,26 @@ This method returns a new dataset that is comprised of all quads in the current 
 
 | Name | Type |
 | :------ | :------ |
-| `subject?` | ``null`` \| Term |
-| `predicate?` | ``null`` \| Term |
-| `object?` | ``null`` \| Term |
-| `graph?` | ``null`` \| Term |
+| `subject?` | ``null`` \| `Term` |
+| `predicate?` | ``null`` \| `Term` |
+| `object?` | ``null`` \| `Term` |
+| `graph?` | ``null`` \| `Term` |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
+
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 a Dataset with matching triples
 
-Implementation of: Dataset.match
+#### Implementation of
 
-Defined in: [lib/ExtendedDataset.ts:340](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L340)
+Dataset.match
 
 ___
 
 ### reduce
 
-▸ **reduce**<A\>(`iteratee`: (`accumulator`: A, `quad`: InAndOutQuad, `dataset`: [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>) => A, `initialValue?`: A): A
+▸ **reduce**<`A`\>(`iteratee`, `initialValue?`): `A`
 
 This method calls the iteratee on each quad of the DatasetCore. The first time the iteratee is called, the accumulator value is the initialValue or, if not given, equals to the first quad of the Dataset. The return value of the iteratee is used as accumulator value for the next calls.
 This method returns the return value of the last iteratee call.
@@ -481,28 +517,30 @@ Note: This method is aligned with Array.prototype.reduce() in ECMAScript-262.
 
 #### Type parameters
 
-| Name | Default |
+| Name | Type |
 | :------ | :------ |
-| `A` | *unknown* |
+| `A` | `unknown` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`accumulator`: A, `quad`: InAndOutQuad, `dataset`: [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>) => A |
-| `initialValue?` | A |
+| `iteratee` | (`accumulator`: `A`, `quad`: `InAndOutQuad`, `dataset`: [`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>) => `A` |
+| `initialValue?` | `A` |
 
-**Returns:** A
+#### Returns
 
-Implementation of: Dataset.reduce
+`A`
 
-Defined in: [lib/ExtendedDataset.ts:233](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L233)
+#### Implementation of
+
+Dataset.reduce
 
 ___
 
 ### some
 
-▸ **some**(`iteratee`: (`quad`: InAndOutQuad, `dataset`: [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>) => *boolean*): *boolean*
+▸ **some**(`iteratee`): `boolean`
 
 Existential quantification method, tests whether some quads in the dataset pass the test implemented by the provided iteratee.
 Note: This method is aligned with Array.prototype.some() in ECMAScript-262.
@@ -511,79 +549,89 @@ Note: This method is aligned with Array.prototype.some() in ECMAScript-262.
 
 | Name | Type |
 | :------ | :------ |
-| `iteratee` | (`quad`: InAndOutQuad, `dataset`: [*ExtendedDataset*](extendeddataset.md)<InAndOutQuad\>) => *boolean* |
+| `iteratee` | (`quad`: `InAndOutQuad`, `dataset`: [`ExtendedDataset`](ExtendedDataset.md)<`InAndOutQuad`\>) => `boolean` |
 
-**Returns:** *boolean*
+#### Returns
+
+`boolean`
 
 boolean true once a quad that passes the test is found.
 
-Implementation of: Dataset.some
+#### Implementation of
 
-Defined in: [lib/ExtendedDataset.ts:258](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L258)
+Dataset.some
 
 ___
 
 ### toArray
 
-▸ **toArray**(): InAndOutQuad[]
+▸ **toArray**(): `InAndOutQuad`[]
 
 Returns the set of quads within the dataset as a host language native sequence, for example an Array in ECMAScript-262.
 Note: Since a DatasetCore is an unordered set, the order of the quads within the returned sequence is arbitrary.
 
-**Returns:** InAndOutQuad[]
+#### Returns
 
-Implementation of: Dataset.toArray
+`InAndOutQuad`[]
 
-Defined in: [lib/ExtendedDataset.ts:271](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L271)
+#### Implementation of
+
+Dataset.toArray
 
 ___
 
 ### toCanonical
 
-▸ **toCanonical**(): *string*
+▸ **toCanonical**(): `string`
 
 Returns an N-Quads string representation of the dataset, preprocessed with RDF Dataset Normalization algorithm.
 
-**Returns:** *string*
+#### Returns
 
-Implementation of: Dataset.toCanonical
+`string`
 
-Defined in: [lib/ExtendedDataset.ts:282](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L282)
+#### Implementation of
+
+Dataset.toCanonical
 
 ___
 
 ### toStream
 
-▸ **toStream**(): *Stream*<InAndOutQuad\>
+▸ **toStream**(): `Stream`<`InAndOutQuad`\>
 
 Returns a stream that contains all quads of the dataset.
 
-**Returns:** *Stream*<InAndOutQuad\>
+#### Returns
 
-Implementation of: Dataset.toStream
+`Stream`<`InAndOutQuad`\>
 
-Defined in: [lib/ExtendedDataset.ts:289](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L289)
+#### Implementation of
+
+Dataset.toStream
 
 ___
 
 ### toString
 
-▸ **toString**(): *string*
+▸ **toString**(): `string`
 
 Returns an N-Quads string representation of the dataset.
 No prior normalization is required, therefore the results for the same quads may vary depending on the Dataset implementation.
 
-**Returns:** *string*
+#### Returns
 
-Implementation of: Dataset.toString
+`string`
 
-Defined in: [lib/ExtendedDataset.ts:310](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L310)
+#### Implementation of
+
+Dataset.toString
 
 ___
 
 ### union
 
-▸ **union**(`other`: *Dataset*<InAndOutQuad, InAndOutQuad\>): *Dataset*<InAndOutQuad, InAndOutQuad\>
+▸ **union**(`other`): `Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
 Returns a new Dataset that is a concatenation of this dataset and the quads given as an argument.
 
@@ -591,10 +639,12 @@ Returns a new Dataset that is a concatenation of this dataset and the quads give
 
 | Name | Type |
 | :------ | :------ |
-| `other` | *Dataset*<InAndOutQuad, InAndOutQuad\> |
+| `other` | `Dataset`<`InAndOutQuad`, `InAndOutQuad`\> |
 
-**Returns:** *Dataset*<InAndOutQuad, InAndOutQuad\>
+#### Returns
 
-Implementation of: Dataset.union
+`Dataset`<`InAndOutQuad`, `InAndOutQuad`\>
 
-Defined in: [lib/ExtendedDataset.ts:319](https://github.com/o-development/o-dataset-pack/blob/7f31bc0/lib/ExtendedDataset.ts#L319)
+#### Implementation of
+
+Dataset.union
