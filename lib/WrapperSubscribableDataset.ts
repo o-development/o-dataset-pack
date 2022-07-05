@@ -142,7 +142,7 @@ export default class WrapperSubscribableDataset<
   public every(
     iteratee: (quad: InAndOutQuad, dataset: this) => boolean
   ): boolean {
-    return this.dataset.every(iteratee);
+    return this.dataset.every((quad) => iteratee(quad, this));
   }
 
   /**
@@ -153,7 +153,7 @@ export default class WrapperSubscribableDataset<
   public filter(
     iteratee: (quad: InAndOutQuad, dataset: this) => boolean
   ): Dataset<InAndOutQuad, InAndOutQuad> {
-    return this.dataset.filter(iteratee);
+    return this.dataset.filter((quad) => iteratee(quad, this));
   }
 
   /**
@@ -162,7 +162,7 @@ export default class WrapperSubscribableDataset<
    * @param iteratee
    */
   public forEach(iteratee: (quad: InAndOutQuad, dataset: this) => void): void {
-    return this.dataset.forEach(iteratee);
+    return this.dataset.forEach((quad) => iteratee(quad, this));
   }
 
   /**
@@ -195,7 +195,7 @@ export default class WrapperSubscribableDataset<
   public map(
     iteratee: (quad: InAndOutQuad, dataset: this) => InAndOutQuad
   ): Dataset<InAndOutQuad, InAndOutQuad> {
-    return this.dataset.map(iteratee);
+    return this.dataset.map((quad) => iteratee(quad, this));
   }
 
   /**
@@ -209,7 +209,10 @@ export default class WrapperSubscribableDataset<
     iteratee: (accumulator: A, quad: InAndOutQuad, dataset: this) => A,
     initialValue?: A
   ): A {
-    return this.dataset.reduce(iteratee, initialValue);
+    return this.dataset.reduce(
+      (acc, quad) => iteratee(acc, quad, this),
+      initialValue
+    );
   }
 
   /**
@@ -221,7 +224,7 @@ export default class WrapperSubscribableDataset<
   public some(
     iteratee: (quad: InAndOutQuad, dataset: this) => boolean
   ): boolean {
-    return this.dataset.some(iteratee);
+    return this.dataset.some((quad) => iteratee(quad, this));
   }
 
   /**

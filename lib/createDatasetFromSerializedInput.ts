@@ -1,7 +1,6 @@
 import { Dataset, DatasetFactory, Quad } from "@rdfjs/types";
-import { JsonLdParser } from "jsonld-streaming-parser";
-import { Readable } from "stream";
-import { Parser, ParserOptions, BlankNode } from "n3";
+import { JsonLdDocument, toRDF } from "jsonld";
+import { Parser, ParserOptions } from "n3";
 
 /**
  * Creates a dataset with a string input that could be SON-LD, Turtle, N-Triples, TriG, RDF*, or N3.
@@ -22,22 +21,18 @@ export default async function createDatasetFromSerializedInput<
   data: string,
   options?: ParserOptions
 ): Promise<ReturnDataset> {
+  let dataToParse: string = data;
+  let optionsToUse: ParserOptions = options || {};
   // JSON-LD Parsing
   if (options && options.format === "application/json-ld") {
-    return new Promise((resolve, reject) => {
-      const dataset: ReturnDataset = (datasetFactory.dataset() as unknown) as ReturnDataset;
-      const jsonLdParser = new JsonLdParser();
-      Readable.from(data)
-        .pipe(jsonLdParser)
-        .on("data", (quad) => {
-          dataset.add(quad);
-        })
-        .on("error", reject)
-        .on("end", () => resolve(dataset));
-    });
+    // The typings on this library are incorrect
+    dataToParse = ((await toRDF(JSON.parse(data) as JsonLdDocument, {
+      format: "application/n-quads",
+    })) as unknown) as string;
+    optionsToUse = { format: "application/n-quads" };
   }
   // N3 Parsing
-  const parser = new Parser(options as ParserOptions);
-  const quads = parser.parse(data);
+  const parser = new Parser(optionsToUse as ParserOptions);
+  const quads = parser.parse(dataToParse);
   return (datasetFactory.dataset(quads) as unknown) as ReturnDataset;
 }
