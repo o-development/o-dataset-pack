@@ -44,7 +44,7 @@ Types of nodes a subscribable dataset can subscribe to
 
 #### Defined in
 
-[lib/types.ts:19](https://github.com/o-development/o-dataset-pack/blob/c640ede/lib/types.ts#L19)
+[lib/types.ts:19](https://github.com/o-development/o-dataset-pack/blob/e8a7e34/lib/types.ts#L19)
 
 ___
 
@@ -77,7 +77,7 @@ An event listeners for nodes
 
 #### Defined in
 
-[lib/types.ts:24](https://github.com/o-development/o-dataset-pack/blob/c640ede/lib/types.ts#L24)
+[lib/types.ts:24](https://github.com/o-development/o-dataset-pack/blob/e8a7e34/lib/types.ts#L24)
 
 ## Functions
 

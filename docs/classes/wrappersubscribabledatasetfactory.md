@@ -54,7 +54,7 @@ A DatasetFactory that returns a WrapperSubscribableDataset given a generic Datas
 
 #### Defined in
 
-[lib/WrapperSubscribableDatasetFactory.ts:10](https://github.com/o-development/o-dataset-pack/blob/c640ede/lib/WrapperSubscribableDatasetFactory.ts#L10)
+[lib/WrapperSubscribableDatasetFactory.ts:10](https://github.com/o-development/o-dataset-pack/blob/e8a7e34/lib/WrapperSubscribableDatasetFactory.ts#L10)
 
 ## Methods
 
