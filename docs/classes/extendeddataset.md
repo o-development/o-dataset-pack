@@ -93,7 +93,7 @@ The main backing dataset
 
 #### Defined in
 
-[lib/ExtendedDataset.ts:21](https://github.com/o-development/o-dataset-pack/blob/44be04c/lib/ExtendedDataset.ts#L21)
+[lib/ExtendedDataset.ts:21](https://github.com/o-development/o-dataset-pack/blob/f941b7f/lib/ExtendedDataset.ts#L21)
 
 ___
 
@@ -105,7 +105,7 @@ A factory that generates datasets for the methods
 
 #### Defined in
 
-[lib/ExtendedDataset.ts:26](https://github.com/o-development/o-dataset-pack/blob/44be04c/lib/ExtendedDataset.ts#L26)
+[lib/ExtendedDataset.ts:26](https://github.com/o-development/o-dataset-pack/blob/f941b7f/lib/ExtendedDataset.ts#L26)
 
 ## Accessors
 

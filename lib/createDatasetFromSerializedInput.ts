@@ -25,6 +25,7 @@ export default async function createDatasetFromSerializedInput<
   // JSON-LD Parsing
   if (options && options.format === "application/json-ld") {
     return new Promise((resolve, reject) => {
+      JSON.parse(data);
       const parserJsonld = new ParserJsonld();
 
       const input = new Readable({
@@ -42,7 +43,9 @@ export default async function createDatasetFromSerializedInput<
       output.on("end", () => {
         resolve((datasetFactory.dataset(quads) as unknown) as ReturnDataset);
       });
+      /* istanbul ignore next */
       output.on("error", (err) => {
+        /* istanbul ignore next */
         reject(err);
       });
     });
