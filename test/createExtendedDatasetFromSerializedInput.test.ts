@@ -23,4 +23,10 @@ describe("createExtendedDatasetFromSerializedInput", () => {
       '<http://a.example/Employee7> <http://xmlns.com/foaf/0.1/givenName> "Robert" .\n<http://a.example/Employee7> <http://xmlns.com/foaf/0.1/givenName> "Taylor" .\n<http://a.example/Employee7> <http://xmlns.com/foaf/0.1/familyName> "Johnson" .\n<http://a.example/Employee7> <http://www.w3.org/2002/12/cal/ical#dtstart> "2020-11-04T00:01:22Z" .\n<http://a.example/Employee7> <http://xmlns.com/foaf/0.1/mbox> <mailto:rtj@example.com> .\n'
     );
   });
+
+  it("Should error when given invalid JSON", async () => {
+    await expect(
+      serializedToDataset('{ bad" json', { format: "application/json-ld" })
+    ).rejects.toThrow('Unexpected "b" at position 2 in state STOP');
+  });
 });
