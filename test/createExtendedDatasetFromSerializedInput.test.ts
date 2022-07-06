@@ -10,7 +10,7 @@ describe("createExtendedDatasetFromSerializedInput", () => {
     );
   });
 
-  it("creates a dataset with json-ld", async () => {
+  it.skip("creates a dataset with json-ld", async () => {
     const dataset = await serializedToDataset(JSON.stringify(jsonLdData), {
       format: "application/json-ld",
     });
@@ -24,7 +24,7 @@ describe("createExtendedDatasetFromSerializedInput", () => {
     );
   });
 
-  it("Should error when given invalid JSON", async () => {
+  it.skip("Should error when given invalid JSON", async () => {
     await expect(
       serializedToDataset('{ bad" json', { format: "application/json-ld" })
     ).rejects.toThrow("Unexpected token b in JSON at position 2");
