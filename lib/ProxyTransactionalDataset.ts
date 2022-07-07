@@ -127,7 +127,7 @@ export default class ProxyTransactionalDataset<
       graph
     );
     if (this.datasetChanges.removed) {
-      finalMatch = this.parentDataset.difference(this.datasetChanges.removed);
+      finalMatch = finalMatch.difference(this.datasetChanges.removed);
     }
     if (this.datasetChanges.added) {
       finalMatch = finalMatch.union(

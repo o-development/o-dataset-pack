@@ -254,6 +254,12 @@ describe("ProxyTransactionalDataset", () => {
   });
 
   it("Matches a dataset with a removed quad", () => {
+    initializeWithExtendedDatasetParent([
+      tomNameQuad,
+      tomTypeQuad,
+      lickyNameQuad,
+      lickyTypeQuad,
+    ]);
     transactionalDataset.delete(tomNameQuad);
     const matchingDataset = transactionalDataset.match(
       tomTypeQuad.subject,
