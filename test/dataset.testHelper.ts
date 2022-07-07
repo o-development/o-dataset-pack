@@ -1,6 +1,12 @@
-import { namedNode, literal, quad } from "@rdfjs/dataset";
+import { namedNode, literal, quad } from "@rdfjs/data-model";
 import { Quad_Object, Quad_Predicate } from "n3";
-import { BaseQuad, Dataset, Quad_Subject, DatasetFactory, Quad } from "rdf-js";
+import {
+  BaseQuad,
+  Dataset,
+  Quad_Subject,
+  DatasetFactory,
+  Quad,
+} from "@rdfjs/types";
 import { Readable } from "stream";
 
 export default function testDataset(
@@ -88,7 +94,7 @@ export default function testDataset(
     });
 
     it("Iterates over itself", () => {
-      const quads = [];
+      const quads: Quad[] = [];
       initializeDataset();
       for (const curQuad of dataset) {
         quads.push(curQuad);

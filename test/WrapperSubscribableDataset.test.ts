@@ -10,8 +10,8 @@ import {
   quad,
   defaultGraph,
   blankNode,
-} from "@rdfjs/dataset";
-import { Quad, BlankNode } from "rdf-js";
+} from "@rdfjs/data-model";
+import { Quad, BlankNode } from "@rdfjs/types";
 import testDataset from "./dataset.testHelper";
 
 describe("WrapperSubscribableDataset", () => {

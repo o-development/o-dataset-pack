@@ -1,15 +1,11 @@
-import { Dataset, DatasetCoreFactory, Quad, DatasetCore } from "rdf-js";
+import { Dataset, DatasetCoreFactory, Quad, DatasetCore } from "@rdfjs/types";
 import {
   ExtendedDatasetFactory,
   BulkEditableDataset,
   ProxyTransactionalDataset,
 } from "../lib";
-import {
-  namedNode,
-  literal,
-  quad,
-  dataset as initializeDatasetCore,
-} from "@rdfjs/dataset";
+import { namedNode, literal, quad } from "@rdfjs/data-model";
+import datasetCoreFactory from "@rdfjs/dataset";
 
 describe("ProxyTransactionalDataset", () => {
   let parentDataset: Dataset<Quad>;
@@ -36,10 +32,7 @@ describe("ProxyTransactionalDataset", () => {
   );
   const datasetFactory: DatasetCoreFactory = {
     dataset: (quads?: Dataset | Quad[]): DatasetCore => {
-      // Bad typings. These will be fixed
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      return initializeDatasetCore(quads);
+      return datasetCoreFactory.dataset(quads ? Array.from(quads) : undefined);
     },
   };
   const extendedDatasetFactory = new ExtendedDatasetFactory(datasetFactory);
@@ -48,9 +41,6 @@ describe("ProxyTransactionalDataset", () => {
     parentDataset = extendedDatasetFactory.dataset(
       quads || [tomTypeQuad, tomNameQuad]
     );
-    // Bad typings again
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
     transactionalDataset = new ProxyTransactionalDataset(
       parentDataset,
       extendedDatasetFactory
