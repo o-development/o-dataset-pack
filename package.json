@@ -1,6 +1,6 @@
 {
   "name": "o-dataset-pack",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "description": "An RDFJS dataset that alerts upon the update of a node",
   "main": "dist/index.js",
   "scripts": {
@@ -47,7 +47,11 @@
     "@rdfjs/data-model": "^1.2.0",
     "@rdfjs/dataset": "^1.1.0",
     "buffer": "^6.0.3",
-    "n3": "^1.10.0"
+    "n3": "^1.10.0",
+    "readable-stream": "^4.2.0"
+  },
+  "overrides": {
+    "readable-stream": "^4.2.0"
   },
   "files": [
     "dist"

@@ -8,7 +8,7 @@ import {
   Quad,
 } from "@rdfjs/types";
 import { Writer } from "n3";
-import { Readable } from "stream";
+import { Readable } from "readable-stream";
 
 /**
  * A full implementation of the RDF JS Dataset interface.

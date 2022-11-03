@@ -109,7 +109,7 @@ be triggered whenever a quad containing that added or removed.
 
 #### Defined in
 
-[lib/WrapperSubscribableDataset.ts:343](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/WrapperSubscribableDataset.ts#L343)
+[lib/WrapperSubscribableDataset.ts:343](https://github.com/o-development/o-dataset-pack/blob/fb94027/lib/WrapperSubscribableDataset.ts#L343)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 #### Defined in
 
-[lib/WrapperSubscribableDataset.ts:344](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/WrapperSubscribableDataset.ts#L344)
+[lib/WrapperSubscribableDataset.ts:344](https://github.com/o-development/o-dataset-pack/blob/fb94027/lib/WrapperSubscribableDataset.ts#L344)
 
 ___
 
@@ -133,7 +133,7 @@ EVENTEMITTER METHODS
 
 #### Defined in
 
-[lib/WrapperSubscribableDataset.ts:342](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/WrapperSubscribableDataset.ts#L342)
+[lib/WrapperSubscribableDataset.ts:342](https://github.com/o-development/o-dataset-pack/blob/fb94027/lib/WrapperSubscribableDataset.ts#L342)
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 #### Defined in
 
-[lib/WrapperSubscribableDataset.ts:345](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/WrapperSubscribableDataset.ts#L345)
+[lib/WrapperSubscribableDataset.ts:345](https://github.com/o-development/o-dataset-pack/blob/fb94027/lib/WrapperSubscribableDataset.ts#L345)
 
 ___
 
@@ -155,7 +155,7 @@ The underlying dataset
 
 #### Defined in
 
-[lib/WrapperSubscribableDataset.ts:28](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/WrapperSubscribableDataset.ts#L28)
+[lib/WrapperSubscribableDataset.ts:28](https://github.com/o-development/o-dataset-pack/blob/fb94027/lib/WrapperSubscribableDataset.ts#L28)
 
 ___
 
@@ -167,7 +167,7 @@ The underlying dataset factory
 
 #### Defined in
 
-[lib/WrapperSubscribableDataset.ts:24](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/WrapperSubscribableDataset.ts#L24)
+[lib/WrapperSubscribableDataset.ts:24](https://github.com/o-development/o-dataset-pack/blob/fb94027/lib/WrapperSubscribableDataset.ts#L24)
 
 ___
 
@@ -179,7 +179,7 @@ The underlying event emitter
 
 #### Defined in
 
-[lib/WrapperSubscribableDataset.ts:32](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/WrapperSubscribableDataset.ts#L32)
+[lib/WrapperSubscribableDataset.ts:32](https://github.com/o-development/o-dataset-pack/blob/fb94027/lib/WrapperSubscribableDataset.ts#L32)
 
 ## Accessors
 

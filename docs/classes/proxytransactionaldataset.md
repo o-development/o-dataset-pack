@@ -115,7 +115,7 @@ also have triple A.
 
 #### Defined in
 
-[lib/ProxyTransactionalDataset.ts:44](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/ProxyTransactionalDataset.ts#L44)
+[lib/ProxyTransactionalDataset.ts:44](https://github.com/o-development/o-dataset-pack/blob/fb94027/lib/ProxyTransactionalDataset.ts#L44)
 
 ___
 
@@ -131,7 +131,7 @@ The main backing dataset
 
 #### Defined in
 
-[lib/ExtendedDataset.ts:22](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/ExtendedDataset.ts#L22)
+[lib/ExtendedDataset.ts:22](https://github.com/o-development/o-dataset-pack/blob/fb94027/lib/ExtendedDataset.ts#L22)
 
 ___
 
@@ -143,7 +143,7 @@ The changes made that are ready to commit
 
 #### Defined in
 
-[lib/ProxyTransactionalDataset.ts:35](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/ProxyTransactionalDataset.ts#L35)
+[lib/ProxyTransactionalDataset.ts:35](https://github.com/o-development/o-dataset-pack/blob/fb94027/lib/ProxyTransactionalDataset.ts#L35)
 
 ___
 
@@ -159,7 +159,7 @@ A factory that generates datasets for the methods
 
 #### Defined in
 
-[lib/ExtendedDataset.ts:27](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/ExtendedDataset.ts#L27)
+[lib/ExtendedDataset.ts:27](https://github.com/o-development/o-dataset-pack/blob/fb94027/lib/ExtendedDataset.ts#L27)
 
 ___
 
@@ -171,7 +171,7 @@ A factory for creating new datasets to be added to the update method
 
 #### Defined in
 
-[lib/ProxyTransactionalDataset.ts:30](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/ProxyTransactionalDataset.ts#L30)
+[lib/ProxyTransactionalDataset.ts:30](https://github.com/o-development/o-dataset-pack/blob/fb94027/lib/ProxyTransactionalDataset.ts#L30)
 
 ___
 
@@ -183,7 +183,7 @@ The parent dataset that will be updated upon commit
 
 #### Defined in
 
-[lib/ProxyTransactionalDataset.ts:25](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/ProxyTransactionalDataset.ts#L25)
+[lib/ProxyTransactionalDataset.ts:25](https://github.com/o-development/o-dataset-pack/blob/fb94027/lib/ProxyTransactionalDataset.ts#L25)
 
 ## Accessors
 
