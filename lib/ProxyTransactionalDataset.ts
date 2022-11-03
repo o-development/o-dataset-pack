@@ -17,7 +17,8 @@ export default class ProxyTransactionalDataset<
   extends ExtendedDataset<InAndOutQuad>
   implements
     BulkEditableDataset<InAndOutQuad>,
-    TransactionalDataset<InAndOutQuad> {
+    TransactionalDataset<InAndOutQuad>
+{
   /**
    * The parent dataset that will be updated upon commit
    */
@@ -267,12 +268,10 @@ export default class ProxyTransactionalDataset<
         this.datasetChanges.removed
       );
       if (changesIntersection.size > 0) {
-        this.datasetChanges.added = this.datasetChanges.added.difference(
-          changesIntersection
-        );
-        this.datasetChanges.removed = this.datasetChanges.removed.difference(
-          changesIntersection
-        );
+        this.datasetChanges.added =
+          this.datasetChanges.added.difference(changesIntersection);
+        this.datasetChanges.removed =
+          this.datasetChanges.removed.difference(changesIntersection);
       }
     }
 

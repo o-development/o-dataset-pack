@@ -24,6 +24,7 @@ export function createWrapperSubscribableDatasetFactory(): WrapperSubscribableDa
 export default function createWrapperSubscribableDataset(
   quads?: Dataset<Quad> | Quad[]
 ): WrapperSubscribableDataset<Quad> {
-  const wrapperSubscribableDatasetFactory = createWrapperSubscribableDatasetFactory();
+  const wrapperSubscribableDatasetFactory =
+    createWrapperSubscribableDatasetFactory();
   return wrapperSubscribableDatasetFactory.dataset(quads);
 }

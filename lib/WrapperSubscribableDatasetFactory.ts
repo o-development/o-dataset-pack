@@ -6,7 +6,8 @@ import WrapperSubscribableDataset from "./WrapperSubscribableDataset";
  */
 export default class WrapperSubscribableDatasetFactory<
   InAndOutQuad extends BaseQuad = BaseQuad
-> implements DatasetFactory<InAndOutQuad, InAndOutQuad> {
+> implements DatasetFactory<InAndOutQuad, InAndOutQuad>
+{
   private datasetFactory: DatasetFactory<InAndOutQuad, InAndOutQuad>;
   constructor(datasetFactory: DatasetFactory<InAndOutQuad, InAndOutQuad>) {
     this.datasetFactory = datasetFactory;

@@ -54,5 +54,5 @@ export default async function createDatasetFromSerializedInput<
   // N3 Parsing
   const parser = new Parser(options as ParserOptions);
   const quads = parser.parse(data);
-  return (datasetFactory.dataset(quads) as unknown) as ReturnDataset;
+  return datasetFactory.dataset(quads) as unknown as ReturnDataset;
 }

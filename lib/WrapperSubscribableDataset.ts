@@ -16,7 +16,8 @@ import ProxyTransactionalDataset from "./ProxyTransactionalDataset";
  */
 export default class WrapperSubscribableDataset<
   InAndOutQuad extends BaseQuad = BaseQuad
-> implements SubscribableDataset<InAndOutQuad> {
+> implements SubscribableDataset<InAndOutQuad>
+{
   /**
    * The underlying dataset factory
    */
@@ -391,9 +392,8 @@ export default class WrapperSubscribableDataset<
       const quadTerms = [subject, predicate, object, graph];
       quadTerms.forEach((quadTerm) => {
         if (this.SUBSCRIBABLE_TERMS.includes(quadTerm.termType)) {
-          triggeredTermsMap[
-            `${quadTerm.termType}${quadTerm.value}`
-          ] = quadTerm as SubscribableTerms;
+          triggeredTermsMap[`${quadTerm.termType}${quadTerm.value}`] =
+            quadTerm as SubscribableTerms;
         }
       });
     };
@@ -415,10 +415,8 @@ export default class WrapperSubscribableDataset<
     changed: DatasetChanges<InAndOutQuad>
   ): void {
     if (this.listenerCount(term) > 0) {
-      let allQuads: Dataset<
-        InAndOutQuad,
-        InAndOutQuad
-      > = this.datasetFactory.dataset();
+      let allQuads: Dataset<InAndOutQuad, InAndOutQuad> =
+        this.datasetFactory.dataset();
       if (term.termType !== "DefaultGraph") {
         allQuads = allQuads.union(this.match(term, null, null, null));
         allQuads = allQuads.union(this.match(null, null, term, null));

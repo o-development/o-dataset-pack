@@ -54,7 +54,7 @@ A DatasetFactory that creates an ExtendedDataset given a DatasetCoreFactory.
 
 #### Defined in
 
-[lib/ExtendedDatasetFactory.ts:15](https://github.com/o-development/o-dataset-pack/blob/cbe3363/lib/ExtendedDatasetFactory.ts#L15)
+[lib/ExtendedDatasetFactory.ts:16](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/ExtendedDatasetFactory.ts#L16)
 
 ## Methods
 

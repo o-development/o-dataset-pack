@@ -11,7 +11,8 @@ import ExtendedDataset from "./ExtendedDataset";
  */
 export default class ExtendedDatasetFactory<
   InAndOutQuad extends BaseQuad = BaseQuad
-> implements DatasetFactory<InAndOutQuad, InAndOutQuad> {
+> implements DatasetFactory<InAndOutQuad, InAndOutQuad>
+{
   private datasetCoreFactory: DatasetCoreFactory<InAndOutQuad, InAndOutQuad>;
   constructor(
     datasetCoreFactory: DatasetCoreFactory<InAndOutQuad, InAndOutQuad>

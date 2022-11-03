@@ -8,13 +8,14 @@ import {
   Quad,
 } from "@rdfjs/types";
 import { Writer } from "n3";
-import { Readable } from "readable-stream";
+import { Readable } from "stream";
 
 /**
  * A full implementation of the RDF JS Dataset interface.
  */
 export default class ExtendedDataset<InAndOutQuad extends BaseQuad = BaseQuad>
-  implements Dataset<InAndOutQuad, InAndOutQuad> {
+  implements Dataset<InAndOutQuad, InAndOutQuad>
+{
   /**
    * The main backing dataset
    */

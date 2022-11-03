@@ -25,7 +25,7 @@ An interface representing the changes made
 
 #### Defined in
 
-[lib/types.ts:12](https://github.com/o-development/o-dataset-pack/blob/cbe3363/lib/types.ts#L12)
+[lib/types.ts:12](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/types.ts#L12)
 
 ___
 
@@ -35,4 +35,4 @@ ___
 
 #### Defined in
 
-[lib/types.ts:13](https://github.com/o-development/o-dataset-pack/blob/cbe3363/lib/types.ts#L13)
+[lib/types.ts:13](https://github.com/o-development/o-dataset-pack/blob/cb5ddec/lib/types.ts#L13)
