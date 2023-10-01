@@ -1,3 +1,5 @@
+> :warning: **This repository is archived**: It's contents have been moved to a new [monorepo](https://github.com/o-development/ldo/).
+
 # O Dataset Pack
 
 A library of RDFJS Datasets that have many uses including subscribing to node changes and making transactions on a dataset.
